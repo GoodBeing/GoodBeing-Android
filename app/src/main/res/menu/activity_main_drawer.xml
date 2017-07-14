@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_intro"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="서비스 소개" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="이력관리" />
+        <item
+            android:id="@+id/nav_surveyWrite"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="설문작성" />
+        <item
+            android:id="@+id/nav_measure"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="시료측정" />
+        <item
+            android:id="@+id/nav_consulting"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="의료상담" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="의료 FAQ" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
