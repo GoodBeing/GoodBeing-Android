@@ -15,16 +15,18 @@ import android.widget.Button;
 /**
  * Created by 고승빈 on 2017-07-17.
  */
-public class InspectionActivity extends AppCompatActivity
+public class InspectionMeasureActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
     private Button inspectionMeasureViewBtn;
     private Button inspectionResultViewBtn;
 
+    private Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inspect);
+        setContentView(R.layout.activity_inspectmeasure);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -52,19 +54,22 @@ public class InspectionActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        intent = new Intent();
+
         if (id == R.id.nav_intro) {
-
+            ;
         } else if (id == R.id.nav_history) {
-
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            Intent intent = new Intent(InspectionActivity.this , SurveyWriteActivity.class);
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_measure) {
-
+           onRestart();
         } else if (id == R.id.nav_consulting) {
-
+            ;
         } else if (id == R.id.nav_faq) {
-
+            ;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,17 +79,20 @@ public class InspectionActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
+
+        intent = new Intent();
+
         switch (view.getId())
         {
             case R.id.inspectionMeasureBtn :
-                ;
+                break;
             case R.id.inspectionResultViewBtn :
 
-                Intent intent = new Intent(InspectionActivity.this , InspectionResultActivity.class);
+                intent.setClassName(this , InspectionResultActivity.class.getName());
                 startActivity(intent);
-
+                break;
             default:
-                ;
+                break;
         }
 
     }

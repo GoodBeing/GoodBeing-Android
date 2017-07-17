@@ -2,8 +2,6 @@ package com.landvibe.goodbeing.goodbeing_android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +18,8 @@ public class MainActivity extends AppCompatActivity
 
 
     private Button mainSurveyBtn;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,21 +81,23 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_intro) {
+        intent = new Intent();
 
+        if (id == R.id.nav_intro) {
+            ;
         } else if (id == R.id.nav_history) {
-            Intent intent = new Intent(MainActivity.this , HistoryActivity.class);
+            intent.setClassName(this , HistoryActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            Intent intent = new Intent(MainActivity.this , SurveyWriteActivity.class);
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_measure) {
-            Intent intent = new Intent(MainActivity.this , InspectionActivity.class);
+            intent.setClassName(this , InspectionMeasureActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-
+            ;
         } else if (id == R.id.nav_faq) {
-
+            ;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -105,9 +107,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
+
+        intent = new Intent();
+
         if(view.getId() == R.id.mainSurveyBtn)
         {
-            Intent intent = new Intent(MainActivity.this , SurveyWriteActivity.class);
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         }
     }

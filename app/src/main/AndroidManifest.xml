@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.landvibe.goodbeing.goodbeing_android">
 
+    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,8 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SurveyWriteActivity"
+            android:name=".SurveySearchActivity"
             android:label="설문 선택"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -39,7 +42,7 @@
         </activity>
 
         <activity
-            android:name=".InspectionActivity"
+            android:name=".InspectionMeasureActivity"
             android:label="시료 측정"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -50,6 +53,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+
 
 </manifest>

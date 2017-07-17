@@ -13,7 +13,8 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -22,6 +23,10 @@ public class InspectionResultActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
     private WebView webView;
+
+    private Intent intent;
+
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +49,40 @@ public class InspectionResultActivity extends AppCompatActivity
         webView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-//        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+
         webSettings.setBuiltInZoomControls(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient() {
+
+            // ProgressBar 적용
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+
+            public void onPageStarted(WebView view, String url,
+                                      android.graphics.Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                progressBar = (ProgressBar) findViewById(R.id.progress);
+                progressBar.bringToFront();
+                progressBar.getIndeterminateDrawable().setColorFilter(0xFF98ff98, android.graphics.PorterDuff.Mode.SRC_ATOP);
+                progressBar.setVisibility(View.VISIBLE);
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+
+
+            public void onReceivedError(WebView view, int errorCode,
+                                        String description, String failingUrl) {
+                super.onReceivedError(view, errorCode, description, failingUrl);
+                Toast.makeText(InspectionResultActivity.this, "Error : " + description,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+        });
 
 
         webView.loadUrl("file:///android_asset/ScatterChart.html");
@@ -61,19 +96,23 @@ public class InspectionResultActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        intent = new Intent();
+
         if (id == R.id.nav_intro) {
-
+            ;
         } else if (id == R.id.nav_history) {
-
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            Intent intent = new Intent(InspectionResultActivity.this , SurveyWriteActivity.class);
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_measure) {
-
+            intent.setClassName(this , InspectionMeasureActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-
+            ;
         } else if (id == R.id.nav_faq) {
-
+            ;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -83,6 +122,9 @@ public class InspectionResultActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
+
+        intent = new Intent();
+
         if(view.getId() == R.id.mainSurveyBtn)
         {
             ;
