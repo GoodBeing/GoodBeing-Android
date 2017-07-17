@@ -24,6 +24,11 @@
             android:label="설문 작성"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:label="서비스 소개"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
