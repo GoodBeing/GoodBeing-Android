@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_intro) {
 
+            Intent intent = new Intent(MainActivity.this , IntroActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_surveyWrite) {
