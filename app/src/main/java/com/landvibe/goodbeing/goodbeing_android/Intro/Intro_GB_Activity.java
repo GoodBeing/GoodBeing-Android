@@ -1,4 +1,4 @@
-package com.landvibe.goodbeing.goodbeing_android;
+package com.landvibe.goodbeing.goodbeing_android.Intro;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,34 +6,31 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.landvibe.goodbeing.goodbeing_android.R;
 
 /**
  * Created by user on 2017-07-17.
  */
 
-public class Intro_Purpose_Activity extends IntroActivity
+public class Intro_GB_Activity extends IntroActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    private String story;
-    private String link;
+     private String story;
+     private String link;
 
-    private TextView intro_text_1;
-    private TextView intro_text_link;
+     private TextView intro_text_1;
+     private TextView intro_text_link;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intropurpose);
+        setContentView(R.layout.activity_introgb);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,28 +43,21 @@ public class Intro_Purpose_Activity extends IntroActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        story = "저출산 시대에 태어나는 귀한 \n" +
-                "새 생명, \n" +
-                "이들의 건강에 우리의 미래가 달려있읍니다.\n" +
-                "건강한 임신\n" +
-                "건강한 유아\n" +
-                "건강한 청소년\n" +
-                "을 위하여 굳빙센터가 있읍니다.\n" +
-                "\n" +
-                "굳빙센터는 \n" +
-                "1. 일반인이 쉽게 자신의 유해물질노출정도를 파악할 수 있게 합니다.\n" +
-                "2. 유해물질의 노출을 생활속에서 줄이고 해독하도록 돕습니다.\n" +
-                "3. 식이 등 생활습관 등을 분석하여 맞춤형 예방을 가능하게 합니다.\n" +
-                "4. 개인, 가족, 직장, 지역, 공동체의 굳빙을 자문하여 드립니다. \n";
+         story = "굳빙서비스란\n" +
+         "피할 수 없는 유해물질의 노출로부터 개인과 공통체의 질병을 예방하여 좋은 삶(굳빙)을 제공하는 토탈 해독 서비스입니다.\n" +
+         "굳빙서비스센터는 세계탑수준의  환경호르몬(내분비장애물질) 등 인체 유해물질 노출분석과" +
+         "신토불이 해독기술을  보유하여" +
+         "다양한 서비스(제품)를 통해" +
+         "건강한 개인과 가족, 사회를 약속합니다.";
 
-        link = "web : www.naver.com \nemail : ajtnlaka456@naver.com\n" +
-                "phone : 010-8873-9215 \nmap : 서울특별시 송파구 법원로11길 7 문정현대지식산업센터 C동 1107호";
+         link = "web : www.naver.com \nemail : ajtnlaka456@naver.com\n" +
+         "phone : 010-8873-9215 \nmap : 서울특별시 송파구 법원로11길 7 문정현대지식산업센터 C동 1107호";
 
-        intro_text_1 = (TextView) findViewById(R.id.intro_text_1);
-        intro_text_link = (TextView) findViewById(R.id.intro_text_link);
+         intro_text_1 = (TextView) findViewById(R.id.intro_text_1);
+         intro_text_link = (TextView) findViewById(R.id.intro_text_link);
 
-        intro_text_1.setText(story);
-        intro_text_link.setText(link);
+         intro_text_1.setText(story);
+         intro_text_link.setText(link);
 
     }
 
