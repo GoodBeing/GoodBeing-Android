@@ -7,7 +7,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical">
 
-
+    <TextView
+        android:text="기본 정보 입력"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="10pt"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -17,19 +22,28 @@
             android:layout_marginTop="10dp">
 
             <TextView
+
                 android:text="신장"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"/>
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
             <EditText
-                android:layout_width="0dp"
+                android:id="@+id/height"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff0000"
+                />
             <TextView
                 android:text="cm"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
         </LinearLayout>
 
 
@@ -40,22 +54,31 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            >
 
             <TextView
                 android:text="체중"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"/>
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
             <EditText
-                android:layout_width="0dp"
+                android:id="@+id/weight"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff0000"
+                />
             <TextView
                 android:text="kg"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
         </LinearLayout>
 
 
@@ -68,14 +91,29 @@
             android:layout_marginTop="10dp">
             <TextView
                 android:text="BMI"
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
             <Button
+                android:id="@+id/cal_btn"
                 android:text="계산"
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -92,6 +130,11 @@
                />
 
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
     </LinearLayout>
+</LinearLayout>
 

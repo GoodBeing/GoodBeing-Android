@@ -17,7 +17,7 @@
         >
         <TextView
             android:id="@+id/section_label"
-            android:text="하루 평균 근무 시간"
+            android:text="Q3. 하루 평균 근무 시간"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -50,7 +50,7 @@
         android:layout_weight="1"
         >
         <TextView
-            android:text="직업의 종류"
+            android:text="Q4. 직업의 종류"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

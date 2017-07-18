@@ -13,11 +13,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="5"
         >
         <TextView
             android:id="@+id/section_label"
-            android:text="녹즙, 야채나 과일을 그대로 혹은 쥬스로 섭취회수는?"
+            android:text="Q5. 녹즙, 야채나 과일을 그대로 혹은 쥬스로 섭취회수는?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -51,10 +51,10 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="5"
         >
         <TextView
-            android:text="하루 물 섭취량은?"
+            android:text="Q6. 하루 물 섭취량은?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -77,9 +77,17 @@
 
         </RadioGroup>
     </LinearLayout>
-
-    <Button
-        android:text="확인"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="0dp"
+        android:layout_weight="5">
+        <Button
+            android:id="@+id/ok_btn"
+            android:text="완료"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
 </LinearLayout>

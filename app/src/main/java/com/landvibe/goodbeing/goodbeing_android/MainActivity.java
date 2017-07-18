@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_surveyWrite) {
-
+            Intent i = new Intent(MainActivity.this,RealsurveywriteActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_measure) {
 
         } else if (id == R.id.nav_consulting) {
