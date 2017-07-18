@@ -36,16 +36,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="박재형" />
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/history_intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="남 / 1992년 3월 3일 / AB형" />
+                android:gravity="center" />
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

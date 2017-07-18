@@ -65,7 +65,7 @@ public class InspectionResultActivity extends AppCompatActivity
                 super.onPageStarted(view, url, favicon);
                 progressBar = (ProgressBar) findViewById(R.id.progress);
                 progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF98ff98, android.graphics.PorterDuff.Mode.SRC_ATOP);
+                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
                 progressBar.setVisibility(View.VISIBLE);
             }
 

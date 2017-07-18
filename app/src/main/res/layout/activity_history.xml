@@ -49,14 +49,30 @@
                 android:id="@+id/webview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"/>
+                android:layout_weight="4" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/history_recycler_view"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"/>
+                android:layout_weight="6"
+                android:orientation="vertical">
 
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/history_tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FF98ff98"
+                    android:minHeight="?attr/actionBarSize"
+                    android:fillViewport="false" />
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/history_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </LinearLayout>
         </LinearLayout>
 
 

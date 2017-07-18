@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,17 +31,23 @@ import java.util.ArrayList;
 public class HistoryActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    /*
+      WebView
+   */
     private WebView webView;
-
-    private RecyclerView historyRecycleView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
-
-    private ArrayList<HistoryItem> historyItemArrayList;
 
     private Intent intent;
 
+    /*
+        ProgressBar
+    */
     private ProgressBar progressBar;
+
+    /*
+       ViewPager
+    */
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     synchronized
@@ -62,11 +70,15 @@ public class HistoryActivity extends AppCompatActivity
 
         // chart webview
         webView = (WebView) findViewById(R.id.webview);
+
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.setBuiltInZoomControls(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         webView.setWebViewClient(new WebViewClient() {
 
             // ProgressBar 적용
@@ -80,7 +92,7 @@ public class HistoryActivity extends AppCompatActivity
                 super.onPageStarted(view, url, favicon);
                 progressBar = (ProgressBar) findViewById(R.id.progress);
                 progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF98ff98, android.graphics.PorterDuff.Mode.SRC_ATOP);
+                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
                 progressBar.setVisibility(View.VISIBLE);
             }
 
@@ -101,40 +113,38 @@ public class HistoryActivity extends AppCompatActivity
 
         webView.loadUrl("file:///android_asset/GraphChart.html");
 
-        //RecycleView
-        historyRecycleView = (RecyclerView) findViewById(R.id.history_recycler_view);
 
-        historyRecycleView.setHasFixedSize(true);
+        // Initializing the TabLayout
+        tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("전체"));
+        tabLayout.addTab(tabLayout.newTab().setText("진행"));
+        tabLayout.addTab(tabLayout.newTab().setText("완료"));
 
-        layoutManager = new LinearLayoutManager(this);
-        historyRecycleView.setLayoutManager(layoutManager);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        // DataSet
-        historyItemArrayList = new ArrayList<HistoryItem>();
-        historyItemArrayList.add(new HistoryItem("강승모" , true , 26 , 4));
-        historyItemArrayList.add(new HistoryItem("이상직" , true , 26 , 3));
-        historyItemArrayList.add(new HistoryItem("박재형" , true , 22 , 1));
-        historyItemArrayList.add(new HistoryItem("김나라" , false , 26 , 4));
-        historyItemArrayList.add(new HistoryItem("사진좀" , true , 29 , 2));
-        historyItemArrayList.add(new HistoryItem("너이다" , false , 34 , 2));
-        historyItemArrayList.add(new HistoryItem("코카콜라" , false , 21 , 1));
-        historyItemArrayList.add(new HistoryItem("펩시" , false , 29 , 3));
+        viewPager = (ViewPager) findViewById(R.id.history_viewpager);
 
-        adapter = new HistoryListAdapter(historyItemArrayList);
-        historyRecycleView.setAdapter(adapter);
+        HistoryViewPagerAdapter historyViewPagerAdapter = new HistoryViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(historyViewPagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        historyRecycleView.addOnItemTouchListener(new HistoryRecycleViewOnItemClickListener(this.getApplicationContext(), historyRecycleView, new HistoryRecycleViewOnItemClickListener.OnItemClickListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
             @Override
-            public void onItemClick(View v, int position) {
-
-                intent = new Intent();
-                intent.putExtra("index" , position);
-                intent.setClassName(getApplicationContext() , SurveyResultActiviy.class.getName());
-
-                startActivity(intent);
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
             }
-        }));
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
 
     }
