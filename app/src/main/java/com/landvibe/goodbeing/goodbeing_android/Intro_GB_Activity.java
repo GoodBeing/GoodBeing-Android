@@ -1,6 +1,5 @@
 package com.landvibe.goodbeing.goodbeing_android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -16,23 +15,25 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by user on 2017-07-17.
  */
 
-public class IntroActivity extends AppCompatActivity
+public class Intro_GB_Activity extends IntroActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+     private String story;
+     private String link;
 
-    static final String[] LIST_MENU = {"굳빙 서비스란","굳빙서비스의 목적","핵심기술","서비스의 종류","교수소개"};
-    //private ListView list_name;
+     private TextView intro_text_1;
+     private TextView intro_text_link;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.activity_introgb);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -45,28 +46,21 @@ public class IntroActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,LIST_MENU);
+         story = "굳빙서비스란\n" +
+         "피할 수 없는 유해물질의 노출로부터 개인과 공통체의 질병을 예방하여 좋은 삶(굳빙)을 제공하는 토탈 해독 서비스입니다.\n" +
+         "굳빙서비스센터는 세계탑수준의  환경호르몬(내분비장애물질) 등 인체 유해물질 노출분석과" +
+         "신토불이 해독기술을  보유하여" +
+         "다양한 서비스(제품)를 통해" +
+         "건강한 개인과 가족, 사회를 약속합니다.";
 
-        ListView listView =(ListView) findViewById(R.id.intro_listview);
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+         link = "web : www.naver.com \nemail : ajtnlaka456@naver.com\n" +
+         "phone : 010-8873-9215 \nmap : 서울특별시 송파구 법원로11길 7 문정현대지식산업센터 C동 1107호";
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String strText = (String) parent.getItemAtPosition(position);
-                if(position == 0)
-                {
-                    Intent intent0 = new Intent(IntroActivity.this,Intro_GB_Activity.class);
-                    startActivity(intent0);
-                }
-                if(position == 1)
-                {
-                    Intent intent1 = new Intent(IntroActivity.this,Intro_Purpose_Activity.class);
-                    startActivity(intent1);
-                }
-            }
-        });
+         intro_text_1 = (TextView) findViewById(R.id.intro_text_1);
+         intro_text_link = (TextView) findViewById(R.id.intro_text_link);
+
+         intro_text_1.setText(story);
+         intro_text_link.setText(link);
 
     }
 
