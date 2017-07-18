@@ -2,9 +2,6 @@ package com.landvibe.goodbeing.goodbeing_android.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,19 +10,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-import com.landvibe.goodbeing.goodbeing_android.SurveyWriteActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{
 
 
     private Button mainSurveyBtn;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +33,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,18 +86,23 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        intent = new Intent();
+
         if (id == R.id.nav_intro) {
-
+            ;
         } else if (id == R.id.nav_history) {
-
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-
+            intent.setClassName(this , SurveySearchActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_measure) {
-
+            intent.setClassName(this , InspectionMeasureActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-
+            ;
         } else if (id == R.id.nav_faq) {
-
+            ;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,9 +112,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
+
+        intent = new Intent();
+
         if(view.getId() == R.id.mainSurveyBtn)
         {
-            Intent intent = new Intent(MainActivity.this , SurveyWriteActivity.class);
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         }
     }

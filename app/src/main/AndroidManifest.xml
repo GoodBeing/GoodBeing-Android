@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.landvibe.goodbeing.goodbeing_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,24 +22,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Survey.SurveySearchActivity"
-            android:label="설문 선택"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
 
+        <!-- History -->
         <activity
             android:name=".History.HistoryActivity"
             android:label="이력 관리"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
+        <!-- Survey -->
+        <activity
+            android:name=".Survey.SurveySearchActivity"
+            android:label="설문 선택"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".Survey.SurveyResultActiviy"
             android:label="설문 결과"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
+        <!-- Inspection -->
         <activity
             android:name=".Inspection.InspectionMeasureActivity"
             android:label="시료 측정"
