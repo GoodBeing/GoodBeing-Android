@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
+import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 
 /**
@@ -108,7 +109,8 @@ public class SurveyResultActiviy extends AppCompatActivity
         intent = new Intent();
 
         if (id == R.id.nav_intro) {
-            ;
+            intent.setClassName(this , IntroActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
             intent.setClassName(this , HistoryActivity.class.getName());
             startActivity(intent);

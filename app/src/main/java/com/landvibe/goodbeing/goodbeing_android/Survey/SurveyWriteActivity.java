@@ -1,4 +1,4 @@
-package com.landvibe.goodbeing.goodbeing_android;
+package com.landvibe.goodbeing.goodbeing_android.Survey;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,11 +17,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.landvibe.goodbeing.goodbeing_android.Main.MainActivity;
+import com.landvibe.goodbeing.goodbeing_android.R;
+
 /**
  * Created by jik on 2017-07-17.
  */
 
-public class RealsurveywriteActivity extends AppCompatActivity {
+public class SurveyWriteActivity extends AppCompatActivity {
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -41,7 +44,7 @@ public class RealsurveywriteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activty_realsurveywrite);
+        setContentView(R.layout.activty_surveywrite);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -224,7 +227,7 @@ public class RealsurveywriteActivity extends AppCompatActivity {
         public void onClick(View view) {
             if(view.getId() == R.id.ok_btn)
             {
-                Intent intent = new Intent(getActivity() , MainActivity.class);
+                Intent intent = new Intent(getActivity() , SurveyResultActiviy.class);
                 startActivity(intent);
             }
         }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
+import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
@@ -61,7 +62,8 @@ public class InspectionMeasureActivity extends AppCompatActivity
         intent = new Intent();
 
         if (id == R.id.nav_intro) {
-            ;
+            intent.setClassName(this , IntroActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
             intent.setClassName(this , HistoryActivity.class.getName());
             startActivity(intent);

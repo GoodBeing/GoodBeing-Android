@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
+import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
@@ -162,7 +163,8 @@ public class HistoryActivity extends AppCompatActivity
         intent = new Intent();
 
         if (id == R.id.nav_intro) {
-            ;
+            intent.setClassName(this , IntroActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
             onRestart();
         } else if (id == R.id.nav_surveyWrite) {

@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.landvibe.goodbeing.goodbeing_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Main -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Main.MainActivity"
 
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -19,11 +24,61 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Intro -->
         <activity
-            android:name=".SurveyWriteActivity"
+            android:name=".Intro.IntroActivity"
+            android:label="서비스 소개"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Intro.Intro_GB_Activity"
+            android:label="굳빙 서비스란"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Intro.Intro_Purpose_Activity"
+            android:label="굳빙 서비스의 목적"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <!-- History -->
+        <activity
+            android:name=".History.HistoryActivity"
+            android:label="이력 관리"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <!-- Survey -->
+        <activity
+            android:name=".Survey.SurveySearchActivity"
+            android:label="설문 선택"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Survey.SurveyWriteActivity"
             android:label="설문 작성"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Survey.SurveyResultActiviy"
+            android:label="설문 결과"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <!-- Inspection -->
+        <activity
+            android:name=".Inspection.InspectionMeasureActivity"
+            android:label="시료 측정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Inspection.InspectionResultActivity"
+            android:label="시료 측정 결과"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
     </application>
 
 </manifest>
