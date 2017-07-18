@@ -24,6 +24,11 @@
             android:label="설문 작성"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".RealsurveywriteActivity"
+            android:label="진짜 설문 작성"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

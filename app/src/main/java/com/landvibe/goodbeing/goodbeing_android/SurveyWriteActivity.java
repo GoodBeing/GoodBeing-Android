@@ -1,5 +1,6 @@
 package com.landvibe.goodbeing.goodbeing_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -8,7 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Button;
 
 /**
  * Created by 고승빈 on 2017-07-14.
@@ -43,7 +43,8 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
         if (id == R.id.nav_intro) {
 
         } else if (id == R.id.nav_history) {
-
+            Intent i = new Intent(SurveyWriteActivity.this,RealsurveywriteActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_surveyWrite) {
 
         } else if (id == R.id.nav_measure) {
