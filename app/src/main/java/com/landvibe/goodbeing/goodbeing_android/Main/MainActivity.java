@@ -1,4 +1,4 @@
-package com.landvibe.goodbeing.goodbeing_android;
+package com.landvibe.goodbeing.goodbeing_android.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
+import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
+import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
+import com.landvibe.goodbeing.goodbeing_android.SurveyWriteActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{

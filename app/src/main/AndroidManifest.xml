@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Main.MainActivity"
 
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -20,8 +20,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SurveyWriteActivity"
-            android:label="설문 작성"
+            android:name=".Survey.SurveySearchActivity"
+            android:label="설문 선택"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".History.HistoryActivity"
+            android:label="이력 관리"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Survey.SurveyResultActiviy"
+            android:label="설문 결과"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Inspection.InspectionMeasureActivity"
+            android:label="시료 측정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Inspection.InspectionResultActivity"
+            android:label="시료 측정 결과"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
