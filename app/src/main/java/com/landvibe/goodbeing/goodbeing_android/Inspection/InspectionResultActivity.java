@@ -130,10 +130,5 @@ public class InspectionResultActivity extends AppCompatActivity
     public void onClick(View view) {
 
         intent = new Intent();
-
-        if(view.getId() == R.id.mainSurveyBtn)
-        {
-            ;
-        }
     }
 }
