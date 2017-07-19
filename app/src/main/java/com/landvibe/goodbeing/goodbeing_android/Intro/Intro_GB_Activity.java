@@ -26,7 +26,6 @@ public class Intro_GB_Activity extends IntroActivity
      private TextView intro_text_1;
      private TextView intro_text_link;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
