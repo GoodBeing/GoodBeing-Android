@@ -13,9 +13,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
-import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 
 /**
  * Created by 고승빈 on 2017-07-14.
@@ -83,7 +83,7 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         } else if (id == R.id.nav_surveyWrite) {
            onRestart();
         } else if (id == R.id.nav_measure) {
-            intent.setClassName(this , InspectionMeasureActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
