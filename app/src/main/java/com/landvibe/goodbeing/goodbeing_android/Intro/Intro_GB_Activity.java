@@ -74,7 +74,7 @@ public class Intro_GB_Activity extends IntroActivity
 
         } else if (id == R.id.nav_surveyWrite) {
 
-        } else if (id == R.id.nav_measure) {
+        } else if (id == R.id.nav_sample) {
 
         } else if (id == R.id.nav_consulting) {
 

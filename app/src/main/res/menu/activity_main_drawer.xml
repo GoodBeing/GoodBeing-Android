@@ -15,7 +15,7 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="설문작성" />
         <item
-            android:id="@+id/nav_measure"
+            android:id="@+id/nav_sample"
             android:icon="@drawable/ic_menu_manage"
             android:title="시료측정" />
         <item

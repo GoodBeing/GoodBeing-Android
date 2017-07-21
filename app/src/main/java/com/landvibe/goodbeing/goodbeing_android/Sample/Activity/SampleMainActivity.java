@@ -114,7 +114,7 @@ public class SampleMainActivity extends AppCompatActivity
         } else if (id == R.id.nav_surveyWrite) {
             intent.setClassName(this, SurveySearchActivity.class.getName());
             startActivity(intent);
-        } else if (id == R.id.nav_measure) {
+        } else if (id == R.id.nav_sample) {
             intent.setClassName(this, SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
