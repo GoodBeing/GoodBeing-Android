@@ -69,6 +69,21 @@ public class IntroActivity extends AppCompatActivity
                     Intent intent1 = new Intent(IntroActivity.this,Intro_Purpose_Activity.class);
                     startActivity(intent1);
                 }
+                if(position == 2)
+                {
+                    Intent intent2 = new Intent(IntroActivity.this,Intro_Skill_Activity.class);
+                    startActivity(intent2);
+                }
+                if(position == 3)
+                {
+                    Intent intent3 = new Intent(IntroActivity.this,Intro_Service_Activity.class);
+                    startActivity(intent3);
+                }
+                if(position == 4)
+                {
+                    Intent intent4 = new Intent(IntroActivity.this,Intro_Professor_Activity.class);
+                    startActivity(intent4);
+                }
             }
         });
 

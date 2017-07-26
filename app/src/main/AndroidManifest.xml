@@ -41,6 +41,21 @@
             android:label="굳빙 서비스의 목적"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Intro.Intro_Skill_Activity"
+            android:label="핵심 기술"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Intro.Intro_Service_Activity"
+            android:label="서비스 종류"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Intro.Intro_Professor_Activity"
+            android:label="교수소개"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <!-- History -->
         <activity
@@ -65,6 +80,7 @@
             android:label="설문 결과"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
 
         <!-- Inspection -->
         <activity

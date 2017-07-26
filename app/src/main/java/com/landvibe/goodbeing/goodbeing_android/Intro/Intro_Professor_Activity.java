@@ -17,20 +17,19 @@ import com.landvibe.goodbeing.goodbeing_android.R;
  * Created by user on 2017-07-17.
  */
 
-public class Intro_Purpose_Activity extends IntroActivity
+public class Intro_Professor_Activity extends IntroActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private String story;
     private String link;
 
-    private TextView intro_purpose_text_1;
+    private TextView intro_professor_text_1;
     private TextView intro_text_link;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intropurpose);
+        setContentView(R.layout.activity_introprofessor);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,27 +42,17 @@ public class Intro_Purpose_Activity extends IntroActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        story = "저출산 시대에 태어나는 귀한 \n" +
-                "새 생명, \n" +
-                "이들의 건강에 우리의 미래가 달려있읍니다.\n" +
-                "건강한 임신\n" +
-                "건강한 유아\n" +
-                "건강한 청소년\n" +
-                "을 위하여 굳빙센터가 있읍니다.\n" +
-                "\n" +
-                "굳빙센터는 \n" +
-                "1. 일반인이 쉽게 자신의 유해물질노출정도를 파악할 수 있게 합니다.\n" +
-                "2. 유해물질의 노출을 생활속에서 줄이고 해독하도록 돕습니다.\n" +
-                "3. 식이 등 생활습관 등을 분석하여 맞춤형 예방을 가능하게 합니다.\n" +
-                "4. 개인, 가족, 직장, 지역, 공동체의 굳빙을 자문하여 드립니다. \n";
+        story = "대표 양미희: 전 서울대 예방의학교실 조교수;현 숙대 약대 독성학, 미국 독성학전문가보드보유(D. ABT),   교수20여년 유해물질 분석, 환경호르몬  bisphenol A에 대한 한국인에서 인체노출과 독성에 관한 다수의 국제 우수논문발표\n" +
+                "도와주시는 분들: " +
+                "호흡기전문의사, 소화기암전문의사, 소아과의사, 약사, 사상의학 한의사, 인체시료에 관한 윤리법 전문가, 영양학 교수, 사회심리전문가, IT과 교수 및 IT전문회사, \n";
 
         link = "web : www.naver.com \nemail : ajtnlaka456@naver.com\n" +
                 "phone : 010-8873-9215 \nmap : 서울특별시 송파구 법원로11길 7 문정현대지식산업센터 C동 1107호";
 
-        intro_purpose_text_1 = (TextView) findViewById(R.id.intro_purpose_text_1);
+        intro_professor_text_1 = (TextView) findViewById(R.id.intro_professor_text_1);
         intro_text_link = (TextView) findViewById(R.id.intro_text_link);
 
-        intro_purpose_text_1.setText(story);
+        intro_professor_text_1.setText(story);
         intro_text_link.setText(link);
 
     }
