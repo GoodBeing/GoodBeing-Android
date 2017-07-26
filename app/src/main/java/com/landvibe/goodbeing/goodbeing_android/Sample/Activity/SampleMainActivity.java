@@ -1,35 +1,52 @@
-package com.landvibe.goodbeing.goodbeing_android.Main;
+package com.landvibe.goodbeing.goodbeing_android.Sample.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ProgressBar;
 
-import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
-import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Adapter.SampleViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{
+/**
+ * Created by 고승빈 on 2017-07-17.
+ */
+public class SampleMainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
 
     private Intent intent;
 
+    /*
+        ProgressBar
+    */
+    private ProgressBar progressBar;
+
+    /*
+       ViewPager
+    */
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     @Override
+    synchronized
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        setContentView(R.layout.activity_sample_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,38 +57,45 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // Initializing the TabLayout
+        tabLayout = (TabLayout) findViewById(R.id.sample_main_tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("전체"));
+        tabLayout.addTab(tabLayout.newTab().setText("진행"));
+        tabLayout.addTab(tabLayout.newTab().setText("완료"));
+
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        viewPager = (ViewPager)findViewById(R.id.sample_main_viewpager);
+
+        SampleViewPagerAdapter sampleViewPagerAdapter = new SampleViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(sampleViewPagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+
+        });
+
     }
 
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+    protected void onStart() {
+        super.onStart();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -86,13 +110,12 @@ public class MainActivity extends AppCompatActivity
             intent.setClassName(this , IntroActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_history) {
-            intent.setClassName(this , HistoryActivity.class.getName());
-            startActivity(intent);
+            onRestart();
         } else if (id == R.id.nav_surveyWrite) {
-            intent.setClassName(this , SurveySearchActivity.class.getName());
+            intent.setClassName(this, SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_sample) {
-            intent.setClassName(this , SampleMainActivity.class.getName());
+            intent.setClassName(this, SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
@@ -105,9 +128,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public void onClick(View view) {
-
-        intent = new Intent();
-    }
 }

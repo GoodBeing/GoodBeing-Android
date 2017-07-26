@@ -1,4 +1,4 @@
-package com.landvibe.goodbeing.goodbeing_android.Inspection;
+package com.landvibe.goodbeing.goodbeing_android.Sample.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
@@ -24,19 +20,16 @@ import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 /**
  * Created by 고승빈 on 2017-07-17.
  */
-public class InspectionResultActivity extends AppCompatActivity
+public class SampleResultActiviy extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
-    private WebView webView;
-
     private Intent intent;
-
-    private ProgressBar progressBar;
+    private TextView user_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inspectionresult);
+        setContentView(R.layout.activity_sample_result);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,50 +43,11 @@ public class InspectionResultActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // chart webview
-        webView = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        intent = getIntent();
 
-        webSettings.setBuiltInZoomControls(true);
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.setWebViewClient(new WebViewClient() {
-
-            // ProgressBar 적용
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-            public void onPageStarted(WebView view, String url,
-                                      android.graphics.Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                progressBar = (ProgressBar) findViewById(R.id.progress);
-                progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
-                progressBar.setVisibility(View.VISIBLE);
-            }
-
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                progressBar.setVisibility(View.INVISIBLE);
-            }
-
-
-            public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-                Toast.makeText(InspectionResultActivity.this, "Error : " + description,
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-
-        webView.loadUrl("file:///android_asset/ScatterChart.html");
-
+        user_name = (TextView)findViewById(R.id.sample_result_user_name);
+        user_name.setText(intent.getStringExtra("name").toString());
     }
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -112,8 +66,8 @@ public class InspectionResultActivity extends AppCompatActivity
         } else if (id == R.id.nav_surveyWrite) {
             intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
-        } else if (id == R.id.nav_measure) {
-            intent.setClassName(this , InspectionMeasureActivity.class.getName());
+        } else if (id == R.id.nav_sample) {
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
@@ -130,10 +84,5 @@ public class InspectionResultActivity extends AppCompatActivity
     public void onClick(View view) {
 
         intent = new Intent();
-
-        if(view.getId() == R.id.mainSurveyBtn)
-        {
-            ;
-        }
     }
 }

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".Inspection.InspectionResultActivity">
+        tools:context=".Sample.Activity.SampleMainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -30,14 +30,6 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <!-- progressbar -->
-        <ProgressBar
-            android:id="@+id/progress"
-            style="?android:attr/progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
         <!--layout-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,36 +37,20 @@
             android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical">
 
-            <ScrollView
+            <android.support.design.widget.TabLayout
+                android:id="@+id/sample_main_tabLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:background="#FF98ff98"
+                android:minHeight="?attr/actionBarSize"
+                android:fillViewport="false" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <WebView
-                        android:id="@+id/webview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="시료 측정 결과 한마디"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/sample_main_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
         </LinearLayout>
-
 
     </android.support.design.widget.CoordinatorLayout>
 

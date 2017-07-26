@@ -84,14 +84,14 @@
 
         <!-- Inspection -->
         <activity
-            android:name=".Inspection.InspectionMeasureActivity"
+            android:name=".Sample.Activity.SampleMainActivity"
             android:label="시료 측정"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
-            android:name=".Inspection.InspectionResultActivity"
-            android:label="시료 측정 결과"
+            android:name=".Sample.Activity.SampleResultActiviy"
+            android:label="시료 결과"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 

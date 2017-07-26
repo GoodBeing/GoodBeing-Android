@@ -18,9 +18,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
-import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -117,8 +117,8 @@ public class SurveyResultActiviy extends AppCompatActivity
         } else if (id == R.id.nav_surveyWrite) {
             intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
-        } else if (id == R.id.nav_measure) {
-            intent.setClassName(this , InspectionMeasureActivity.class.getName());
+        } else if (id == R.id.nav_sample) {
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
@@ -135,10 +135,5 @@ public class SurveyResultActiviy extends AppCompatActivity
     public void onClick(View view) {
 
         intent = new Intent();
-
-        if(view.getId() == R.id.mainSurveyBtn)
-        {
-            ;
-        }
     }
 }

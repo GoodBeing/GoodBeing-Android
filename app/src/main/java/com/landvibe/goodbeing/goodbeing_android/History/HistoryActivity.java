@@ -19,9 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
-import com.landvibe.goodbeing.goodbeing_android.Inspection.InspectionMeasureActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 /**
@@ -170,8 +170,8 @@ public class HistoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_surveyWrite) {
             intent.setClassName(this, SurveySearchActivity.class.getName());
             startActivity(intent);
-        } else if (id == R.id.nav_measure) {
-            intent.setClassName(this, InspectionMeasureActivity.class.getName());
+        } else if (id == R.id.nav_sample) {
+            intent.setClassName(this, SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
