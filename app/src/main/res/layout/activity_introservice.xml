@@ -25,7 +25,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#FF00c700"
+                android:background="#B91A4D"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
@@ -49,9 +49,9 @@
 
                 <ImageView
                     android:id="@+id/intro_service_image"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="center"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/introservice"/>
                 <TextView
                     android:id="@+id/intro_text_link"

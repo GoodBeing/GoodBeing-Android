@@ -1,5 +1,6 @@
 package com.landvibe.goodbeing.goodbeing_android.Intro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -11,7 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 /**
  * Created by user on 2017-07-17.
@@ -23,6 +27,8 @@ public class Intro_Service_Activity extends IntroActivity
     private String link;
 
     private TextView intro_text_link;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,18 +63,24 @@ public class Intro_Service_Activity extends IntroActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        intent = new Intent();
+
         if (id == R.id.nav_intro) {
-
+            intent.setClassName(this , IntroActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
-
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-
-        } else if (id == R.id.nav_measure) {
-
+            intent.setClassName(this , SurveySearchActivity.class.getName());
+            startActivity(intent);
+        } else if (id == R.id.nav_sample) {
+            intent.setClassName(this , SampleMainActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-
+            ;
         } else if (id == R.id.nav_faq) {
-
+            ;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
