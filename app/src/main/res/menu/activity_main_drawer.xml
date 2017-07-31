@@ -26,6 +26,14 @@
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_menu_manage"
             android:title="의료 FAQ" />
+        <item
+            android:id="@+id/nav_log"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="로그인" />
+        <item
+            android:id="@+id/nav_join"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="회원가입" />
     </group>
 
     <item android:title="Communicate">
