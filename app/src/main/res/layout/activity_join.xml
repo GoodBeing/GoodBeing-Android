@@ -307,6 +307,7 @@
                         android:layout_height="wrap_content"
                         android:text="인증" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/join_but"
                     android:layout_width="wrap_content"
