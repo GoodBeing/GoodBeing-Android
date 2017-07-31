@@ -1,5 +1,6 @@
-package com.landvibe.goodbeing.goodbeing_android.Main;
+package com.landvibe.goodbeing.goodbeing_android.FAQ;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -7,28 +8,39 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{
+import java.util.ArrayList;
+
+/**
+ * Created by 고승빈 on 2017-07-17.
+ */
+public class FaqActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
+
+    Context mContext;
 
     private Intent intent;
+    private RecyclerView faqRecycleView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private ArrayList<FaqItem> faqItemArrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_faq);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,38 +54,47 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-    }
+        intent = getIntent();
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+        mContext = getApplicationContext();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        faqRecycleView = (RecyclerView)findViewById(R.id.faq_recyclerview);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        faqRecycleView.setHasFixedSize(true);
 
-        return super.onOptionsItemSelected(item);
+
+
+
+
+        faqItemArrayList = new ArrayList<FaqItem>();
+        faqItemArrayList.add(new FaqItem("첫번째 질문","첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf첫번째 답변fasfsdfsdfasdfdsafasdfasdfsadfdasfsdf",R.drawable.ic_menu_send));
+        faqItemArrayList.add(new FaqItem("두번째 질문","두번째 답변",R.drawable.ic_menu_camera));
+        faqItemArrayList.add(new FaqItem("세번째 질문","세번째 답변",R.drawable.ic_menu_slideshow));
+
+
+        layoutManager = new LinearLayoutManager(this);
+        faqRecycleView.setLayoutManager(layoutManager);
+
+        adapter = new FaqAdapter(faqItemArrayList);
+        faqRecycleView.addOnItemTouchListener(new FaqRecyclerViewOnItemClickListener(this,faqRecycleView, new FaqRecyclerViewOnItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+                if(view.findViewById(R.id.faq_answer_tv).getVisibility()==view.findViewById(R.id.faq_answer_tv).GONE)
+                    view.findViewById(R.id.faq_answer_tv).setVisibility(View.VISIBLE);
+                else
+                    view.findViewById(R.id.faq_answer_tv).setVisibility(View.GONE);
+
+            }
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
+
+
+        faqRecycleView.setAdapter(adapter);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -97,17 +118,11 @@ public class MainActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
-            startActivity(intent);
+            ;
         } else if (id == R.id.nav_faq) {
-            intent.setClassName(this , FaqActivity.class.getName());
-            startActivity(intent);
+            ;
         }
-        else if(id == R.id.nav_login)
-        {
-            intent.setClassName(this , LoginActivity.class.getName());
-            startActivity(intent);
-        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

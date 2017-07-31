@@ -83,6 +83,12 @@
             android:label="로그인"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".FAQ.FaqActivity"
+            android:label="FAQ"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
