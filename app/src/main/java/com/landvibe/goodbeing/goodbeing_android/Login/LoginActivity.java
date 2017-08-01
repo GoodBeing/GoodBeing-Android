@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.Main.MainActivity;
@@ -110,9 +111,16 @@ public class LoginActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            ;
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_faq) {
-            ;
+            intent.setClassName(this , FaqActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(id == R.id.nav_login)
+        {
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

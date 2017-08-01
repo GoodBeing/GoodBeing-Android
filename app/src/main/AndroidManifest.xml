@@ -24,7 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".Main.MainAfterLoginActivity"
+            android:label="로그인 후 메인화면"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <!-- Intro -->
         <activity
             android:name=".Intro.IntroActivity"

@@ -15,7 +15,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
@@ -84,7 +86,8 @@ public class IntroActivity extends AppCompatActivity
         intent = new Intent();
 
         if (id == R.id.nav_intro) {
-            onRestart();
+            intent.setClassName(this , IntroActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
             intent.setClassName(this , HistoryActivity.class.getName());
             startActivity(intent);
@@ -95,9 +98,16 @@ public class IntroActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            ;
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_faq) {
-            ;
+            intent.setClassName(this , FaqActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(id == R.id.nav_login)
+        {
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

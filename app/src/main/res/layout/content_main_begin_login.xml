@@ -9,28 +9,58 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Main.MainActivity"
     tools:showIn="@layout/app_bar_main">
-
-    <ViewFlipper
-        android:id="@+id/viewflipper"
-        android:layout_weight="1"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:src="@drawable/sample_pic_2"
+        android:layout_height="wrap_content">
+        <ViewFlipper
+            android:id="@+id/viewflipper"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:src="@drawable/sample_pic_1"
+        </ViewFlipper>
+<!--
+        <LinearLayout android:layout_height="50dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ViewFlipper>
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgIndex1"
+                android:src="@drawable/white_circle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imgIndex2"
+                android:src="@drawable/white_circle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imgIndex3"
+                android:src="@drawable/white_circle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        -->
+    </FrameLayout>
+</LinearLayout>
+
 
     <TableLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
 
         <TableRow
             android:layout_height="wrap_content"
@@ -38,19 +68,22 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:text="서비스소개"
+                android:id="@+id/survey1"
+                android:text="설문1"
                 android:src="@drawable/ic_description_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"/>
             <ImageButton
-                android:text="설문작성"
+                android:id="@+id/survey2"
+                android:text="설문2"
                 android:src="@drawable/ic_mode_edit_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"/>
             <ImageButton
-                android:text="시료측정"
+                android:id="@+id/survey3"
+                android:text="설문3"
                 android:src="@drawable/ic_opacity_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
@@ -63,19 +96,22 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:text="상담관리"
+                android:id="@+id/survey4"
+                android:text="설문4"
                 android:src="@drawable/ic_question_answer_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"/>
             <ImageButton
-                android:text="이력관리"
+                android:id="@+id/survey5"
+                android:text="설문5"
                 android:src="@drawable/ic_date_range_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"/>
             <ImageButton
-                android:text="FAQ"
+                android:id="@+id/survey6"
+                android:text="설문6"
                 android:src="@drawable/ic_favorite_border_black_36dp"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"

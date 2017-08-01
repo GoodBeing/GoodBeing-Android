@@ -12,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
@@ -82,14 +84,22 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
             intent.setClassName(this , HistoryActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-           onRestart();
+            intent.setClassName(this , SurveySearchActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_sample) {
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            ;
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_faq) {
-            ;
+            intent.setClassName(this , FaqActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(id == R.id.nav_login)
+        {
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
