@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +14,6 @@
         <!-- Main -->
         <activity
             android:name=".Main.MainActivity"
-
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -29,56 +27,49 @@
         <activity
             android:name=".Intro.IntroActivity"
             android:label="서비스 소개"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Intro.Intro_GB_Activity"
             android:label="굳빙 서비스란"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Intro.Intro_Purpose_Activity"
             android:label="굳빙 서비스의 목적"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- History -->
         <activity
             android:name=".History.HistoryActivity"
             android:label="이력 관리"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <!-- Survey -->
         <activity
             android:name=".Survey.SurveySearchActivity"
             android:label="설문 선택"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Survey.SurveyWriteActivity"
             android:label="설문 작성"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Survey.SurveyResultActiviy"
             android:label="설문 결과"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Inspection -->
+        <!-- Sample -->
         <activity
             android:name=".Sample.Activity.SampleMainActivity"
             android:label="시료 측정"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sample.Activity.SampleResultActiviy"
             android:label="시료 결과"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sample.Activity.SampleAddActivity"
+            android:label="시료 추가"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

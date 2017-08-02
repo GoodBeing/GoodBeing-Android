@@ -37,15 +37,60 @@
             android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/sample_result_user_name"
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <TableRow>
+                    <TextView
+                        android:text="등록번호 : 12345678"
+                        android:id="@+id/sample_result_reg_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="성명 : 강승모"
+                        android:id="@+id/sample_result_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="검사 신청일 : 2017-01-01"
+                        android:id="@+id/sample_result_request_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="검사 통보일 : 2017-02-01"
+                        android:id="@+id/sample_result_notice_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="굳빙검사는 남에 의해 결정되는  것이 아니라 자기스스로 질병을 유발하는 물질로부터 노출을 최소화하고 해독을 추구하는 자기주도적인 예방법입니다."
+                        android:id="@+id/sample_result_service_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="1.분석결과\n2.맞춤형\n3.대책\n"
+                        android:id="@+id/sample_result_body"/>
+                </TableRow>
+            </TableLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="설문작성 결과"/>
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/sample_result_bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/sample_result_radar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
         </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
