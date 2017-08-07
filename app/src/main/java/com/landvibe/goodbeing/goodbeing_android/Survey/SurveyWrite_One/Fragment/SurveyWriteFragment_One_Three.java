@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyConnectServer;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyResultActiviy;
 
 /**
@@ -51,10 +52,18 @@ public  class SurveyWriteFragment_One_Three extends Fragment implements View.OnC
         return rootView;
     }
 
+
+
+
+
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.ok_btn)
         {
+            SurveyConnectServer SCS = new SurveyConnectServer();
+            //유저 id ,설문 코드, 점수
+            //SCS.sendSurvey();
+
             Intent intent = new Intent(getActivity() , SurveyResultActiviy.class);
             startActivity(intent);
         }

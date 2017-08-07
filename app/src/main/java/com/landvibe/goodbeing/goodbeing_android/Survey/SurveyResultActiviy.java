@@ -8,19 +8,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
+import com.landvibe.goodbeing.goodbeing_android.Main.MainActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 
@@ -30,11 +27,15 @@ import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivi
 public class SurveyResultActiviy extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
-    private WebView webView;
 
     private Intent intent;
-
-    private ProgressBar progressBar;
+    private Button gomain;
+    private Button gocategory;
+    private Button gosample;
+    private TextView survey_result_userid_tv;
+    private TextView survey_result_uiui_tv;
+    private TextView survey_result_score_tv;
+    private TextView survey_result_answer_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,52 +54,17 @@ public class SurveyResultActiviy extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // chart webview
-        webView = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setBuiltInZoomControls(true);
+        gomain = (Button)findViewById(R.id.survey_result_gomain_btn);
+        gocategory = (Button)findViewById(R.id.survey_result_gocategory_btn);
+        gosample = (Button)findViewById(R.id.survey_result_gosample_btn);
+        survey_result_userid_tv =(TextView)findViewById(R.id.survey_result_userid_tv);
+        survey_result_uiui_tv = (TextView)findViewById(R.id.survey_result_uiui_tv);
+        survey_result_score_tv=(TextView)findViewById(R.id.survey_result_score_tv);
+        survey_result_answer_tv = (TextView)findViewById(R.id.survey_result_answer_tv);
 
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.setWebViewClient(new WebViewClient() {
-
-            // ProgressBar 적용
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-            public void onPageStarted(WebView view, String url,
-                                      android.graphics.Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                progressBar = (ProgressBar) findViewById(R.id.progress);
-                progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
-                progressBar.setVisibility(View.VISIBLE);
-            }
-
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                progressBar.setVisibility(View.INVISIBLE);
-            }
-
-
-            public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-                Toast.makeText(SurveyResultActiviy.this, "Error : " + description,
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-
-        webView.loadUrl("file:///android_asset/BarChart.html");
-
-        intent = getIntent();
-
-        Log.d("value : ", intent.getIntExtra("index" ,0)+"");
-
+        gomain.setOnClickListener(this);
+        gocategory.setOnClickListener(this);
+        gosample.setOnClickListener(this);
     }
 
 
@@ -144,5 +110,20 @@ public class SurveyResultActiviy extends AppCompatActivity
     public void onClick(View view) {
 
         intent = new Intent();
+        if(view.getId() == R.id.survey_result_gomain_btn)
+        {
+            Intent intent = new Intent(this , MainActivity.class);
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.survey_result_gocategory_btn)
+        {
+            Intent intent = new Intent(this , SurveySearchActivity.class);
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.survey_result_gosample_btn)
+        {
+            Intent intent = new Intent(this , SampleMainActivity.class);
+            startActivity(intent);
+        }
     }
 }
