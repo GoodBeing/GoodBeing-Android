@@ -1,6 +1,7 @@
 package com.landvibe.goodbeing.goodbeing_android.History;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -11,13 +12,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
@@ -25,6 +29,8 @@ import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
+
+import java.util.ArrayList;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -70,50 +76,64 @@ public class HistoryActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // chart webview
-        webView = (WebView) findViewById(R.id.webview);
+        LineChart lineChart = (LineChart)findViewById(R.id.history_linechart);
+        lineChart.setDescription(null);
+        lineChart.setPinchZoom(false);
+        lineChart.setScaleEnabled(false);
+        lineChart.setDrawGridBackground(false);
 
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        ArrayList xVals = new ArrayList();
+        xVals.add("2017.03");
+        xVals.add("2017.04");
+        xVals.add("2017.05");
+        xVals.add("2017.06");
 
-        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-        webView.setWebViewClient(new WebViewClient() {
+        ArrayList yVals1 = new ArrayList();
+        ArrayList yVals2 = new ArrayList();
+        ArrayList yVals3 = new ArrayList();
+        ArrayList yVals4 = new ArrayList();
 
-            // ProgressBar 적용
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
+        yVals1.add(new BarEntry(0, (float) 1));
+        yVals2.add(new BarEntry(0, (float) 2));
+        yVals3.add(new BarEntry(0, (float) 3));
+        yVals4.add(new BarEntry(0, (float) 8));
+        yVals1.add(new BarEntry(1, (float) 5));
+        yVals2.add(new BarEntry(1, (float) 6));
+        yVals3.add(new BarEntry(1, (float) 7));
+        yVals4.add(new BarEntry(1, (float) 6));
+        yVals1.add(new BarEntry(2, (float) 3));
+        yVals2.add(new BarEntry(2, (float) 4));
+        yVals3.add(new BarEntry(2, (float) 11));
+        yVals4.add(new BarEntry(2, (float) 2));
+        yVals1.add(new BarEntry(3, (float) 15));
+        yVals2.add(new BarEntry(3, (float) 14));
+        yVals3.add(new BarEntry(3, (float) 15));
+        yVals4.add(new BarEntry(3, (float) 10));
 
-            public void onPageStarted(WebView view, String url,
-                                      android.graphics.Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                progressBar = (ProgressBar) findViewById(R.id.progress);
-                progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
-                progressBar.setVisibility(View.VISIBLE);
-            }
+        LineDataSet set1, set2, set3, set4;
+        set1 = new LineDataSet(yVals1, "비스페놀A");
+        set1.setColor(Color.RED);
+        set2 = new LineDataSet(yVals2, "노화");
+        set2.setColor(Color.BLUE);
+        set3 = new LineDataSet(yVals3, "수면");
+        set3.setColor(Color.GREEN);
+        set4 = new LineDataSet(yVals4, "유해식품");
+        set4.setColor(Color.YELLOW);
 
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                progressBar.setVisibility(View.INVISIBLE);
-            }
+        LineData data = new LineData(set1, set2, set3, set4);
+        data.setValueFormatter(new LargeValueFormatter());
+        lineChart.setData(data);
+        lineChart.invalidate();
 
-
-            public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-                Toast.makeText(HistoryActivity.this, "Error : " + description,
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-        webView.loadUrl("file:///android_asset/GraphChart.html");
-
+        XAxis xAxis = lineChart.getXAxis();
+        xAxis.setGranularity(1f);
+//        xAxis.setGranularityEnabled(true);
+//        xAxis.setCenterAxisLabels(true);
+//        xAxis.setDrawGridLines(false);
+//        xAxis.setAxisMinimum(0);
+//        xAxis.setAxisMaximum(3);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
 
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);

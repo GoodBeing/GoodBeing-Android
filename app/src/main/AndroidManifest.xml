@@ -70,10 +70,16 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
-        <!-- Inspection -->
+        <!-- Sample -->
         <activity
             android:name=".Sample.Activity.SampleMainActivity"
             android:label="시료 측정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".Sample.Activity.SampleAddActivity"
+            android:label="시료 신청"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
