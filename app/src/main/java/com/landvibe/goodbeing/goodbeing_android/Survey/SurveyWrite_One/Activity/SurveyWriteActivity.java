@@ -1,16 +1,19 @@
-package com.landvibe.goodbeing.goodbeing_android.Survey;
+package com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
+import android.widget.Button;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
@@ -18,30 +21,39 @@ import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Adapter.SurveyWriteAdapter_One;
 
 /**
- * Created by 고승빈 on 2017-07-14.
+ * Created by jik on 2017-07-17.
  */
-public class SurveySearchActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{
 
+public class SurveyWriteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    /**
+     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * fragments for each of the sections. We use a
+     * {@link FragmentPagerAdapter} derivative, which will keep every
+     * loaded fragment in memory. If this becomes too memory intensive, it
+     * may be best to switch to a
+     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+    private SurveyWriteAdapter_One.SectionsPagerAdapter mSectionsPagerAdapter;
     private Intent intent;
 
-    private ImageView pregnant;
-    private ImageView publicPerson;
-    private ImageView child;
-    private ImageView oldMan;
-    private ImageView disabled;
-    private ImageView other;
 
+    /**
+     * The {@link ViewPager} that will host the section contents.
+     */
+    private ViewPager mViewPager;
+    private Button RealsurveywirteActivity_ok_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_surveysearch);
+        setContentView(R.layout.activty_surveywrite);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -52,26 +64,43 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Declare ImageView
-        ImageView pregnant = (ImageView) findViewById(R.id.pregnant);
-        ImageView publicPerson  = (ImageView) findViewById(R.id.publicPerson);
-        ImageView child  = (ImageView) findViewById(R.id.child);
-        ImageView oldMan  = (ImageView) findViewById(R.id.oldMan);
-        ImageView disabled  = (ImageView) findViewById(R.id.disabled);
-        ImageView other  = (ImageView) findViewById(R.id.other);
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        mSectionsPagerAdapter = new SurveyWriteAdapter_One.SectionsPagerAdapter(getSupportFragmentManager());
 
-        pregnant.setOnClickListener(this);
-        publicPerson.setOnClickListener(this);
-        child.setOnClickListener(this);
-        oldMan.setOnClickListener(this);
-        disabled.setOnClickListener(this);
-        other.setOnClickListener(this);
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
 
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -104,13 +133,9 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    public void onClick(View view) {
-        intent = new Intent();
-        intent.setClassName(this , SurveyWriteActivity.class.getName());
-        startActivity(intent);
-    }
+        return true;    }
 }
+
+
+
+

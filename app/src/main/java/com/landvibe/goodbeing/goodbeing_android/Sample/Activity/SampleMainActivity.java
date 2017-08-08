@@ -11,7 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
+import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleIntroFragment;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
@@ -67,17 +70,25 @@ public class SampleMainActivity extends AppCompatActivity
             intent.setClassName(this , IntroActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_history) {
-            onRestart();
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            intent.setClassName(this, SurveySearchActivity.class.getName());
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_sample) {
-            intent.setClassName(this, SampleMainActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            ;
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_faq) {
-            ;
+            intent.setClassName(this , FaqActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(id == R.id.nav_login)
+        {
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

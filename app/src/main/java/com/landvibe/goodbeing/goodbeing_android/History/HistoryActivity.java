@@ -11,26 +11,20 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -75,47 +69,51 @@ public class HistoryActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        LineChart lineChart = (LineChart) findViewById(R.id.history_linechart);
+        // chart webview
+        webView = (WebView) findViewById(R.id.webview);
 
-        List<Entry> valsComp1 = new ArrayList<Entry>();
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
-        valsComp1.add(new Entry(0, 10f));
-        valsComp1.add(new Entry(1, 12f));
-        valsComp1.add(new Entry(2, 14f));
-        valsComp1.add(new Entry(3, 16f));
+        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        webView.setWebViewClient(new WebViewClient() {
 
-        LineDataSet setComp1 = new LineDataSet(valsComp1, "Company 1");
-
-        List<Entry> valsComp2 = new ArrayList<Entry>();
-
-        valsComp2.add(new Entry(0, 14f));
-        valsComp2.add(new Entry(1, 12f));
-        valsComp2.add(new Entry(2, 10f));
-        valsComp2.add(new Entry(3, 8f));
-
-        LineDataSet setComp2 = new LineDataSet(valsComp2, "Company 2");
-
-        List<ILineDataSet> datasets = new ArrayList<ILineDataSet>();
-        datasets.add(setComp1);
-        datasets.add(setComp2);
-
-        LineData data = new LineData(datasets);
-
-        final String[] quaters = new String[]{"Q1", "Q2", "Q3", "Q4"};
-
-        IAxisValueFormatter formatter = new IndexAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return quaters[((int) value)];
+            // ProgressBar 적용
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
             }
-        };
-        XAxis xAxis = lineChart.getXAxis();
-        xAxis.setGranularity(1f);
-        xAxis.setValueFormatter(formatter);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
 
-        lineChart.setData(data);
-        lineChart.invalidate();
+            public void onPageStarted(WebView view, String url,
+                                      android.graphics.Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                progressBar = (ProgressBar) findViewById(R.id.progress);
+                progressBar.bringToFront();
+                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
+                progressBar.setVisibility(View.VISIBLE);
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+
+
+            public void onReceivedError(WebView view, int errorCode,
+                                        String description, String failingUrl) {
+                super.onReceivedError(view, errorCode, description, failingUrl);
+                Toast.makeText(HistoryActivity.this, "Error : " + description,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        webView.loadUrl("file:///android_asset/GraphChart.html");
+
 
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);
@@ -170,17 +168,25 @@ public class HistoryActivity extends AppCompatActivity
             intent.setClassName(this , IntroActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_history) {
-            onRestart();
+            intent.setClassName(this , HistoryActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            intent.setClassName(this, SurveySearchActivity.class.getName());
+            intent.setClassName(this , SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_sample) {
-            intent.setClassName(this, SampleMainActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            ;
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         } else if (id == R.id.nav_faq) {
-            ;
+            intent.setClassName(this , FaqActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(id == R.id.nav_login)
+        {
+            intent.setClassName(this , LoginActivity.class.getName());
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

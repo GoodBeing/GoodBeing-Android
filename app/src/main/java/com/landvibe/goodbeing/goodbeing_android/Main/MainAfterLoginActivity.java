@@ -27,16 +27,16 @@ import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener , ImageView.OnClickListener
+public class MainAfterLoginActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener
 //,ViewFlipperAction.ViewFlipperCallback
 {
-    private ImageButton survey_1_ibtn;
-    private ImageButton survey_2_ibtn;
-    private ImageButton survey_3_ibtn;
-    private ImageButton survey_4_ibtn;
-    private ImageButton survey_5_ibtn;
-    private ImageButton survey_6_ibtn;
+    private ImageButton enter_intro_ibtn;
+    private ImageButton enter_survey_ibtn;
+    private ImageButton enter_sample_ibtn;
+    private ImageButton enter_myinfo_ibtn;
+    private ImageButton enter_history_ibtn;
+    private ImageButton enter_faq_ibtn;
 
     private Intent intent;
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_after_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -59,19 +59,22 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        survey_1_ibtn = (ImageButton)findViewById(R.id.survey1);
-        survey_2_ibtn = (ImageButton)findViewById(R.id.survey2);
-        survey_3_ibtn = (ImageButton)findViewById(R.id.survey3);
-        survey_4_ibtn = (ImageButton)findViewById(R.id.survey4);
-        survey_5_ibtn = (ImageButton)findViewById(R.id.survey5);
-        survey_6_ibtn = (ImageButton)findViewById(R.id.survey6);
 
-        survey_1_ibtn.setOnClickListener(this);
-        survey_2_ibtn.setOnClickListener(this);
-        survey_3_ibtn.setOnClickListener(this);
-        survey_4_ibtn.setOnClickListener(this);
-        survey_5_ibtn.setOnClickListener(this);
-        survey_6_ibtn.setOnClickListener(this);
+
+
+        enter_intro_ibtn = (ImageButton)findViewById(R.id.enter_intro_ibtn);
+        enter_survey_ibtn = (ImageButton)findViewById(R.id.enter_survey_ibtn);
+        enter_sample_ibtn = (ImageButton)findViewById(R.id.enter_sample_ibtn);
+        enter_myinfo_ibtn = (ImageButton)findViewById(R.id.enter_myinfo_ibtn);
+        enter_history_ibtn = (ImageButton)findViewById(R.id.enter_history_ibtn);
+        enter_faq_ibtn = (ImageButton)findViewById(R.id.enter_faq_ibtn);
+
+        enter_intro_ibtn.setOnClickListener(this);
+        enter_survey_ibtn.setOnClickListener(this);
+        enter_sample_ibtn.setOnClickListener(this);
+        enter_myinfo_ibtn.setOnClickListener(this);
+        enter_history_ibtn.setOnClickListener(this);
+        enter_faq_ibtn.setOnClickListener(this);
 
 
 
@@ -153,7 +156,7 @@ public class MainActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , MainAfterLoginActivity.class.getName());
+            intent.setClassName(this , LoginActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -172,30 +175,31 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         intent = new Intent();
+
         switch(view.getId())
         {
-            case R.id.survey1:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_intro_ibtn:
+                intent = new Intent(this , IntroActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.survey2:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_survey_ibtn:
+                intent = new Intent(this , SurveyWriteActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.survey3:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_sample_ibtn:
+                intent = new Intent(this , SampleMainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.survey4:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_myinfo_ibtn:
+                intent= new Intent(this , MainActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.survey5:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_history_ibtn:
+                intent= new Intent(this , HistoryActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.survey6:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+            case R.id.enter_faq_ibtn:
+                intent = new Intent(this , FaqActivity.class);
                 startActivity(intent);
                 break;
 

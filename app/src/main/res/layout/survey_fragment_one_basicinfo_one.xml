@@ -13,25 +13,24 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:textSize="10pt"/>
-        <LinearLayout
+
+         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp">
 
             <TextView
 
                 android:text="신장"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="2"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
             <EditText
                 android:id="@+id/height"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"
@@ -39,9 +38,8 @@
                 />
             <TextView
                 android:text="cm"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
@@ -51,22 +49,20 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             >
 
             <TextView
                 android:text="체중"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="2"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
             <EditText
                 android:id="@+id/weight"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"
@@ -74,9 +70,8 @@
                 />
             <TextView
                 android:text="kg"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
@@ -85,19 +80,18 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp">
             <TextView
                 android:text="BMI"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
             <TextView
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
             <Button
@@ -110,7 +104,7 @@
                 />
             <TextView
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_horizontal"/>
 
@@ -119,8 +113,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp">
             <TextView
@@ -130,11 +123,93 @@
                />
 
         </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:text="하루 평균 근무시간"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/work_time"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff0000"
+            />
+        <TextView
+            android:text="시간 / 일"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="하루 평균 휴식시간\n(식사시간 제외)"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
+
+        <RadioGroup
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/resttime"
+            >
+            <RadioButton
+                android:id="@+id/resttime1"
+                android:text="없음"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/resttime2"
+                android:text="있음"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+
+        <TextView
+            android:text="(평균"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/rest_time"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff0000"
+            />
+        <TextView
+            android:text="분 / 일)"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
 </LinearLayout>
 
