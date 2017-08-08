@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".Sample.Activity.SampleMainActivity">
+        tools:context="Sample.Activity.SampleAddActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -31,17 +31,31 @@
         </android.support.design.widget.AppBarLayout>
 
         <!--layout-->
-        <FrameLayout
-            android:id="@+id/sample_main_frame_layout"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize">
 
-        </FrameLayout>
+            <TextView
+                android:text="유저 기본 정보"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="유저 주소 정보"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/sample_add_submit_button"
+                android:text="Submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
-
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

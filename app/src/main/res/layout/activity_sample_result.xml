@@ -83,7 +83,7 @@
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/sample_result_bar_chart"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content"/>
 
             <com.github.mikephil.charting.charts.RadarChart
                 android:id="@+id/sample_result_radar_chart"
