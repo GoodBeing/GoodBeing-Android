@@ -27,72 +27,78 @@
         <activity
             android:name=".Main.MainAfterLoginActivity"
             android:label="로그인 후 메인화면"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!-- Intro -->
         <activity
             android:name=".Intro.IntroActivity"
             android:label="서비스 소개"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Intro.Intro_GB_Activity"
             android:label="굳빙 서비스란"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Intro.Intro_Purpose_Activity"
             android:label="굳빙 서비스의 목적"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <!-- History -->
         <activity
             android:name=".History.HistoryActivity"
             android:label="이력 관리"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <!-- Survey -->
         <activity
             android:name=".Survey.SurveySearchActivity"
             android:label="설문 선택"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Survey.SurveyWrite_One.Activity.SurveyWriteActivity"
             android:label="설문 작성"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Survey.SurveyResultActiviy"
             android:label="설문 결과"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <!-- Inspection -->
         <activity
             android:name=".Sample.Activity.SampleMainActivity"
             android:label="시료 측정"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
             android:name=".Sample.Activity.SampleResultActiviy"
             android:label="시료 결과"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Login.LoginActivity"
             android:label="로그인"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Login.ResetPasswordActivity"
+            android:label="패스워드 찾기"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Signup.SignupActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".Signup.Terms.TermsOfUseActivity"
+            android:label="이용약관"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".Signup.Terms.TermsOfServiceActivity"
+            android:label="서비스 약관"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
             android:name=".FAQ.FaqActivity"
             android:label="FAQ"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
