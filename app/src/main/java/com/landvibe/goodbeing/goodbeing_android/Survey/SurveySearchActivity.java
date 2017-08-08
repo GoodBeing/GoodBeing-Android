@@ -117,40 +117,34 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
     public void onClick(View view) {
         intent = new Intent();
 
-        if(view == pregnant)
+        if(view.getId() == R.id.pregnant)
         {
-            intent.putExtra("type",1);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view == publicPerson)
+        else if(view.getId() == R.id.publicPerson)
         {
-            intent.putExtra("type",2);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
 
-        else if(view == child)
+        else if(view.getId() == R.id.child)
         {
-            intent.putExtra("type",3);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view == oldMan)
+        else if(view.getId() == R.id.oldMan)
         {
-            intent.putExtra("type",4);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view == disabled)
+        else if(view.getId() == R.id.disabled)
         {
-            intent.putExtra("type",5);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view == other)
+        else if(view.getId() == R.id.other)
         {
-            intent.putExtra("type",6);
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
