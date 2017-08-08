@@ -2,19 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="로그인" />
-
-        <item
+           <item
             android:id="@+id/nav_intro"
             android:icon="@drawable/ic_menu_camera"
             android:title="서비스 소개" />
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="이력관리" />
+            android:title="마이굳빙" />
         <item
             android:id="@+id/nav_surveyWrite"
             android:icon="@drawable/ic_menu_slideshow"
@@ -24,25 +19,26 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="시료측정" />
         <item
-            android:id="@+id/nav_consulting"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="의료상담" />
-        <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_menu_manage"
             android:title="의료 FAQ" />
+        <item
+            android:id="@+id/nav_consulting"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="로그인 후 메인으로" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="사용자">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_login"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="로그인" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_appinfo"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="앱 정보" />
         </menu>
     </item>
 

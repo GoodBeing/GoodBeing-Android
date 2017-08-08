@@ -1,7 +1,6 @@
 package com.landvibe.goodbeing.goodbeing_android.Survey;
 
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -41,17 +40,24 @@ public class SurveyConnectServer {
             mPrarams.put("USER_IDX",user_id);
             mPrarams.put("SURVEY_TYPE_CODE",survey_code);
             mPrarams.put("SURVEY_SCORE",score);
-            mClient.post("http://naver.com", mPrarams, new AsyncHttpResponseHandler() {
+            mClient.get("URL",mPrarams, new JsonHttpResponseHandler(){
                 @Override
-                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
+
+                    try {
+                        String answer;
+                        answer = response.getJSONArray("SAMPLE_RESULT_A").toString();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
-                @Override
-                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 }
             });
+
 
     }
 
@@ -62,23 +68,6 @@ public class SurveyConnectServer {
         mClient = new AsyncHttpClient();
         mPrarams = new RequestParams();
 
-        mClient.get("URL",mPrarams, new JsonHttpResponseHandler(){
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
-
-                try {
-                    String answer;
-                    answer = response.getJSONArray("SAMPLE_RESULT_A").toString();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-            }
-        });
 
     }
 

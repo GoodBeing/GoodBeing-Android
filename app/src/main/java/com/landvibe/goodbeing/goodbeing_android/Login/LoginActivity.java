@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity
     private Button LoginActivity_ok_btn;
     private Button LoginActivity_cancle_btn;
     private SharedPreferences msharedpreferences;
+    private SharedPreferences.Editor speditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,9 @@ public class LoginActivity extends AppCompatActivity
 
         LoginActivity_ok_btn.setOnClickListener(this);
         LoginActivity_cancle_btn.setOnClickListener(this);
+
+        msharedpreferences = getSharedPreferences("msharedpreferences",MODE_PRIVATE);
+        speditor = msharedpreferences.edit();
 
     }
 
@@ -143,10 +147,19 @@ public class LoginActivity extends AppCompatActivity
             idx =  LCS.requestLogin(mID,mPW);
 
             //idx cookie 로그인 유지//
-
-            SharedPreferences.Editor speditor = msharedpreferences.edit();
+            if(idx==0)
+            {
             speditor.putInt("IDX",idx);
-            speditor.apply();
+            speditor.commit();
+            }
+            else
+            {
+                //IDX를 불러오고 해당값이 없을경우 리턴 0
+                idx = msharedpreferences.getInt("IDX",0);
+            }
+            //shared 데이터 삭제
+//            speditor.remove("IDX");
+//            speditor.commit();
 
             Intent intent = new Intent(this , MainActivity.class);
             intent.putExtra("IDX",idx);

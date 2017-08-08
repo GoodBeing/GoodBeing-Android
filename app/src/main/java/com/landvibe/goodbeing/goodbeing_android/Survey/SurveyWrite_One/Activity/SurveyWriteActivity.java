@@ -39,7 +39,6 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
      */
     private SurveyWriteAdapter_One.SectionsPagerAdapter mSectionsPagerAdapter;
     private Intent intent;
-    private int surveytype;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -73,7 +72,6 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         intent = getIntent();
-        surveytype =  intent.getExtras().getInt("type");
 
 
 
