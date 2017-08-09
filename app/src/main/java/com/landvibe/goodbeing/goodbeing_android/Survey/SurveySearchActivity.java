@@ -19,6 +19,8 @@ import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.RequestParams;
 
 /**
  * Created by 고승빈 on 2017-07-14.
@@ -33,7 +35,8 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
     private ImageView oldMan;
     private ImageView disabled;
     private ImageView other;
-
+    private AsyncHttpClient mHttpClient = new AsyncHttpClient();
+    private RequestParams params = new RequestParams();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +63,15 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         ImageView disabled  = (ImageView) findViewById(R.id.disabled);
         ImageView other  = (ImageView) findViewById(R.id.other);
 
+
         pregnant.setOnClickListener(this);
         publicPerson.setOnClickListener(this);
         child.setOnClickListener(this);
         oldMan.setOnClickListener(this);
         disabled.setOnClickListener(this);
         other.setOnClickListener(this);
+
+
 
     }
 
@@ -110,7 +116,38 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
     @Override
     public void onClick(View view) {
         intent = new Intent();
-        intent.setClassName(this , SurveyWriteActivity.class.getName());
-        startActivity(intent);
+
+        if(view.getId() == R.id.pregnant)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.publicPerson)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+
+        else if(view.getId() == R.id.child)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.oldMan)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.disabled)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.other)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+
     }
 }

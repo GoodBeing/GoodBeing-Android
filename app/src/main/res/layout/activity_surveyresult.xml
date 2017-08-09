@@ -30,50 +30,151 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <!-- progressbar -->
-        <ProgressBar
-            android:id="@+id/progress"
-            style="?android:attr/progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
 
-        <!--layout-->
+      <LinearLayout
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:orientation="vertical">
+          <TextView
+              android:layout_height="100dp"
+              android:layout_width="match_parent"
+              />
+          <TextView
+          android:layout_height="50dp"
+          android:layout_width="match_parent"
+          android:text="유해물질분석 검사 결과지"
+              android:gravity="center_horizontal|center_vertical"
+          />
+
+          <TextView
+              android:layout_height="50dp"
+              android:layout_width="match_parent"
+              android:gravity="right"
+              android:id="@+id/survey_result_userid_tv"
+              android:text="사용자 이름"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                    <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="유해물질"
+                    />
+                    <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/survey_result_thing"
+                    />
+            </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="의의"
+                  />
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:id="@+id/survey_result_uiui_tv"
+                  />
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="노출정도"
+                  />
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:id="@+id/survey_result_score_tv"
+                  />
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="ug/L"
+                  />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="해설"
+                  />
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:id="@+id/survey_result_answer_tv"
+                  />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="유해물질에 따른 추천 제품"
+                  />
+              <TextView
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                    android:text="배 성분이 함유된 해독 주스(개인별 맞춤형)"
+                  />
+
+          </LinearLayout>
+
+
+
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+            android:layout_gravity="bottom">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/survey_result_gomain_btn"
+            android:text="메인으로"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/survey_result_gocategory_btn"
+            android:text="다른 설문하기"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/survey_result_gosample_btn"
+            android:text="시료하러가기"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <WebView
-                        android:id="@+id/webview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="설문작성 결과"/>
-
-                    </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
         </LinearLayout>
+
+    </LinearLayout>
 
 
     </android.support.design.widget.CoordinatorLayout>

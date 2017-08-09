@@ -17,27 +17,32 @@ import com.landvibe.goodbeing.goodbeing_android.R;
  * Created by jik on 2017-07-26.
  */
 
-public class SurveyWriteFragment_One_One extends Fragment implements View.OnClickListener {
+public class SurveyWriteFragment_One_1 extends Fragment implements View.OnClickListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+
+    private EditText surveywriteActivity_Fragment_One_age_et;
+    private RadioGroup surveywriteActivity_Fragment_One_N2_rg;
+
+
     private EditText surveywriteActivity_Fragment_One_height_et;
     private EditText surveywriteActivity_Fragment_One_weight_et;
     private Button surveywriteActivity_Fragment_One_calBMI_button;
     private TextView surveywriteActivity_Fragment_One_BMIresult_tv;
-    private EditText surveywriteActivity_Fragment_One_worktime_et;
-    private EditText surveywriteActivity_Fragment_One_resttime_et;
-    private RadioGroup surveywriteActivity_Fragment_One_resttime_rg;
+
+    private EditText surveywriteActivity_Fragment_One_N5_et;
+
     private int score=0;
 
-    public SurveyWriteFragment_One_One() {
+    public SurveyWriteFragment_One_1() {
     }
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static SurveyWriteFragment_One_One newInstance(int sectionNumber) {
-        SurveyWriteFragment_One_One fragment = new SurveyWriteFragment_One_One();
+    public static SurveyWriteFragment_One_1 newInstance(int sectionNumber) {
+        SurveyWriteFragment_One_1 fragment = new SurveyWriteFragment_One_1();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -47,9 +52,28 @@ public class SurveyWriteFragment_One_One extends Fragment implements View.OnClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.survey_fragment_one_basicinfo_one, container, false);
+        View rootView = inflater.inflate(R.layout.survey_fragment_one_1, container, false);
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+
+        surveywriteActivity_Fragment_One_age_et = (EditText) rootView.findViewById(R.id.age);
+
+        surveywriteActivity_Fragment_One_N2_rg = (RadioGroup) rootView.findViewById(R.id.one_N2);
+        surveywriteActivity_Fragment_One_N2_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                     switch(i)
+                     {
+                         case R.id.one_N2_1:
+                             break;
+                         case R.id.one_N2_2:
+                             break;
+                     }
+            }
+        });
+
+
         surveywriteActivity_Fragment_One_height_et = (EditText) rootView.findViewById(R.id.height);
         surveywriteActivity_Fragment_One_weight_et = (EditText) rootView.findViewById(R.id.weight);
         surveywriteActivity_Fragment_One_BMIresult_tv = (TextView) rootView.findViewById(R.id.BMI_result);
@@ -57,17 +81,7 @@ public class SurveyWriteFragment_One_One extends Fragment implements View.OnClic
         surveywriteActivity_Fragment_One_calBMI_button = (Button) rootView.findViewById(R.id.cal_btn);
         surveywriteActivity_Fragment_One_calBMI_button.setOnClickListener(this);
 
-
-        surveywriteActivity_Fragment_One_resttime_rg = (RadioGroup) rootView.findViewById(R.id.resttime);
-        surveywriteActivity_Fragment_One_resttime_rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if(R.id.resttime1==i)
-                    score++;
-                if(R.id.resttime2==i)
-                    score = score+2;
-            }
-        });
+        surveywriteActivity_Fragment_One_N5_et = (EditText) rootView.findViewById(R.id.one_N5);
 
 
 

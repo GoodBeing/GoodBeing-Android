@@ -1,6 +1,7 @@
 package com.landvibe.goodbeing.goodbeing_android.Login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity
     private EditText LoginActivity_pw_et;
     private Button LoginActivity_ok_btn;
     private Button LoginActivity_cancle_btn;
+    private SharedPreferences msharedpreferences;
+    private SharedPreferences.Editor speditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,9 @@ public class LoginActivity extends AppCompatActivity
 
         LoginActivity_ok_btn.setOnClickListener(this);
         LoginActivity_cancle_btn.setOnClickListener(this);
+
+        msharedpreferences = getSharedPreferences("msharedpreferences",MODE_PRIVATE);
+        speditor = msharedpreferences.edit();
 
     }
 
@@ -130,11 +136,33 @@ public class LoginActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-
+        int idx = 0;
         intent = new Intent();
         if(view.getId() == R.id.ok_btn)
         {
+            String mID = LoginActivity_id_et.getText().toString();
+            String mPW = LoginActivity_pw_et.getText().toString();
+
+            LoginConnectServer LCS = new LoginConnectServer();
+            idx =  LCS.requestLogin(mID,mPW);
+
+            //idx cookie 로그인 유지//
+            if(idx==0)
+            {
+            speditor.putInt("IDX",idx);
+            speditor.commit();
+            }
+            else
+            {
+                //IDX를 불러오고 해당값이 없을경우 리턴 0
+                idx = msharedpreferences.getInt("IDX",0);
+            }
+            //shared 데이터 삭제
+//            speditor.remove("IDX");
+//            speditor.commit();
+
             Intent intent = new Intent(this , MainActivity.class);
+            intent.putExtra("IDX",idx);
             startActivity(intent);
         }
         else if(view.getId() == R.id.cancle_btn)
@@ -143,4 +171,8 @@ public class LoginActivity extends AppCompatActivity
             startActivity(intent);
         }
     }
+
+
+
+
 }
