@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
@@ -56,23 +57,20 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         navigationView.setNavigationItemSelectedListener(this);
 
         // Declare ImageView
-        ImageView pregnant = (ImageView) findViewById(R.id.pregnant);
-        ImageView publicPerson  = (ImageView) findViewById(R.id.publicPerson);
-        ImageView child  = (ImageView) findViewById(R.id.child);
-        ImageView oldMan  = (ImageView) findViewById(R.id.oldMan);
-        ImageView disabled  = (ImageView) findViewById(R.id.disabled);
-        ImageView other  = (ImageView) findViewById(R.id.other);
+        Button general = (Button) findViewById(R.id.general);
+        Button couple  = (Button) findViewById(R.id.couple);
+        Button family  = (Button) findViewById(R.id.family);
+        Button group  = (Button) findViewById(R.id.group);
+        Button teenager  = (Button) findViewById(R.id.teenager);
+        Button pregnant  = (Button) findViewById(R.id.pregnant);
 
 
         pregnant.setOnClickListener(this);
-        publicPerson.setOnClickListener(this);
-        child.setOnClickListener(this);
-        oldMan.setOnClickListener(this);
-        disabled.setOnClickListener(this);
-        other.setOnClickListener(this);
-
-
-
+        general.setOnClickListener(this);
+        family.setOnClickListener(this);
+        group.setOnClickListener(this);
+        teenager.setOnClickListener(this);
+        couple.setOnClickListener(this);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -122,28 +120,28 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view.getId() == R.id.publicPerson)
+        else if(view.getId() == R.id.general)
         {
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
 
-        else if(view.getId() == R.id.child)
+        else if(view.getId() == R.id.couple)
         {
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view.getId() == R.id.oldMan)
+        else if(view.getId() == R.id.family)
         {
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view.getId() == R.id.disabled)
+        else if(view.getId() == R.id.teenager)
         {
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
-        else if(view.getId() == R.id.other)
+        else if(view.getId() == R.id.group)
         {
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
