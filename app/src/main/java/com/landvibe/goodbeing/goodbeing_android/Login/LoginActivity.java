@@ -81,8 +81,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     @OnClick(R.id.btn_signup)
-    void signupBtnEvent()
-    {
+    void signupBtnEvent() {
         intent = new Intent();
         intent.setClassName(this , SignupActivity.class.getName());
         startActivity(intent);
