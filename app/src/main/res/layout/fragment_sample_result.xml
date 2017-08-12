@@ -1,77 +1,103 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleResultFragment">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="2">
-        <TextView
-            android:text="등록번호 : 12345678"
-            android:id="@+id/sample_result_reg_num"
-            android:layout_columnSpan="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="성명 : 강승모"
-            android:id="@+id/sample_result_user_name"
-            android:layout_columnSpan="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="검사 신청일 : 2017-01-01"
-            android:id="@+id/sample_result_request_date"
-            android:layout_columnWeight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="검사 통보일 : 2017-02-01"
-            android:id="@+id/sample_result_notice_date"
-            android:layout_columnWeight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="굳빙검사는 남에 의해 결정되는  것이 아니라 자기스스로 질병을 유발하는 물질로부터 노출을 최소화하고 해독을 추구하는 자기주도적인 예방법입니다."
-            android:id="@+id/sample_result_service_description"
-            android:layout_columnSpan="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/sample_result_body"
-            android:text="\n1.분석결과\n분석항목: 비스페놀 A (의미, 내분비장애물질로 유리대체물질로 생활속에서 많이 사용되어 생식, 면역, 발암, 인지장애 등이 위험이 보고되었읍니다)\n노출정도: 24 ug/L\n판정: 고노출 (한국인 노출 평균 1 ug/L)\n\n2.맞춤형 굳빙평가: 노화, 수면, 신진대사, 해독식품 섭취가 그림1과 같이  좋지 않읍니다.\n
-\n3.대책 노화를 막고  해독식품섭취를 권장합니다. 평소 신선한 야채나 과일(오래된 야채는 조리해서 익혀드실것)을 흐르는 물에 3회 이상 씻어 드시기 직전 잘라서 드십니다.\n
-vtC 섭취, 엽산 섭취를 늘립니다(엽산이 많이 들어간 식품,,,,).\n
-> 위에 제안한 내용을 실행하시고 한달 뒤 재검을 하시기 바랍니다.\n"
-            android:layout_columnSpan="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </GridLayout>
-
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_width="wrap_content"
+        android:id="@+id/analysis_result_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/sample_result_retry_button"
-            android:text="재검하기"
-            android:layout_marginRight="5dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+        <TextView
+            android:text="분석정보"
+            android:paddingLeft="25dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/sample_result_back_button"
-            android:text="돌아가기"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <TextView
+                    android:text="등록번호"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/sample_result_reg_num"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="성명"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/sample_result_name"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="신청일"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/sample_result_date_1"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="통보일"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/sample_result_date_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="굳빙검사는 남에 의해 결정되는  것이 아니라 자기스스로 질병을 유발하는 물질로부터 노출을 최소화하고 해독을 추구하는 자기주도적인 예방법입니다."
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:text="분석결과"
+            android:paddingLeft="25dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sample_analysis_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

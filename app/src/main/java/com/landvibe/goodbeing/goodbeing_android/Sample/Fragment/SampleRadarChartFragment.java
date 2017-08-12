@@ -1,6 +1,7 @@
 package com.landvibe.goodbeing.goodbeing_android.Sample.Fragment;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -85,14 +86,14 @@ public class SampleRadarChartFragment extends Fragment {
 
         List<RadarEntry> entries = new ArrayList<>();
 
-        entries.add(new RadarEntry(10f));
-        entries.add(new RadarEntry(20f));
-        entries.add(new RadarEntry(30f));
-        entries.add(new RadarEntry(40f));
-        entries.add(new RadarEntry(10f));
-        entries.add(new RadarEntry(20f));
-        entries.add(new RadarEntry(30f));
-        entries.add(new RadarEntry(40f));
+        entries.add(new RadarEntry(10));
+        entries.add(new RadarEntry(20));
+        entries.add(new RadarEntry(30));
+        entries.add(new RadarEntry(40));
+        entries.add(new RadarEntry(10));
+        entries.add(new RadarEntry(20));
+        entries.add(new RadarEntry(30));
+        entries.add(new RadarEntry(40));
 
         ArrayList xVals = new ArrayList();
 
@@ -105,7 +106,9 @@ public class SampleRadarChartFragment extends Fragment {
         xVals.add("유해식품");
         xVals.add("신진대사");
 
-        RadarDataSet set = new RadarDataSet(entries, "Election Results");
+        RadarDataSet set = new RadarDataSet(entries, null);
+        set.setColor(Color.BLUE);
+        set.setDrawFilled(true);
         RadarData radarData = new RadarData(set);
 
         Legend legend = radarChart.getLegend();
@@ -116,49 +119,11 @@ public class SampleRadarChartFragment extends Fragment {
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
 
         radarChart.getYAxis().setEnabled(false);
+        radarChart.getLegend().setEnabled(false);
         radarChart.setDescription(null);
         radarChart.setData(radarData);
         radarChart.invalidate();
 
         return view;
     }
-//
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
-//
-//    /**
-//     * This interface must be implemented by activities that contain this
-//     * fragment to allow an interaction in this fragment to be communicated
-//     * to the activity and potentially other fragments contained in that
-//     * activity.
-//     * <p>
-//     * See the Android Training lesson <a href=
-//     * "http://developer.android.com/training/basics/fragments/communicating.html"
-//     * >Communicating with Other Fragments</a> for more information.
-//     */
-//    public interface OnFragmentInteractionListener {
-//        // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-//    }
 }

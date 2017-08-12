@@ -10,4 +10,8 @@
         android:layout_height="match_parent"
         android:layout_margin="15dp"/>
 
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/sample_result_bar_chart_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </FrameLayout>

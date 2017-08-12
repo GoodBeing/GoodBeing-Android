@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -78,11 +79,13 @@ public class SampleBarChartFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sample_bar_chart, container, false);
 
+        int count = 8;
+
         float barWidth = 0.25f;
         float barSpace = 0f;
-        float groupSpace = 0.25f;
+        float groupSpace = 0.5f;
 
-        BarChart chart = (BarChart)view.findViewById(R.id.sample_result_bar_chart);
+        HorizontalBarChart chart = (HorizontalBarChart)view.findViewById(R.id.sample_result_bar_chart_horizontal);
         chart.setDescription(null);
         chart.setPinchZoom(false);
         chart.setScaleEnabled(false);
@@ -95,32 +98,41 @@ public class SampleBarChartFragment extends Fragment {
         xVals.add("노화");
         xVals.add("수면");
         xVals.add("유해식품");
+        xVals.add("비스페놀A");
+        xVals.add("노화");
+        xVals.add("수면");
+        xVals.add("유해식품");
 
         ArrayList yVals1 = new ArrayList();
         ArrayList yVals2 = new ArrayList();
-        ArrayList yVals3 = new ArrayList();
 
+        /* 저번달 자료 */
         yVals1.add(new BarEntry(1, (float) 1));
-        yVals2.add(new BarEntry(1, (float) 2));
-        yVals3.add(new BarEntry(1, (float) 3));
         yVals1.add(new BarEntry(2, (float) 4));
-        yVals2.add(new BarEntry(2, (float) 5));
-        yVals3.add(new BarEntry(2, (float) 6));
         yVals1.add(new BarEntry(3, (float) 7));
-        yVals2.add(new BarEntry(3, (float) 8));
-        yVals3.add(new BarEntry(3, (float) 9));
         yVals1.add(new BarEntry(4, (float) 10));
-        yVals2.add(new BarEntry(4, (float) 11));
-        yVals3.add(new BarEntry(4, (float) 12));
+        yVals1.add(new BarEntry(5, (float) 1));
+        yVals1.add(new BarEntry(6, (float) 4));
+        yVals1.add(new BarEntry(7, (float) 7));
+        yVals1.add(new BarEntry(8, (float) 10));
 
-        BarDataSet set1, set2, set3;
+        /* 이번달 자료 */
+        yVals2.add(new BarEntry(1, (float) 5));
+        yVals2.add(new BarEntry(2, (float) 2));
+        yVals2.add(new BarEntry(3, (float) 8));
+        yVals2.add(new BarEntry(4, (float) 11));
+        yVals2.add(new BarEntry(5, (float) 3));
+        yVals2.add(new BarEntry(6, (float) 6));
+        yVals2.add(new BarEntry(7, (float) 9));
+        yVals2.add(new BarEntry(8, (float) 12));
+
+        BarDataSet set1, set2;
         set1 = new BarDataSet(yVals1, "2017.02");
         set1.setColor(Color.RED);
         set2 = new BarDataSet(yVals2, "2017.03");
         set2.setColor(Color.BLUE);
-        set3 = new BarDataSet(yVals3, "2017.04");
-        set2.setColor(Color.GREEN);
-        BarData data = new BarData(set1, set2, set3);
+
+        BarData data = new BarData(set1, set2);
         data.setValueFormatter(new LargeValueFormatter());
         chart.setData(data);
         chart.getBarData().setBarWidth(barWidth);
@@ -132,11 +144,9 @@ public class SampleBarChartFragment extends Fragment {
 
         Legend l = chart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         l.setDrawInside(true);
-        l.setYOffset(20f);
-        l.setXOffset(0f);
         l.setYEntrySpace(0f);
         l.setTextSize(8f);
 
@@ -146,56 +156,17 @@ public class SampleBarChartFragment extends Fragment {
         xAxis.setGranularityEnabled(true);
         xAxis.setCenterAxisLabels(true);
         xAxis.setDrawGridLines(false);
-        xAxis.setAxisMaximum(4);
+        xAxis.setAxisMaximum(count);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
         //Y-axis
-        chart.getAxisRight().setEnabled(false);
-        YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setValueFormatter(new LargeValueFormatter());
-        leftAxis.setDrawGridLines(true);
-        leftAxis.setSpaceTop(35f);
-        leftAxis.setAxisMinimum(0f);
+        chart.getAxisLeft().setEnabled(false);
+        YAxis rightAxis = chart.getAxisRight();
+        rightAxis.setValueFormatter(new LargeValueFormatter());
+        rightAxis.setDrawGridLines(true);
+        rightAxis.setSpaceTop(35f);
+        rightAxis.setAxisMinimum(0f);
 
         return view;
     }
-
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
-//
-//    /**
-//     * This interface must be implemented by activities that contain this
-//     * fragment to allow an interaction in this fragment to be communicated
-//     * to the activity and potentially other fragments contained in that
-//     * activity.
-//     * <p>
-//     * See the Android Training lesson <a href=
-//     * "http://developer.android.com/training/basics/fragments/communicating.html"
-//     * >Communicating with Other Fragments</a> for more information.
-//     */
-//    public interface OnFragmentInteractionListener {
-//        // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-//    }
 }

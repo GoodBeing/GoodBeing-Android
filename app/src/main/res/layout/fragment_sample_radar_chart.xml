@@ -1,13 +1,194 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleRadarChartFragment">
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="맞춤형 굿빙 평가"
+            android:textColor="@android:color/white"
+            android:background="@android:color/black"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow>
+            <TextView
+                android:text="평가내용"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="노화, 수면, 신진대사, 해독식품 섭취 필요"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="신진대사"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="유해식품"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:text="해독식품"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:text="화장품"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:text="수면"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="직업"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="노화"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="주거"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="평가 내용에 대한 평가 내용을 평가 해주세요."
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+    </TableLayout>
+
     <com.github.mikephil.charting.charts.RadarChart
         android:id="@+id/sample_result_radar_chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="15dp"/>
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
 
-</FrameLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+        android:text="맞춤형 굿빙 평가"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:paddingLeft="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <TableRow>
+            <TextView
+                android:text="대책"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="노화를 막고 해독식품섭취를 권장합니다.
+    평소 신선한 야채나 과일(오래된 야채는 조리해서 익혀드실것)을
+    흐르는 물에 3회 이상 씻어 드시기 직전 잘라서 드십니다.
+    vtC 섭취, 엽산 섭취를 늘립니다(엽산이 많이 들어간 식품,,,,)."
+                android:textStyle="bold"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+
+
+
+</LinearLayout>
