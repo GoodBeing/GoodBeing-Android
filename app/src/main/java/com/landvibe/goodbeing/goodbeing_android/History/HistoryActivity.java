@@ -1,7 +1,6 @@
 package com.landvibe.goodbeing.goodbeing_android.History;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -15,13 +14,6 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
@@ -29,8 +21,6 @@ import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-
-import java.util.ArrayList;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -75,71 +65,10 @@ public class HistoryActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // chart webview
-        LineChart lineChart = (LineChart)findViewById(R.id.history_linechart);
-        lineChart.setDescription(null);
-        lineChart.setPinchZoom(false);
-        lineChart.setScaleEnabled(false);
-        lineChart.setDrawGridBackground(false);
-
-        ArrayList xVals = new ArrayList();
-        xVals.add("2017.03");
-        xVals.add("2017.04");
-        xVals.add("2017.05");
-        xVals.add("2017.06");
-
-        ArrayList yVals1 = new ArrayList();
-        ArrayList yVals2 = new ArrayList();
-        ArrayList yVals3 = new ArrayList();
-        ArrayList yVals4 = new ArrayList();
-
-        yVals1.add(new BarEntry(0, (float) 1));
-        yVals2.add(new BarEntry(0, (float) 2));
-        yVals3.add(new BarEntry(0, (float) 3));
-        yVals4.add(new BarEntry(0, (float) 8));
-        yVals1.add(new BarEntry(1, (float) 5));
-        yVals2.add(new BarEntry(1, (float) 6));
-        yVals3.add(new BarEntry(1, (float) 7));
-        yVals4.add(new BarEntry(1, (float) 6));
-        yVals1.add(new BarEntry(2, (float) 3));
-        yVals2.add(new BarEntry(2, (float) 4));
-        yVals3.add(new BarEntry(2, (float) 11));
-        yVals4.add(new BarEntry(2, (float) 2));
-        yVals1.add(new BarEntry(3, (float) 15));
-        yVals2.add(new BarEntry(3, (float) 14));
-        yVals3.add(new BarEntry(3, (float) 15));
-        yVals4.add(new BarEntry(3, (float) 10));
-
-        LineDataSet set1, set2, set3, set4;
-        set1 = new LineDataSet(yVals1, "비스페놀A");
-        set1.setColor(Color.RED);
-        set2 = new LineDataSet(yVals2, "노화");
-        set2.setColor(Color.BLUE);
-        set3 = new LineDataSet(yVals3, "수면");
-        set3.setColor(Color.GREEN);
-        set4 = new LineDataSet(yVals4, "유해식품");
-        set4.setColor(Color.YELLOW);
-
-        LineData data = new LineData(set1, set2, set3, set4);
-        data.setValueFormatter(new LargeValueFormatter());
-        lineChart.setData(data);
-        lineChart.invalidate();
-
-        XAxis xAxis = lineChart.getXAxis();
-        xAxis.setGranularity(1f);
-//        xAxis.setGranularityEnabled(true);
-//        xAxis.setCenterAxisLabels(true);
-//        xAxis.setDrawGridLines(false);
-//        xAxis.setAxisMinimum(0);
-//        xAxis.setAxisMaximum(3);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
-
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("전체"));
-        tabLayout.addTab(tabLayout.newTab().setText("진행"));
-        tabLayout.addTab(tabLayout.newTab().setText("완료"));
+        tabLayout.addTab(tabLayout.newTab().setText("시료"));
+        tabLayout.addTab(tabLayout.newTab().setText("설문"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

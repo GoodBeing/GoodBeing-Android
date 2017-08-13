@@ -56,48 +56,6 @@ public class SampleIntroActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.sample_main_add_fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SampleIntroActivity.this, SampleAddActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        // Initializing the TabLayout
-//        tabLayout = (TabLayout) findViewById(R.id.sample_main_tabLayout);
-//        tabLayout.addTab(tabLayout.newTab().setText("전체"));
-//        tabLayout.addTab(tabLayout.newTab().setText("진행"));
-//        tabLayout.addTab(tabLayout.newTab().setText("완료"));
-//
-//        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//
-//        viewPager = (ViewPager)findViewById(R.id.sample_main_viewpager);
-//
-//        SampleViewPagerAdapter sampleViewPagerAdapter = new SampleViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-//        viewPager.setAdapter(sampleViewPagerAdapter);
-//        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-//
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-//
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                viewPager.setCurrentItem(tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//        });
-
     }
 
     @Override

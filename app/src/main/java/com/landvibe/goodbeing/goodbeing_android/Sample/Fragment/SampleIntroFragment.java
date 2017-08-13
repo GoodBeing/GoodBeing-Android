@@ -14,6 +14,7 @@ import com.landvibe.goodbeing.goodbeing_android.R;
  * Created by KSM on 2017-08-06.
  */
 
+// TODO: 굿빙 카페에 올라온 소개 메뉴 추가
 public class SampleIntroFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
@@ -25,7 +26,7 @@ public class SampleIntroFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.sample_main_frame_layout, new SampleMainFragment());
+                fragmentTransaction.replace(R.id.sample_main_frame_layout, new SampleAddFragment());
                 fragmentTransaction.commit();
             }
         });

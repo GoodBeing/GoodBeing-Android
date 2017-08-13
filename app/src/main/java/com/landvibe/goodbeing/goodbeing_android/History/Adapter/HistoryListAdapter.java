@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.landvibe.goodbeing.goodbeing_android.History.Data.HistoryItem;
+import com.landvibe.goodbeing.goodbeing_android.History.Data.SampleResultItem;
 import com.landvibe.goodbeing.goodbeing_android.History.Holder.HistoryViewHolder;
 import com.landvibe.goodbeing.goodbeing_android.R;
 
@@ -16,10 +16,10 @@ import java.util.ArrayList;
  */
 public class HistoryListAdapter extends RecyclerView.Adapter<HistoryViewHolder>{
 
-    private ArrayList<HistoryItem> historyItems;
+    private ArrayList<SampleResultItem> sampleResultItems;
 
-    public HistoryListAdapter(ArrayList<HistoryItem> historyItems) {
-        this.historyItems = historyItems;
+    public HistoryListAdapter(ArrayList<SampleResultItem> sampleResultItems) {
+        this.sampleResultItems = sampleResultItems;
     }
 
     @Override
@@ -36,12 +36,12 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryViewHolder>{
 
         StringBuffer stringBuffer = new StringBuffer();
 
-        stringBuffer.append(historyItems.get(position).getGender() ? "남" : "여")
+        stringBuffer.append(sampleResultItems.get(position).getGender() ? "남" : "여")
                     .append(" / ")
-                    .append(historyItems.get(position).getAge())
+                    .append(sampleResultItems.get(position).getAge())
                     .append(" / ");
 
-        switch (historyItems.get(position).getBloodType())
+        switch (sampleResultItems.get(position).getBloodType())
         {
             case 1 :
                 stringBuffer.append("A");
@@ -59,13 +59,13 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryViewHolder>{
                 break;
         }
 
-        holder.getName().setText(historyItems.get(position).getName());
+        holder.getName().setText(sampleResultItems.get(position).getName());
         holder.getIntro().setText(stringBuffer.toString());
     }
 
     @Override
     public int getItemCount() {
-        return historyItems.size();
+        return sampleResultItems.size();
     }
 
 

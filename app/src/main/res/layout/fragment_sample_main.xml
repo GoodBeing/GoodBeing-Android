@@ -10,28 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-            <android.support.design.widget.TabLayout
-            android:id="@+id/sample_main_tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FF98ff98"
-            android:minHeight="?attr/actionBarSize"
-            android:fillViewport="false" />
-
-            <android.support.v4.view.ViewPager
-            android:id="@+id/sample_main_viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         </LinearLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/sample_main_add_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="15dp"
-            app:srcCompat="@android:drawable/ic_menu_add"/>
 
 </FrameLayout>

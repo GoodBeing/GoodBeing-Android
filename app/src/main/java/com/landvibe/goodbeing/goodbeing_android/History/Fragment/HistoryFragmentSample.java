@@ -12,17 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryListAdapter;
-import com.landvibe.goodbeing.goodbeing_android.History.Data.HistoryItem;
+import com.landvibe.goodbeing.goodbeing_android.History.Data.SampleResultItem;
 import com.landvibe.goodbeing.goodbeing_android.History.Listener.HistoryRecycleViewOnItemClickListener;
 import com.landvibe.goodbeing.goodbeing_android.R;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyResultActiviy;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleResultActiviy;
 
 import java.util.ArrayList;
 
 /**
  * Created by 고승빈 on 2017-07-18.
  */
-public class HistoryFragmentTotal extends Fragment {
+public class HistoryFragmentSample extends Fragment {
 
     /*
           RecycleView
@@ -34,7 +34,7 @@ public class HistoryFragmentTotal extends Fragment {
     /*
         DataSet for RecycleView
     */
-    private ArrayList<HistoryItem> historyItemArrayList;
+    private ArrayList<SampleResultItem> sampleResultItemArrayList;
 
     /*
         Intent
@@ -47,10 +47,10 @@ public class HistoryFragmentTotal extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
 
-        View view = inflater.inflate(R.layout.history_tab_fragment_total,container,false);
+        View view = inflater.inflate(R.layout.history_tab_fragment_sample,container,false);
 
         //RecycleView
-        historyRecycleView = (RecyclerView) view.findViewById(R.id.history_recycler_view);
+        historyRecycleView = (RecyclerView) view.findViewById(R.id.history_sample_recycler_view);
 
         historyRecycleView.setHasFixedSize(true);
 
@@ -58,17 +58,17 @@ public class HistoryFragmentTotal extends Fragment {
         historyRecycleView.setLayoutManager(layoutManager);
 
         // DataSet
-        historyItemArrayList = new ArrayList<HistoryItem>();
-        historyItemArrayList.add(new HistoryItem("강승모" , true , 26 , 4));
-        historyItemArrayList.add(new HistoryItem("이상직" , true , 26 , 3));
-        historyItemArrayList.add(new HistoryItem("박재형" , true , 22 , 1));
-        historyItemArrayList.add(new HistoryItem("김나라" , false , 26 , 4));
-        historyItemArrayList.add(new HistoryItem("사진좀" , true , 29 , 2));
-        historyItemArrayList.add(new HistoryItem("너이다" , false , 34 , 2));
-        historyItemArrayList.add(new HistoryItem("코카콜라" , false , 21 , 1));
-        historyItemArrayList.add(new HistoryItem("펩시" , false , 29 , 3));
+        sampleResultItemArrayList = new ArrayList<SampleResultItem>();
+        sampleResultItemArrayList.add(new SampleResultItem("강승모" , true , 26 , 4));
+        sampleResultItemArrayList.add(new SampleResultItem("이상직" , true , 26 , 3));
+        sampleResultItemArrayList.add(new SampleResultItem("박재형" , true , 22 , 1));
+        sampleResultItemArrayList.add(new SampleResultItem("김나라" , false , 26 , 4));
+        sampleResultItemArrayList.add(new SampleResultItem("사진좀" , true , 29 , 2));
+        sampleResultItemArrayList.add(new SampleResultItem("너이다" , false , 34 , 2));
+        sampleResultItemArrayList.add(new SampleResultItem("코카콜라" , false , 21 , 1));
+        sampleResultItemArrayList.add(new SampleResultItem("펩시" , false , 29 , 3));
 
-        adapter = new HistoryListAdapter(historyItemArrayList);
+        adapter = new HistoryListAdapter(sampleResultItemArrayList);
         historyRecycleView.setAdapter(adapter);
 
         historyRecycleView.addOnItemTouchListener(new HistoryRecycleViewOnItemClickListener(inflater.getContext().getApplicationContext(), historyRecycleView, new HistoryRecycleViewOnItemClickListener.OnItemClickListener() {
@@ -77,7 +77,7 @@ public class HistoryFragmentTotal extends Fragment {
 
                 intent = new Intent();
                 intent.putExtra("index" , position);
-                intent.setClassName(inflater.getContext().getApplicationContext() , SurveyResultActiviy.class.getName());
+                intent.setClassName(inflater.getContext().getApplicationContext() , SampleResultActiviy.class.getName());
 
                 startActivity(intent);
             }

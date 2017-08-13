@@ -27,9 +27,9 @@ public class SampleResultViewPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new SampleResultFragment();
             case 1:
-                return new SampleBarChartFragment();
-            case 2:
                 return new SampleRadarChartFragment();
+            case 2:
+                return new SampleBarChartFragment();
             default:
                 return null;
         }
