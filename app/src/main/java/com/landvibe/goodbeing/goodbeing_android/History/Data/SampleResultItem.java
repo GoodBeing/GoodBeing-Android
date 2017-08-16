@@ -3,7 +3,7 @@ package com.landvibe.goodbeing.goodbeing_android.History.Data;
 /**
  * Created by 고승빈 on 2017-07-18.
  */
-public class HistoryItem {
+public class SampleResultItem {
 
     private String name;
 
@@ -13,10 +13,10 @@ public class HistoryItem {
 
     private int bloodType;
 
-    public HistoryItem() {
+    public SampleResultItem() {
     }
 
-    public HistoryItem(String name, Boolean gender, int age, int bloodType) {
+    public SampleResultItem(String name, Boolean gender, int age, int bloodType) {
         this.name = name;
         this.gender = gender;
         this.age = age;

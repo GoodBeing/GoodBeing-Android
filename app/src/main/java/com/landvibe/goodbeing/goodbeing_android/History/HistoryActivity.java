@@ -11,12 +11,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryViewPagerAdapter;
@@ -68,57 +64,10 @@ public class HistoryActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // chart webview
-        webView = (WebView) findViewById(R.id.webview);
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-
-        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-        webView.setWebViewClient(new WebViewClient() {
-
-            // ProgressBar 적용
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-            public void onPageStarted(WebView view, String url,
-                                      android.graphics.Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                progressBar = (ProgressBar) findViewById(R.id.progress);
-                progressBar.bringToFront();
-                progressBar.getIndeterminateDrawable().setColorFilter(0xFF7b68ee, android.graphics.PorterDuff.Mode.SRC_ATOP);
-                progressBar.setVisibility(View.VISIBLE);
-            }
-
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                progressBar.setVisibility(View.INVISIBLE);
-            }
-
-
-            public void onReceivedError(WebView view, int errorCode,
-                                        String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-                Toast.makeText(HistoryActivity.this, "Error : " + description,
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-        webView.loadUrl("file:///android_asset/GraphChart.html");
-
-
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("전체"));
-        tabLayout.addTab(tabLayout.newTab().setText("진행"));
-        tabLayout.addTab(tabLayout.newTab().setText("완료"));
+        tabLayout.addTab(tabLayout.newTab().setText("시료"));
+        tabLayout.addTab(tabLayout.newTab().setText("설문"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

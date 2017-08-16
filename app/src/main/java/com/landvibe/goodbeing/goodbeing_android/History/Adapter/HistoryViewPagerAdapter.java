@@ -4,9 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.landvibe.goodbeing.goodbeing_android.History.Fragment.HistoryFragmentComplete;
-import com.landvibe.goodbeing.goodbeing_android.History.Fragment.HistoryFragmentConsulting;
-import com.landvibe.goodbeing.goodbeing_android.History.Fragment.HistoryFragmentTotal;
+import com.landvibe.goodbeing.goodbeing_android.History.Fragment.HistoryFragmentSurvey;
+import com.landvibe.goodbeing.goodbeing_android.History.Fragment.HistoryFragmentSample;
 
 /**
  * Created by 고승빈 on 2017-07-18.
@@ -25,11 +24,9 @@ public class HistoryViewPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                return new HistoryFragmentTotal();
+                return new HistoryFragmentSample();
             case 1:
-                return new HistoryFragmentComplete();
-            case 2:
-                return new HistoryFragmentConsulting();
+                return new HistoryFragmentSurvey();
             default:
                 return null;
         }
