@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,12 @@ import android.widget.TextView;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.Main.MainActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Item.SurveyItem;
+
+import java.util.ArrayList;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -32,11 +35,11 @@ public class SurveyResultActiviy extends AppCompatActivity
     private Button gomain;
     private Button gocategory;
     private Button gosample;
-    private TextView survey_result_userid_tv;
-    private TextView survey_result_uiui_tv;
-    private TextView survey_result_score_tv;
-    private TextView survey_result_answer_tv;
 
+    private TextView result_score;
+    private TextView result_opinion;
+
+    private ArrayList<SurveyItem> arraysurvey;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,14 +56,24 @@ public class SurveyResultActiviy extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        arraysurvey = new ArrayList<SurveyItem>();
         gomain = (Button)findViewById(R.id.survey_result_gomain_btn);
         gocategory = (Button)findViewById(R.id.survey_result_gocategory_btn);
         gosample = (Button)findViewById(R.id.survey_result_gosample_btn);
-        survey_result_userid_tv =(TextView)findViewById(R.id.survey_result_userid_tv);
-        survey_result_uiui_tv = (TextView)findViewById(R.id.survey_result_uiui_tv);
-        survey_result_score_tv=(TextView)findViewById(R.id.survey_result_score_tv);
-        survey_result_answer_tv = (TextView)findViewById(R.id.survey_result_answer_tv);
+        result_score =(TextView)findViewById(R.id.survey_result_score);
+        result_opinion = (TextView)findViewById(R.id.survey_result_opinion);
+
+        Intent intt = getIntent();
+        arraysurvey = intt.getParcelableArrayListExtra("SURVEY_RESULT");
+        int resultscore = 0;
+        for(int i = 0;i<arraysurvey.size();i++)
+        {
+            Log.d("score is : ",i + "번 점수는 "+arraysurvey.get(i).getScore());
+            resultscore += arraysurvey.get(i).getScore();
+        }
+        result_score.setText("당신의 굳빙 지수는 " + resultscore + " 입니다.");
+
+
 
         gomain.setOnClickListener(this);
         gocategory.setOnClickListener(this);
@@ -89,7 +102,7 @@ public class SurveyResultActiviy extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -97,7 +110,7 @@ public class SurveyResultActiviy extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
 

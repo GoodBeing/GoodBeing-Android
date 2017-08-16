@@ -5,103 +5,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="30dp"
-    android:orientation="vertical"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="10dp">
-
-        <TextView
-            android:text="@string/survey_1_9_q"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/one_N9"
-            >
-            <RadioButton
-                android:id="@+id/one_N9_1"
-                android:text="아니요"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/one_N9_2"
-                android:text="현재는 복용하지 않지만 과거에 복용한 적이 있다"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/one_N9_3"
-                android:text="예"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/one_N9_q"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_vertical"
-                    android:hint="있다면 약 이름을 입력해주세요"
-                    android:textSize="15dp"
-                    />
-
-
-        </RadioGroup>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="10dp">
-
-
-    <TextView
-            android:text="@string/survey_1_10_q"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/one_N10"
-            >
-            <RadioButton
-                android:id="@+id/one_N10_1"
-                android:text="아니요"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/one_N10_2"
-                android:text="현재는 복용하지 않지만 과거에 복용한 적이 있다"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-                <RadioButton
-                    android:id="@+id/one_N10_3"
-                    android:text="예"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-        </RadioGroup>
-    </LinearLayout>
-
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="@string/survey_1_11_q"
+            android:text="@string/survey_1_31_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -119,39 +23,120 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/one_N11"
+            android:id="@+id/one_N31"
             >
             <RadioButton
-                android:id="@+id/one_N11_1"
-                android:text="아니요"
+                android:id="@+id/one_N31_1"
+                android:text="@string/survey_1_31_a1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <RadioButton
+                android:id="@+id/one_N31_2"
+                android:text="@string/survey_1_31_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
+            <RadioButton
+                android:id="@+id/one_N31_3"
+                android:text="@string/survey_1_31_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/one_N31_4"
+                android:text="@string/survey_1_31_a4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
+        </RadioGroup>
+    </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/one_N11_2"
-                    android:text="예"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
-                <com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.BackPressEditText
-                    android:id="@+id/one_N11_q"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_vertical"
-                    android:hint="있다면 상품명을 입력해주세요"
-                    android:textSize="15dp"
+        <TextView
+            android:text="@string/survey_1_32_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            />
 
-                    />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/one_N32"
+            >
+            <RadioButton
+                android:id="@+id/one_N32_1"
+                android:text="@string/survey_1_32_a1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N32_2"
+                android:text="@string/survey_1_32_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N32_3"
+                android:text="@string/survey_1_32_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/one_N32_4"
+                android:text="@string/survey_1_32_a4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
         </RadioGroup>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
+        <TextView
+            android:text="@string/survey_1_33_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/one_N33"
+            >
+            <RadioButton
+                android:id="@+id/one_N33_1"
+                android:text="@string/survey_1_33_a1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N33_2"
+                android:text="@string/survey_1_33_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N33_3"
+                android:text="@string/survey_1_33_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+    </LinearLayout>
 
 
 </LinearLayout>

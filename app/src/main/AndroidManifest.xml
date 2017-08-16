@@ -60,6 +60,11 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:name=".Survey.SurveyWrite_One.Activity.SurveyStartActivity"
+            android:label="설문 시작"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".Survey.SurveyWrite_One.Activity.SurveyWriteActivity"
             android:label="설문 작성"
             android:theme="@style/AppTheme.NoActionBar">
@@ -80,11 +85,6 @@
         <activity
             android:name=".Sample.Activity.SampleResultActiviy"
             android:label="시료 결과"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
-            android:name=".Login.LoginActivity"
-            android:label="로그인"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 

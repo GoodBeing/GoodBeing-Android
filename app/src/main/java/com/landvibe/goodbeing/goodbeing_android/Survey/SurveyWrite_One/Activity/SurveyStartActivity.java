@@ -1,10 +1,12 @@
-package com.landvibe.goodbeing.goodbeing_android.Login;
+package com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,33 +15,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Main.MainActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
-public class LoginActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener{
+/**
+ * Created by jik on 2017-08-17.
+ */
 
+public class SurveyStartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+    /**
+     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * fragments for each of the sections. We use a
+     * {@link FragmentPagerAdapter} derivative, which will keep every
+     * loaded fragment in memory. If this becomes too memory intensive, it
+     * may be best to switch to a
+     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
     private Intent intent;
-    private EditText LoginActivity_id_et;
-    private EditText LoginActivity_pw_et;
-    private Button LoginActivity_ok_btn;
-    private Button LoginActivity_cancle_btn;
-    private SharedPreferences msharedpreferences;
-    private SharedPreferences.Editor speditor;
+    /**
+     * The {@link ViewPager} that will host the section contents.
+     */
+    private Button start_ok_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_surveystart);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -50,34 +59,20 @@ public class LoginActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        LoginActivity_id_et = (EditText) findViewById(R.id.id_et);
-         LoginActivity_pw_et = (EditText) findViewById(R.id.pw_et);
-         LoginActivity_ok_btn =  (Button) findViewById(R.id.ok_btn);
-         LoginActivity_cancle_btn = (Button) findViewById(R.id.cancle_btn);
-
-        LoginActivity_ok_btn.setOnClickListener(this);
-        LoginActivity_cancle_btn.setOnClickListener(this);
-
-        msharedpreferences = getSharedPreferences("msharedpreferences",MODE_PRIVATE);
-        speditor = msharedpreferences.edit();
-
+        start_ok_btn = (Button) findViewById(R.id.start_btn);
+        start_ok_btn.setOnClickListener(this);
     }
 
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+
         return true;
     }
 
@@ -96,9 +91,8 @@ public class LoginActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -117,7 +111,7 @@ public class LoginActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -125,53 +119,22 @@ public class LoginActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+        return true;    }
+
 
     @Override
     public void onClick(View view) {
-        int idx = 0;
         intent = new Intent();
-        if(view.getId() == R.id.ok_btn)
+        if(view.getId() == R.id.start_btn)
         {
-            String mID = LoginActivity_id_et.getText().toString();
-            String mPW = LoginActivity_pw_et.getText().toString();
-
-
-
-            //idx cookie 로그인 유지//
-            if(idx==0)
-            {
-            speditor.putInt("IDX",idx);
-            speditor.commit();
-            }
-            else
-            {
-                //IDX를 불러오고 해당값이 없을경우 리턴 0
-                idx = msharedpreferences.getInt("IDX",0);
-            }
-            //shared 데이터 삭제
-//            speditor.remove("IDX");
-//            speditor.commit();
-
-            Intent intent = new Intent(this , MainActivity.class);
-            intent.putExtra("IDX",idx);
-            startActivity(intent);
-        }
-        else if(view.getId() == R.id.cancle_btn)
-        {
-            Intent intent = new Intent(this , MainActivity.class);
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
     }
-
-
-
-
 }

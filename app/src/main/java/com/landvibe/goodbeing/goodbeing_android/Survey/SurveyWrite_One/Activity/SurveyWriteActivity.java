@@ -18,11 +18,13 @@ import android.widget.Button;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Adapter.SurveyWriteAdapter_One;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Item.SurveyItem;
+
+import java.util.ArrayList;
 
 /**
  * Created by jik on 2017-07-17.
@@ -39,7 +41,7 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
      */
     private SurveyWriteAdapter_One.SectionsPagerAdapter mSectionsPagerAdapter;
     private Intent intent;
-
+    public ArrayList<SurveyItem> SurveyItemArrayList;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -62,7 +64,12 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        SurveyItemArrayList = new ArrayList<>();
+        SurveyItem nullitem = new SurveyItem(0,0,"",0);
+        for(int i = 0; i<46;i++)
+        {
+            SurveyItemArrayList.add(nullitem);
+        }
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SurveyWriteAdapter_One.SectionsPagerAdapter(getSupportFragmentManager());
@@ -71,12 +78,18 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        mViewPager.addOnPageChangeListener(mSectionsPagerAdapter);
         intent = getIntent();
 
 
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSectionsPagerAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,7 +134,7 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -129,13 +142,18 @@ public class SurveyWriteActivity extends AppCompatActivity implements Navigation
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;    }
+
+
+    public ArrayList<SurveyItem> getarray(){
+        return SurveyItemArrayList;
+    }
 }
 
 

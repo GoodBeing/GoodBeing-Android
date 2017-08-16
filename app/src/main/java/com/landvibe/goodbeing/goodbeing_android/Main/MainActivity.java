@@ -19,11 +19,10 @@ import android.widget.ViewFlipper;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyStartActivity;
 
 import java.util.List;
 
@@ -161,7 +160,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -175,27 +174,27 @@ public class MainActivity extends AppCompatActivity
         switch(view.getId())
         {
             case R.id.survey1:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey2:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey3:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey4:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey5:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey6:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
 
