@@ -22,7 +22,6 @@ import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
 
 import java.util.List;
 
@@ -182,7 +181,7 @@ public class MainAfterLoginActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.enter_survey_ibtn:
-                intent = new Intent(this , SurveyWriteActivity.class);
+                intent = new Intent(this , SurveySearchActivity.class);
                 startActivity(intent);
                 break;
             case R.id.enter_sample_ibtn:
@@ -201,9 +200,6 @@ public class MainAfterLoginActivity extends AppCompatActivity
                 intent = new Intent(this , FaqActivity.class);
                 startActivity(intent);
                 break;
-
-
-
 
         }
     }

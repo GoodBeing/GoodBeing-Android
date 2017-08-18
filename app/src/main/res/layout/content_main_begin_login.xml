@@ -57,65 +57,140 @@
 </LinearLayout>
 
 
-    <TableLayout
-        android:layout_weight="1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
 
-        <TableRow
-            android:layout_height="wrap_content"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_weight="1">
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical|center_horizontal"
+            >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    >
+                        <ImageButton
+                        android:id="@+id/survey1"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_normal"
+                        android:layout_gravity="center_vertical|center_horizontal"
 
-            <ImageButton
-                android:id="@+id/survey1"
-                android:text="설문1"
-                android:src="@drawable/ic_description_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/survey2"
-                android:text="설문2"
-                android:src="@drawable/ic_mode_edit_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/survey3"
-                android:text="설문3"
-                android:src="@drawable/ic_opacity_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-        </TableRow>
 
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_weight="1">
+                            />
+                    <ImageButton
+                        android:id="@+id/survey2"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_older"
+                        android:layout_gravity="center_vertical|center_horizontal"
 
-            <ImageButton
-                android:id="@+id/survey4"
-                android:text="설문4"
-                android:src="@drawable/ic_question_answer_black_36dp"
+
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/survey4"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_partner"
+                        android:layout_gravity="center_vertical|center_horizontal"
+
+
+                        />
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/survey5"
-                android:text="설문5"
-                android:src="@drawable/ic_date_range_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-            <ImageButton
-                android:id="@+id/survey6"
-                android:text="설문6"
-                android:src="@drawable/ic_favorite_border_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical|center_horizontal"
+
+                >
+
+
+                    <ImageButton
+                        android:id="@+id/survey3"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_pregnant"
+                        android:layout_gravity="center_vertical|center_horizontal"
+
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/survey5"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_teenager"
+
+
+
+                        />
+                    <ImageButton
+                        android:id="@+id/survey6"
+                        android:layout_height="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_family"
+                        android:layout_gravity="center_vertical|center_horizontal"
+
+                    />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/result_ex"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/survey_result_ex"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        />
+
+
+                    <ImageButton
+                        android:id="@+id/survey7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/survey_group"
+                        android:layout_gravity="center_vertical|center_horizontal"
+
+                        />
+                </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>

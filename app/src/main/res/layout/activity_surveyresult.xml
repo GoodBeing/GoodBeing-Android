@@ -34,7 +34,11 @@
       <LinearLayout
           android:layout_height="match_parent"
           android:layout_width="match_parent"
-          android:orientation="vertical">
+          android:orientation="vertical"
+          android:paddingBottom="@dimen/activity_vertical_margin"
+          android:paddingLeft="@dimen/activity_horizontal_margin"
+          android:paddingRight="@dimen/activity_horizontal_margin"
+          android:paddingTop="30dp">
 
           <LinearLayout
               android:layout_width="match_parent"
@@ -81,23 +85,28 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical|center_horizontal"
+            >
 
         <Button
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/survey_result_gomain_btn"
-            android:text="메인으로"/>
+            android:text="메인으로"
+            android:layout_gravity="center_horizontal|center_vertical"/>
         <Button
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/survey_result_gocategory_btn"
-            android:text="다른 설문하기"/>
+            android:text="다른 설문하기"
+            android:layout_gravity="center_horizontal|center_vertical"/>
         <Button
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/survey_result_gosample_btn"
-            android:text="시료하러가기"/>
+            android:text="시료하러가기"
+            android:layout_gravity="center_horizontal|center_vertical"/>
 
         </LinearLayout>
 

@@ -57,65 +57,87 @@
 </LinearLayout>
 
 
-    <TableLayout
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
 
-        <TableRow
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_weight="1">
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <ImageButton
                 android:id="@+id/enter_intro_ibtn"
                 android:text="서비스소개"
-                android:src="@drawable/ic_description_black_36dp"
+                android:background="@drawable/gb_intro"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                />
             <ImageButton
                 android:id="@+id/enter_survey_ibtn"
                 android:text="설문작성"
-                android:src="@drawable/ic_mode_edit_black_36dp"
+                android:background="@drawable/gb_survey"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                />
             <ImageButton
                 android:id="@+id/enter_sample_ibtn"
                 android:text="시료측정"
-                android:src="@drawable/ic_opacity_black_36dp"
+                android:background="@drawable/gb_sample"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_weight="1">
-
-            <ImageButton
-                android:id="@+id/enter_myinfo_ibtn"
-                android:text="내정보"
-                android:src="@drawable/ic_question_answer_black_36dp"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
+            android:layout_height="0dp"
+            android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/enter_history_ibtn"
                 android:text="이력관리"
-                android:src="@drawable/ic_date_range_black_36dp"
+                android:background="@drawable/gb_result"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                />
+            <ImageButton
+                android:id="@+id/enter_myinfo_ibtn"
+                android:text="내정보"
+                android:background="@drawable/gb_history"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                />
+
             <ImageButton
                 android:id="@+id/enter_faq_ibtn"
                 android:text="FAQ"
-                android:src="@drawable/ic_favorite_border_black_36dp"
+                android:background="@drawable/gb_faq"
                 android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"/>
-        </TableRow>
-    </TableLayout>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

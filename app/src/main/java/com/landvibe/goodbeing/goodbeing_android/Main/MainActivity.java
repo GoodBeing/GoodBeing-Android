@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity
     private ImageButton survey_4_ibtn;
     private ImageButton survey_5_ibtn;
     private ImageButton survey_6_ibtn;
+    private ImageButton survey_7_ibtn;
 
+    private ImageButton survey_result_ex_ibtn;
     private Intent intent;
 
     private ViewFlipper flipper;
@@ -64,7 +66,9 @@ public class MainActivity extends AppCompatActivity
         survey_4_ibtn = (ImageButton)findViewById(R.id.survey4);
         survey_5_ibtn = (ImageButton)findViewById(R.id.survey5);
         survey_6_ibtn = (ImageButton)findViewById(R.id.survey6);
+        survey_7_ibtn = (ImageButton)findViewById(R.id.survey7);
 
+        survey_result_ex_ibtn = (ImageButton)findViewById(R.id.result_ex);
         survey_1_ibtn.setOnClickListener(this);
         survey_2_ibtn.setOnClickListener(this);
         survey_3_ibtn.setOnClickListener(this);
