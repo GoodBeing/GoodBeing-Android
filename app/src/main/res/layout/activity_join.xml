@@ -40,11 +40,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/goodbeingpil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center_horizontal"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="left">
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -53,8 +58,7 @@
                         android:id="@+id/et_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:focusable="true"
-                        android:maxLength="10"
+                        android:maxLength="15"
                         android:hint="아이디를 입력하세요"
                         android:singleLine="true"
                         android:lines="1" />
@@ -126,35 +130,12 @@
                         android:layout_height="wrap_content"
                         android:text="생년월일 : "/>
                     <EditText
-                        android:id="@+id/et_birth_year"
+                        android:id="@+id/et_birthday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLength="4"
-                        android:hint="xxxx"
-                        android:singleLine="true"
-                        android:lines="1"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"/>
-                    <EditText
-                        android:id="@+id/et_birth_month"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="2"
-                        android:hint="xx"
-                        android:singleLine="true"
-                        android:lines="1"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"/>
-                    <EditText
-                        android:id="@+id/et_birth_day"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="2"
-                        android:hint="xx"
+                        android:maxLength="6"
+                        android:hint="960101"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:lines="1"/>
                 </LinearLayout>
@@ -172,6 +153,7 @@
                         android:layout_height="wrap_content"
                         android:maxLength="5"
                         android:hint="xxx.x"
+                        android:inputType="numberDecimal"
                         android:singleLine="true"
                         android:lines="1"/>
                     <TextView
@@ -193,6 +175,7 @@
                         android:layout_height="wrap_content"
                         android:maxLength="5"
                         android:hint="xxx.x"
+                        android:inputType="numberDecimal"
                         android:singleLine="true"
                         android:lines="1"/>
                     <TextView
@@ -226,35 +209,12 @@
                         android:layout_height="wrap_content"
                         android:text="핸드폰 번호 : "/>
                     <EditText
-                        android:id="@+id/et_firstphone"
+                        android:id="@+id/et_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLength="3"
-                        android:hint="01x"
-                        android:singleLine="true"
-                        android:lines="1"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"/>
-                    <EditText
-                        android:id="@+id/et_secondphone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="4"
-                        android:hint="xxxx"
-                        android:singleLine="true"
-                        android:lines="1"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"/>
-                    <EditText
-                        android:id="@+id/et_thirdphone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="4"
-                        android:hint="xxxx"
+                        android:maxLength="11"
+                        android:hint="01234567890"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:lines="1"/>
                     <Button
@@ -277,32 +237,11 @@
                         android:layout_height="wrap_content"
                         android:maxLength="20"
                         android:hint="이메일을 입력하세요"
+                        android:inputType="textEmailAddress"
                         android:singleLine="true"
                         android:lines="1"/>
                     <Button
                         android:id="@+id/email_but"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="인증" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="보호자 아이디 : "/>
-                    <EditText
-                        android:id="@+id/et_parent_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLength="15"
-                        android:hint="보호자 아이디를 입력하세요"
-                        android:singleLine="true"
-                        android:lines="1"/>
-                    <Button
-                        android:id="@+id/parent_id_but"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="인증" />
@@ -313,7 +252,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="회원가입" />
+                    android:text="회원가입"
+                    android:layout_marginBottom="10dp"/>
             </LinearLayout>
         </ScrollView>
 

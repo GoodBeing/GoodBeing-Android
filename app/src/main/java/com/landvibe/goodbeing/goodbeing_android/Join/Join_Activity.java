@@ -31,13 +31,13 @@ import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 public class Join_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    private EditText et_id,et_pw,et_pw_confirm,et_name;
-    private EditText et_birth_year,et_birth_month,et_birth_day,et_height,et_weight;
-    private EditText et_place,et_firstphone,et_secondphone,et_thirdphone,et_email,et_parent_id;
-    private String sId,sPw,sPw_confirm,sName,sBirth,sHeight,sWeight,sPlace,sPhone,sEmail,sParent_id;
+    private EditText et_id, et_pw, et_pw_confirm, et_name;
+    private EditText et_birthday, et_height, et_weight;
+    private EditText et_place, et_phone, et_email;
+    private String sId, sPw, sPw_confirm, sName, sBirth, sHeight, sWeight, sPlace, sPhone, sEmail;
     private Intent intent;
 
-    private Button join_but,id_but,phone_but,email_but,parent_id_but;
+    private Button join_but, id_but, phone_but, email_but;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,49 +55,30 @@ public class Join_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        et_id=(EditText)findViewById(R.id.et_id);
-        et_pw=(EditText)findViewById(R.id.et_pw);
-        et_pw_confirm=(EditText)findViewById(R.id.et_pw_confirm);
-        et_name=(EditText)findViewById(R.id.et_name);
-        et_birth_year=(EditText)findViewById(R.id.et_birth_year);
-        et_birth_month=(EditText)findViewById(R.id.et_birth_month);
-        et_birth_day=(EditText)findViewById(R.id.et_birth_day);
-        et_height=(EditText)findViewById(R.id.et_height);
-        et_weight=(EditText)findViewById(R.id.et_weight);
-        et_place=(EditText)findViewById(R.id.et_place);
-        et_firstphone=(EditText)findViewById(R.id.et_firstphone);
-        et_secondphone=(EditText)findViewById(R.id.et_secondphone);
-        et_thirdphone=(EditText)findViewById(R.id.et_thirdphone);
-        et_email=(EditText)findViewById(R.id.et_email);
-        et_parent_id=(EditText)findViewById(R.id.et_parent_id);
+        et_id = (EditText) findViewById(R.id.et_id);
+        et_pw = (EditText) findViewById(R.id.et_pw);
+        et_pw_confirm = (EditText) findViewById(R.id.et_pw_confirm);
+        et_name = (EditText) findViewById(R.id.et_name);
+        et_birthday = (EditText) findViewById(R.id.et_birthday);
+        et_height = (EditText) findViewById(R.id.et_height);
+        et_weight = (EditText) findViewById(R.id.et_weight);
+        et_place = (EditText) findViewById(R.id.et_place);
+        et_phone = (EditText) findViewById(R.id.et_phone);
+        et_email = (EditText) findViewById(R.id.et_email);
 
 
-        sId=et_id.getText().toString();
-        sPw=et_pw.getText().toString();
-        sPw_confirm=et_pw_confirm.getText().toString();
-        sName=et_name.getText().toString();
-        sBirth=et_birth_year.getText().toString()+et_birth_month.getText().toString()+et_birth_day.getText().toString();
-        sHeight=et_height.getText().toString();
-        sWeight=et_weight.getText().toString();
-        sPlace=et_place.getText().toString();
-        sPhone=et_firstphone.getText().toString()+et_secondphone.getText().toString()+et_thirdphone.getText().toString();
-        sEmail=et_email.getText().toString();
-        sParent_id=et_parent_id.getText().toString();
-
-        join_but=(Button)findViewById(R.id.join_but);
+        join_but = (Button) findViewById(R.id.join_but);
         join_but.setOnClickListener(this);
 
-        id_but=(Button)findViewById(R.id.id_but);
+        id_but = (Button) findViewById(R.id.id_but);
         id_but.setOnClickListener(this);
 
-        phone_but=(Button)findViewById(R.id.phone_but);
+        phone_but = (Button) findViewById(R.id.phone_but);
         phone_but.setOnClickListener(this);
 
-        email_but=(Button)findViewById(R.id.email_but);
+        email_but = (Button) findViewById(R.id.email_but);
         email_but.setOnClickListener(this);
 
-        parent_id_but=(Button)findViewById(R.id.parent_id_but);
-        parent_id_but.setOnClickListener(this);
 
     }
 
@@ -110,26 +91,26 @@ public class Join_Activity extends AppCompatActivity
         intent = new Intent();
 
         if (id == R.id.nav_intro) {
-            intent.setClassName(this , IntroActivity.class.getName());
+            intent.setClassName(this, IntroActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_history) {
-            intent.setClassName(this , HistoryActivity.class.getName());
+            intent.setClassName(this, HistoryActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_surveyWrite) {
-            intent.setClassName(this , SurveySearchActivity.class.getName());
+            intent.setClassName(this, SurveySearchActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_sample) {
-            intent.setClassName(this , SampleMainActivity.class.getName());
+            intent.setClassName(this, SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
             ;
         } else if (id == R.id.nav_faq) {
             ;
-        }else if (id ==R.id.nav_log) {
-            intent.setClassName(this ,Login_Activity.class.getName());
+        } else if (id == R.id.nav_log) {
+            intent.setClassName(this, Login_Activity.class.getName());
             startActivity(intent);
-        }else if (id==R.id.nav_join){
-            intent.setClassName(this ,Join_Activity.class.getName());
+        } else if (id == R.id.nav_join) {
+            intent.setClassName(this, Join_Activity.class.getName());
             startActivity(intent);
         }
 
@@ -141,52 +122,130 @@ public class Join_Activity extends AppCompatActivity
     @Override
     public void onClick(View v) {
 
-        if(v==join_but){
-            new AlertDialog.Builder(this)
-                    .setTitle("회원가입 완료!")
-                    .setMessage("회원가입이 완료되었습니다!")
-                    .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dlg, int something){
-                        }
-                    })
-                    .show();
-        }else if(v==id_but){
+        boolean joinCheck = false;
+        boolean passwordCheck = false;
+        int pwCnt = 0;
+        sId = et_id.getText().toString();
+        sPw = et_pw.getText().toString();
+        sPw_confirm = et_pw_confirm.getText().toString();
+        sName = et_name.getText().toString();
+        sBirth = et_birthday.getText().toString();
+        sHeight = et_height.getText().toString();
+        sWeight = et_weight.getText().toString();
+        sPlace = et_place.getText().toString();
+        sPhone = et_phone.getText().toString();
+        sEmail = et_email.getText().toString();
+        if (v == join_but) {
+            if (sId.length() < 3 ||sId.length()>15) {
+                et_id.setError("적어도 3자리 이상의 아이디를 적어주세요");
+                joinCheck = false;
+            } else {
+                et_id.setError(null);
+                joinCheck = true;
+            }
+            if (sPw.length() < 4 || sPw.length() > 15) {
+                et_pw.setError("비밀번호는 4~15자리 영문,숫자를 사용하세요");
+                joinCheck = false;
+            } else {
+                et_pw.setError(null);
+                joinCheck = true;
+            }if (sPw.length() != sPw_confirm.length()) {
+                et_pw_confirm.setError("같은 비밀번호를 입력하세요");
+            } else {
+                et_pw_confirm.setError(null);
+            }if (sPw.length() == sPw_confirm.length()) {
+                for (int i = 0; i < sPw.length(); i++) {
+                    if (sPw.charAt(i) == sPw_confirm.charAt(i)) {
+                        pwCnt++;
+                    }
+                }
+                if (pwCnt == sPw.length()) {
+                    et_pw_confirm.setError(null);
+                    joinCheck = true;
+                    passwordCheck = true;
+                    pwCnt=0;
+                } else {
+                    et_pw_confirm.setError("같은 비밀번호를 입력하세요");
+                    joinCheck = false;
+                    pwCnt=0;
+                    passwordCheck = false;
+                }
+            }if (sName.length() == 0 || sName.length() > 5) {
+                et_name.setError("올바른 이름을 입력하세요");
+                joinCheck = false;
+            } else {
+                et_name.setError(null);
+                joinCheck = true;
+            }if(sBirth.length()==0||sBirth.length()<6){
+                et_birthday.setError("올바른 생년월일6자리를 입력하세요.");
+                joinCheck=false;
+            }else{
+                et_birthday.setError(null);
+                joinCheck=true;
+            }if(sHeight.length()==0){
+                et_height.setError("키를 입력하세요.");
+                joinCheck=false;
+            }else{
+                et_height.setError(null);
+                joinCheck=true;
+            }if(sWeight.length()==0){
+                et_weight.setError("몸무게를 입력하세요.");
+                joinCheck=false;
+            }else{
+                et_weight.setError(null);
+                joinCheck=true;
+            }if(sPlace.length()==0){
+                et_place.setError("주소를 입력하세요.");
+                joinCheck=false;
+            }else{
+                et_place.setError(null);
+                joinCheck=true;
+            }if(sPhone.length()==0||sPhone.length()<9){
+                et_phone.setError("올바른 핸드폰번호를 입력하세요.");
+                joinCheck=false;
+            }else{
+                et_phone.setError(null);
+                joinCheck=true;
+            }
+            if (v == join_but && joinCheck == true && passwordCheck == true) {
+                new AlertDialog.Builder(this)
+                        .setTitle("회원가입 완료!")
+                        .setMessage("회원가입이 완료되었습니다!")
+                        .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dlg, int something) {
+                            }
+                        })
+                        .show();
+            }
+        } else if (v == id_but) {
             new AlertDialog.Builder(this)
                     .setTitle("사용가능!")
                     .setMessage("사용가능한 아이디 입니다!")
                     .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dlg, int something){
+                        public void onClick(DialogInterface dlg, int something) {
                         }
                     })
                     .show();
-        }else if(v==phone_but){
+        } else if (v == phone_but) {
             new AlertDialog.Builder(this)
                     .setTitle("인증완료!")
                     .setMessage("핸드폰 인증이 완료되었습니다!")
                     .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dlg, int something){
+                        public void onClick(DialogInterface dlg, int something) {
                         }
                     })
                     .show();
-        }else if(v==email_but){
+        } else if (v == email_but) {
             new AlertDialog.Builder(this)
                     .setTitle("인증완료!")
                     .setMessage("이메일 인증이 완료되었습니다!")
                     .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dlg, int something){
-                        }
-                    })
-                    .show();
-        }else if(v==parent_id_but){
-            new AlertDialog.Builder(this)
-                    .setTitle("인증완료!")
-                    .setMessage("부모 인증이 완료되었습니다!")
-                    .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dlg, int something){
+                        public void onClick(DialogInterface dlg, int something) {
                         }
                     })
                     .show();
         }
     }
 }
+
 
