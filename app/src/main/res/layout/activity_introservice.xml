@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".Intro.Intro_GB_Activity">
+        tools:context=".Intro.Intro_Service_Activity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -48,17 +48,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/intro_image_1"
+                    android:id="@+id/intro_service_image"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/introgb1"/>
-                <ImageView
-                    android:id="@+id/intro_image_2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/introgb2"/>
+                    android:src="@drawable/introservice"/>
                 <TextView
                     android:id="@+id/intro_text_link"
                     android:layout_width="match_parent"

@@ -25,7 +25,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#FF00c700"
+                android:background="#B91A4D"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
@@ -47,18 +47,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/intro_text_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:breakStrategy="balanced"
-                    android:textSize="19sp"/>
                 <ImageView
-                    android:id="@+id/intro_image"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/intro_purpose_image"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="center"
-                    android:src="@drawable/introimage"/>
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/purimage"/>
                 <TextView
                     android:id="@+id/intro_text_link"
                     android:layout_width="match_parent"

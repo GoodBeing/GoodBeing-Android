@@ -25,7 +25,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#FF00c700"
+                android:background="#B91A4D"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
@@ -42,6 +42,8 @@
             android:layout_marginRight="10dp"
             android:clickable="true">
         </ListView>
+
+
 
 
     </android.support.design.widget.CoordinatorLayout>
