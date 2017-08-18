@@ -69,14 +69,14 @@
                 android:gravity="center_vertical|center_horizontal"
                 />
 
-          <TextView
+          <com.github.mikephil.charting.charts.RadarChart
+              android:id="@+id/survey_result_radar_chart"
+              android:layout_gravity="center_vertical"
               android:layout_width="match_parent"
               android:layout_height="0dp"
-              android:layout_weight="2"
-              android:text="그래프가 들어갈 부분"
-              android:layout_gravity="center_horizontal|center_vertical"
-              android:gravity="center_vertical|center_horizontal"
-              />
+              android:layout_margin="5dp"
+              android:layout_weight="2"/>
+
           </LinearLayout>
 
 

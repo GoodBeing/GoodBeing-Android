@@ -1,6 +1,7 @@
 package com.landvibe.goodbeing.goodbeing_android.Survey;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +15,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.RadarChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.RadarData;
+import com.github.mikephil.charting.data.RadarDataSet;
+import com.github.mikephil.charting.data.RadarEntry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
@@ -23,6 +31,7 @@ import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivi
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Item.SurveyItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 고승빈 on 2017-07-17.
@@ -74,6 +83,53 @@ public class SurveyResultActiviy extends AppCompatActivity
         result_score.setText("당신의 굳빙 지수는 " + resultscore + " 입니다.");
 
 
+        RadarChart radarChart = (RadarChart)findViewById(R.id.survey_result_radar_chart);
+        radarChart.setRotationEnabled(false);
+
+        /* 그래프 데이터 입력 */
+        List<RadarEntry> entries = new ArrayList<>();
+
+        entries.add(new RadarEntry(10));
+        entries.add(new RadarEntry(20));
+        entries.add(new RadarEntry(30));
+        entries.add(new RadarEntry(40));
+        entries.add(new RadarEntry(10));
+        entries.add(new RadarEntry(20));
+        entries.add(new RadarEntry(30));
+        entries.add(new RadarEntry(40));
+
+        /* 그래프 라벨 입력 */
+        ArrayList xVals = new ArrayList();
+
+        xVals.add("주거");
+        xVals.add("노화");
+        xVals.add("직업");
+        xVals.add("수면");
+        xVals.add("화장품");
+        xVals.add("해독식품");
+        xVals.add("유해식품");
+        xVals.add("신진대사");
+
+        /* 데이터 세부 설정 */
+        RadarDataSet set = new RadarDataSet(entries, null);
+        set.setColor(Color.BLUE);
+        set.setDrawFilled(true);
+        RadarData radarData = new RadarData(set);
+
+        /* 목차 설정 */
+        Legend legend = radarChart.getLegend();
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+
+        XAxis xAxis = radarChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
+
+        /* 그래프 설정 */
+        radarChart.getYAxis().setEnabled(false);
+        radarChart.getLegend().setEnabled(false);
+        radarChart.setDescription(null);
+        radarChart.setData(radarData);
+        radarChart.invalidate();
 
         gomain.setOnClickListener(this);
         gocategory.setOnClickListener(this);
