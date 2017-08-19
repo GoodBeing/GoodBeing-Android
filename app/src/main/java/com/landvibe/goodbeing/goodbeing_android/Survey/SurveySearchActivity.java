@@ -19,8 +19,6 @@ import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.RequestParams;
 
 /**
  * Created by 고승빈 on 2017-07-14.
@@ -35,8 +33,7 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
     private ImageView oldMan;
     private ImageView disabled;
     private ImageView other;
-    private AsyncHttpClient mHttpClient = new AsyncHttpClient();
-    private RequestParams params = new RequestParams();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -59,6 +59,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
         validator = new Validator(this);
         validator.setValidationListener(this);
 
+
+
+
     }
 
     @Override
