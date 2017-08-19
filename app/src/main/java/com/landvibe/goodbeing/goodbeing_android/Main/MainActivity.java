@@ -19,6 +19,7 @@ import android.widget.ViewFlipper;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , SampleMainActivity.class.getName());
+            intent.setClassName(this , LoginActivity.class.getName());
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
