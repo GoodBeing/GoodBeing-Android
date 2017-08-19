@@ -5,7 +5,7 @@
 
 
     <ImageView
-        android:src="@drawable/sample_pic_2"
+        android:src="@drawable/banner_sampleresult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
