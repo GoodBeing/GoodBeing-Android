@@ -7,6 +7,7 @@
 
     <string name="action_settings">Settings</string>
 
+
     <string name="action_sign_in_short">Register</string>
     <string name="id">ID</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -37,4 +38,215 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Id to sent you password reset instructions.</string>
+
+
+    <string name="survey_1_6_q">6. 부양 가족이 있습니까?</string>
+    <string name="survey_1_7_q">7. 직업적으로 유해물질(농약, 휘발유 등 화학물질)에 노출됩니까?</string>
+    <string name="survey_1_8_q">8. 질병이 있습니까?</string>
+    <string name="survey_1_9_q">9. 복용하는 약이 있습니까?</string>
+    <string name="survey_1_10_q">10. 평소 비타민C가 포함된 영양제를 섭취하고 있습니까??</string>
+    <string name="survey_1_11_q">11. 건강 기능성 식품이나 영양제를 복용하십니까?</string>
+    <string name="survey_1_12_q">12. 흡연을 하십니까?</string>
+    <string name="survey_1_13_q">13. 가족이나 매일 만나는 사람들이 담배를 피웁니까?</string>
+    <string name="survey_1_14_q">14. 지금까지 평생 살던 집과 기간은?</string>
+
+    <string name="survey_1_15_q">15. 집 청소는 얼마나 자주 하는가?</string>
+    <string name="survey_1_16_q">16. 외출 시 마스크를 착용합니까?</string>
+    <string name="survey_1_17_q">17. 자동차 주유를 직접하는 횟수는?</string>
+    <string name="survey_1_18_q">18. 음주 빈도는??</string>
+    <string name="survey_1_19_q">19. 평소 커피를 얼마나 마시나요?</string>
+    <string name="survey_1_20_q">20. 평소 외식 빈도를 표하시오</string>
+    <string name="survey_1_21_q">21. 주로 먹는 식품은? </string>
+    <string name="survey_1_22_q">22. 즐겨 먹는 음식의 종류는 ?</string>
+    <string name="survey_1_23_q">23. 하루 식사량은 ?</string>
+    <string name="survey_1_24_q">24. 전자렌지 사용 빈도는?</string>
+    <string name="survey_1_25_q">25. 야채 등 음식을 잘 씻어 드십니까?</string>
+    <string name="survey_1_26_q">26. 야채들을 세척할 때 주방세제를 사용합니까?</string>
+    <string name="survey_1_27_q">27. 불에 직접 구운 불고기, 튀긴 닭 등 타고 튀긴 음식을 자주 먹습니까?</string>
+    <string name="survey_1_28_q">28. 평소 식사량이 어느 정도 인가요?</string>
+    <string name="survey_1_29_q">29. 얼마나 자주 인스턴트 식품을 먹습니까?</string>
+    <string name="survey_1_30_q">30. 육류를 얼마나 자주 섭취합니까?</string>
+    <string name="survey_1_31_q">31.‘요쿠르트나 과일 배’를 자주 먹습니까?</string>
+    <string name="survey_1_32_q">32. 녹즙, 야채나 과일을 그대로 혹은 쥬스로 섭취회수는?</string>
+    <string name="survey_1_33_q">33. 하루 물 섭취량은?</string>
+    <string name="survey_1_34_q">34. 가스 등 불 앞에서 조리하는데 소비하는 시간은?</string>
+    <string name="survey_1_35_q">35. 캔으로 된 식품(참치, 햄 등)을 어느 정도 드십니까? </string>
+    <string name="survey_1_36_q">36. 바퀴약, 모기약(바르는 모기약포함), 농약 등을 자주 사용하십니까?</string>
+    <string name="survey_1_37_q">37. 염색 또는 파마를 하는 횟수를 고르시오</string>
+    <string name="survey_1_38_q">38. 색조화장품을 얼마나 합니까</string>
+    <string name="survey_1_39_q">39. 샴푸 사용하는 횟수?</string>
+    <string name="survey_1_40_q">40. 평소에 느끼는 스트레스는 어느 정도는?</string>
+    <string name="survey_1_41_q">41. 1년에 감기에 걸리는 횟수는</string>
+    <string name="survey_1_42_q">42. 하루 스마트폰 사용량은?</string>
+    <string name="survey_1_43_q">43. 하루에 컴퓨터 이용시간이 얼마나 되십니까? </string>
+    <string name="survey_1_44_q">44. 평소 수면의 깊이는?</string>
+    <string name="survey_1_45_q">45. 당신의 현재 느낌과 가장 가까운 것 하나를 고르시오(7번으로 갈 수록 힘든 상태입니다.)</string>
+    <string name="survey_1_46_q">46. 사우나나 운동, 작업 등으로 땀을 자주 냅니까?</string>
+
+    <string name="survey_1_15_a1"> 거의 하지 않는다</string>
+    <string name="survey_1_15_a2"> 한 달에 1~2회</string>
+    <string name="survey_1_15_a3"> 1주일에 1~2회</string>
+    <string name="survey_1_15_a4"> 날마다</string>
+
+    <string name="survey_1_16_a1"> 거의 사용하지 않는다</string>
+    <string name="survey_1_16_a2"> 생각나면 쓴다</string>
+    <string name="survey_1_16_a3"> 주 1~2회</string>
+    <string name="survey_1_16_a4"> 주 3회 이상</string>
+
+    <string name="survey_1_17_a1"> 거의 하지 않는다</string>
+    <string name="survey_1_17_a2"> 한 달에 1~2회</string>
+    <string name="survey_1_17_a3"> 주 1~2회</string>
+    <string name="survey_1_17_a4"> 주 3회 이상</string>
+
+    <string name="survey_1_18_a1"> 거의 마시지 않는다</string>
+    <string name="survey_1_18_a2"> 한 달에 1~2회</string>
+    <string name="survey_1_18_a3"> 주 1~2회</string>
+    <string name="survey_1_18_a4"> 주 3회 이상</string>
+
+    <string name="survey_1_19_a1"> 거의 마시지 않는다</string>
+    <string name="survey_1_19_a2"> 일주일에 1~2잔</string>
+    <string name="survey_1_19_a3"> 날마다 1~2잔</string>
+    <string name="survey_1_19_a4"> 날마다 3잔 이상</string>
+
+    <string name="survey_1_20_a1"> 거의 하지 않는다</string>
+    <string name="survey_1_20_a2"> 주 1회 정도</string>
+    <string name="survey_1_20_a3"> 주 2~3회</string>
+    <string name="survey_1_20_a4"> 매일 1회</string>
+    <string name="survey_1_20_a5"> 매일 2회 이상</string>
+
+    <string name="survey_1_21_a1"> 야채 위주</string>
+    <string name="survey_1_21_a2"> 골고루</string>
+    <string name="survey_1_21_a3"> 생선 위주</string>
+    <string name="survey_1_21_a4"> 육류 위주</string>
+
+    <string name="survey_1_22_a1"> 한식(김치, 찌게 등)</string>
+    <string name="survey_1_22_a2"> 중식(짜장면, 탕수육 등)</string>
+    <string name="survey_1_22_a3"> 양식(햄버거, 스테이크 등)</string>
+
+    <string name="survey_1_23_a1"> 1끼</string>
+    <string name="survey_1_23_a2"> 2끼</string>
+    <string name="survey_1_23_a3"> 3끼</string>
+    <string name="survey_1_23_a4"> 3끼 이상</string>
+
+    <string name="survey_1_24_a1"> 거의 사용하지 않는다</string>
+    <string name="survey_1_24_a2"> 1주일에 1~2회</string>
+    <string name="survey_1_24_a3"> 1주일에 3~4회</string>
+    <string name="survey_1_24_a4"> 날마다 1~2회</string>
+    <string name="survey_1_24_a5"> 날마다 수회</string>
+
+    <string name="survey_1_25_a1"> 거의 씻지 않고 그대로 먹는다</string>
+    <string name="survey_1_25_a2"> 1번 정도 씻어 먹는다</string>
+    <string name="survey_1_25_a3"> 3번 이상 깨끗이 씻어 먹는다</string>
+
+    <string name="survey_1_26_a1"> 거의 사용하지 않는다</string>
+    <string name="survey_1_26_a2"> 가끔 사용한다</string>
+    <string name="survey_1_26_a3"> 늘 사용한다</string>
+
+    <string name="survey_1_27_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_27_a2"> 한 달에 1~2번</string>
+    <string name="survey_1_27_a3"> 일주일에 1~2번</string>
+    <string name="survey_1_27_a4"> 3~4일에 1~2번</string>
+    <string name="survey_1_27_a5"> 2일 한번</string>
+    <string name="survey_1_27_a6"> 날마다</string>
+
+    <string name="survey_1_28_a1"> 조금 부족하다고 느낄 정도로 먹는다</string>
+    <string name="survey_1_28_a2"> 적당하다고 느낄 만큼 먹는다</string>
+    <string name="survey_1_28_a3"> 배가 차도 조금 더 배부르게 먹는다</string>
+    <string name="survey_1_28_a4"> 매우 배부른 상태에 이를 때 까지 먹는다</string>
+
+    <string name="survey_1_29_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_29_a2"> 한 달에 1~2번</string>
+    <string name="survey_1_29_a3"> 일주일에 1~2번</string>
+    <string name="survey_1_29_a4"> 3~4일에 1~2번</string>
+    <string name="survey_1_29_a5"> 2일 한번</string>
+    <string name="survey_1_29_a6"> 날마다</string>
+
+    <string name="survey_1_30_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_30_a2"> 1주일에 1회</string>
+    <string name="survey_1_30_a3"> 3~4일에 1회</string>
+    <string name="survey_1_30_a4"> 2일에 1회</string>
+    <string name="survey_1_30_a5"> 날마다</string>
+
+    <string name="survey_1_31_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_31_a2"> 1주일에 1회</string>
+    <string name="survey_1_31_a3"> 3~4일에 1회</string>
+    <string name="survey_1_31_a4"> 날마다</string>
+
+    <string name="survey_1_32_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_32_a2"> 1주일에 1~2회</string>
+    <string name="survey_1_32_a3"> 1주일에 3~4회</string>
+    <string name="survey_1_32_a4"> 날마다</string>
+
+    <string name="survey_1_33_a1"> 0.5리터 미만</string>
+    <string name="survey_1_33_a2"> 0.5 ~ 1 리터</string>
+    <string name="survey_1_33_a3"> 1리터 이상</string>
+
+    <string name="survey_1_34_a1"> 거의 없다</string>
+    <string name="survey_1_34_a2"> 하루 1시간 미만</string>
+    <string name="survey_1_34_a3"> 하루 1시간 이상</string>
+
+    <string name="survey_1_35_a1"> 거의 먹지 않는다</string>
+    <string name="survey_1_35_a2"> 한달에 1~2회</string>
+    <string name="survey_1_35_a3"> 일주일에 1~2회</string>
+    <string name="survey_1_35_a4"> 날마다</string>
+
+    <string name="survey_1_36_a1"> 거의 사용하지 않는다</string>
+    <string name="survey_1_36_a2"> 년 1~2회</string>
+    <string name="survey_1_36_a3"> 월 1~2회</string>
+    <string name="survey_1_36_a4"> 주 1회 이상</string>
+
+    <string name="survey_1_37_a1"> 거의 하지 않는다</string>
+    <string name="survey_1_37_a2"> 1년에 1회</string>
+    <string name="survey_1_37_a3"> 6개월에 1회</string>
+    <string name="survey_1_37_a4"> 3개월에 1회</string>
+    <string name="survey_1_37_a5"> 2개월에 1회</string>
+    <string name="survey_1_37_a6"> 1개월에 1회 이상</string>
+
+    <string name="survey_1_38_a1"> 바르지 않는다</string>
+    <string name="survey_1_38_a2"> 일주일에 1번</string>
+    <string name="survey_1_38_a3"> 3~4일에 1번</string>
+    <string name="survey_1_38_a4"> 2일에 1번</string>
+    <string name="survey_1_38_a5"> 날마다</string>
+
+    <string name="survey_1_39_a1"> 거의 사용하지 않는다</string>
+    <string name="survey_1_39_a2"> 주 1~2회</string>
+    <string name="survey_1_39_a3"> 주 3회 이상</string>
+
+    <string name="survey_1_40_a1"> 거의 받지 않는다</string>
+    <string name="survey_1_40_a2"> 조금 받는다</string>
+    <string name="survey_1_40_a3"> 많이 받는다</string>
+    <string name="survey_1_40_a4"> 폭발 직전이다</string>
+
+    <string name="survey_1_41_a1"> 거의 안 걸린다</string>
+    <string name="survey_1_41_a2"> 1~2회</string>
+    <string name="survey_1_41_a3"> 3~4회</string>
+    <string name="survey_1_41_a4"> 5회 이상</string>
+
+    <string name="survey_1_42_a1"> 거의 없다</string>
+    <string name="survey_1_42_a2"> 1시간 이하</string>
+    <string name="survey_1_42_a3"> 1~2시간</string>
+    <string name="survey_1_42_a4"> 3시간 이상</string>
+
+    <string name="survey_1_43_a1"> 거의 없다</string>
+    <string name="survey_1_43_a2"> 1시간 이하</string>
+    <string name="survey_1_43_a3"> 1~2시간</string>
+    <string name="survey_1_43_a4"> 3시간 이상</string>
+
+    <string name="survey_1_44_a1"> 한번 잠들면 아침까지 깨지 않는다</string>
+    <string name="survey_1_44_a2"> 중간에 1~2번 깬다</string>
+    <string name="survey_1_44_a3"> 중간에 3번 이상 깬다</string>
+
+    <string name="survey_1_45_a1"> 전혀 졸리지 않고ㅡ 정신이 맑고 활기참을 느낀다</string>
+    <string name="survey_1_45_a2"> 최상의 상태는 아니지만 집중해서 일을 할 수 있다</string>
+    <string name="survey_1_45_a3"> 정신을 차리고는 있지만 다소 나른해진 상태이다</string>
+    <string name="survey_1_45_a4"> 약간 정신이 몽롱하고 기운이 없다</string>
+    <string name="survey_1_45_a5"> 몽롱해서 정신을 집중할 수가 없고 정신을 계속 차리고 있기 힘들다</string>
+    <string name="survey_1_45_a6"> 졸리고 멍한 상태이며, 눕고 싶다</string>
+    <string name="survey_1_45_a7"> 눈을 뜨고 있지만, 깨어 있기가 힘들다</string>
+
+    <string name="survey_1_46_a1"> 거의 땀 날 일을 하지 않음</string>
+    <string name="survey_1_46_a2"> 주 1~2회</string>
+    <string name="survey_1_46_a3"> 주 3~4회</string>
+    <string name="survey_1_46_a4"> 날마다</string>
+
 </resources>

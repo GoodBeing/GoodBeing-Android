@@ -19,11 +19,9 @@ import android.widget.ViewFlipper;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
 
 import java.util.List;
 
@@ -156,7 +154,7 @@ public class MainAfterLoginActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -164,7 +162,7 @@ public class MainAfterLoginActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -183,7 +181,7 @@ public class MainAfterLoginActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             case R.id.enter_survey_ibtn:
-                intent = new Intent(this , SurveyWriteActivity.class);
+                intent = new Intent(this , SurveySearchActivity.class);
                 startActivity(intent);
                 break;
             case R.id.enter_sample_ibtn:
@@ -202,9 +200,6 @@ public class MainAfterLoginActivity extends AppCompatActivity
                 intent = new Intent(this , FaqActivity.class);
                 startActivity(intent);
                 break;
-
-
-
 
         }
     }

@@ -100,7 +100,6 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     @Override
-
     public void onValidationFailed(List<ValidationError> errors) {
         for (ValidationError error : errors) {
             View view = error.getView();
@@ -111,6 +110,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 ((EditText) view).setError(message);
             } else {
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
             }
 
         }

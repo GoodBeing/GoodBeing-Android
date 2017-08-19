@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Survey.SurveyWrite_One.Activity.SurveyWriteActivity">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FF00c700"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="6"
+        android:text="일반인의 굳빙을 위한 설문입니다. \n 설문문항은 총 46문항입니다. \n
+         설문을 통해 자신의 굳빙 지수와 \n
+         신체, 스트레스, 주거환경, 직업, \n 수면 피부노출, 해독활동, 유해물질 노출 등 \n
+         총 8분야의 굳빙 지수를 확인할 수 있습니다.
+         \n\n 설문 진행은 옆으로 밀어 진행됩니다.
+          \n번호순으로 순서대로 입력하시고
+          \n 빠짐없이 입력해주세요.
+        \n 그럼 설문을 시작하세요!"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/start_btn"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="설문 시작"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+    </android.support.v4.widget.DrawerLayout>

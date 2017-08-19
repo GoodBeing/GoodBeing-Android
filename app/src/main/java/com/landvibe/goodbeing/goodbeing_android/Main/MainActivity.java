@@ -19,11 +19,10 @@ import android.widget.ViewFlipper;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyStartActivity;
 
 import java.util.List;
 
@@ -37,7 +36,9 @@ public class MainActivity extends AppCompatActivity
     private ImageButton survey_4_ibtn;
     private ImageButton survey_5_ibtn;
     private ImageButton survey_6_ibtn;
+    private ImageButton survey_7_ibtn;
 
+    private ImageButton survey_result_ex_ibtn;
     private Intent intent;
 
     private ViewFlipper flipper;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+//
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -65,7 +66,9 @@ public class MainActivity extends AppCompatActivity
         survey_4_ibtn = (ImageButton)findViewById(R.id.survey4);
         survey_5_ibtn = (ImageButton)findViewById(R.id.survey5);
         survey_6_ibtn = (ImageButton)findViewById(R.id.survey6);
+        survey_7_ibtn = (ImageButton)findViewById(R.id.survey7);
 
+        survey_result_ex_ibtn = (ImageButton)findViewById(R.id.result_ex);
         survey_1_ibtn.setOnClickListener(this);
         survey_2_ibtn.setOnClickListener(this);
         survey_3_ibtn.setOnClickListener(this);
@@ -161,7 +164,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -175,27 +178,27 @@ public class MainActivity extends AppCompatActivity
         switch(view.getId())
         {
             case R.id.survey1:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey2:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey3:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey4:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey5:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
             case R.id.survey6:
-                intent.setClassName(this , SurveyWriteActivity.class.getName());
+                intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
 

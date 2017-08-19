@@ -35,8 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp">
 
@@ -44,33 +44,38 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="1">
-                <ImageButton android:text="임산부"
+                <Button
+                    android:id="@+id/general"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="24dp"
+                    android:drawableTop="@drawable/icons_survey_general"
+                    android:text="일반인"/>
+                <Button
+                    android:id="@+id/couple"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="24dp"
+                    android:drawableTop="@drawable/icons_survey_couple"
+                    android:text="예비부부"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1">
+                <Button android:text="임산부"
                     android:id="@+id/pregnant"
-                    android:src="@drawable/ic_menu_gallery"
+                    android:drawableTop="@drawable/icons_survey_pregnant"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"/>
-                <ImageButton android:text="일반인"
-                    android:id="@+id/publicPerson"
-                    android:src="@drawable/ic_menu_gallery"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_weight="1">
-                <ImageButton android:text="유아"
-                    android:id="@+id/child"
-                    android:src="@drawable/ic_menu_gallery"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"/>
-                <ImageButton android:text="노인"
-                    android:id="@+id/oldMan"
-                    android:src="@drawable/ic_menu_gallery"
+                <Button android:text="가족"
+                    android:id="@+id/family"
+                    android:drawableTop="@drawable/icons_survey_family"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"/>
@@ -80,15 +85,37 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="1">
-                <ImageButton android:text="장애인"
-                    android:id="@+id/disabled"
-                    android:src="@drawable/ic_menu_gallery"
+
+                <Button android:text="청소년"
+                    android:id="@+id/teenager"
+                    android:drawableTop="@drawable/icons_survey_teenager"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"/>
-                <ImageButton android:text="요로결석"
-                    android:id="@+id/other"
-                    android:src="@drawable/ic_menu_gallery"
+
+                <Button android:text="단체"
+                    android:id="@+id/group"
+                    android:drawableTop="@drawable/icons_survey_groups"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1">
+
+                <Button android:text="노인"
+                    android:id="@+id/older"
+                    android:drawableTop="@drawable/icons_survey_older"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button android:text="미리보기"
+                    android:id="@+id/searchresult_ex"
+                    android:drawableTop="@drawable/icons_survey_ex"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"/>
@@ -96,10 +123,7 @@
 
         </TableLayout>
 
-
-
     </android.support.design.widget.CoordinatorLayout>
-
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

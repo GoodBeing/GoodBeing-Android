@@ -4,16 +4,19 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="?attr/actionBarSize"
-    android:orientation="vertical">
+    android:paddingTop="30dp"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <TextView
-            android:text="9. 복용하는 약이 있습니까?"
+            android:text="@string/survey_1_9_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -37,33 +40,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
-                <RadioButton
-                    android:id="@+id/one_N9_3"
-                    android:text="예"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text=" 약이름 : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"/>
+            <RadioButton
+                android:id="@+id/one_N9_3"
+                android:text="예"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
                 <EditText
                     android:id="@+id/one_N9_q"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:hint="있다면 약 이름을 입력해주세요"
+                    android:textSize="15dp"
                     />
 
-            </LinearLayout>
 
         </RadioGroup>
     </LinearLayout>
@@ -71,10 +63,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
-        <TextView
-            android:text="10. 평소 비타민 C가 포함된 영양제를 섭취하고 있습니까?"
+
+    <TextView
+            android:text="@string/survey_1_10_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -115,7 +109,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="11. 건강기능성 식품이나 영양제를 복용하십니까?"
+            android:text="@string/survey_1_11_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -135,33 +129,24 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+
                 <RadioButton
                     android:id="@+id/one_N11_2"
                     android:text="예"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:text=" 상품명 : "
+                <com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.BackPressEditText
+                    android:id="@+id/one_N11_q"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_vertical"
+                    android:hint="있다면 상품명을 입력해주세요"
+                    android:textSize="15dp"
 
-                <EditText
-                    android:id="@+id/one_N11_q"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"
                     />
 
-            </LinearLayout>
 
         </RadioGroup>
     </LinearLayout>

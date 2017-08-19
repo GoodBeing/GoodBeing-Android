@@ -4,17 +4,21 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="?attr/actionBarSize"
-    android:orientation="vertical">
+    android:paddingTop="30dp"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        >
 
         <TextView
-            android:text="12. 흡연을 하십니까?"
+            android:text="@string/survey_1_12_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -38,34 +42,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+
                 <RadioButton
                     android:id="@+id/one_N12_3"
                     android:text="예"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:text="  하루피우는 양(개피) : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"/>
 
                 <EditText
                     android:id="@+id/one_N12_q"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"
-                    android:inputType="number"
+                    android:layout_gravity="center_vertical"
+                    android:hint="있다면 하루에 피우는 양을 입력해주세요(개피)"
+                    android:textSize="15dp"
+
                     />
 
-            </LinearLayout>
 
         </RadioGroup>
     </LinearLayout>
@@ -74,10 +69,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <TextView
-            android:text="13. 가족이나 매일 만나는 사람들이 담배를 피웁니까?"
+            android:text="@string/survey_1_13_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -112,7 +108,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="14. 지금까지 평생 살던 집과 기간은? (없으면 0을 기재해주세요)"
+            android:text="@string/survey_1_14_q"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -130,15 +126,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal|center_vertical"/>
 
                 <EditText
                     android:id="@+id/one_N14_1"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"
-                    android:inputType="number"
+                    android:layout_gravity="center_horizontal|center_vertical"
                     />
 
                 <TextView
@@ -146,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal|center_vertical"/>
             </LinearLayout>
 
         <LinearLayout
@@ -159,15 +154,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
 
             <EditText
                 android:id="@+id/one_N14_2"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"
-                android:inputType="number"
+                android:layout_gravity="center_horizontal|center_vertical"
                 />
 
             <TextView
@@ -175,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
         </LinearLayout>
 
         <LinearLayout
@@ -188,15 +182,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
 
             <EditText
                 android:id="@+id/one_N14_3"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"
-                android:inputType="number"
+                android:layout_gravity="center_horizontal|center_vertical"
                 />
 
             <TextView
@@ -204,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
         </LinearLayout>
 
         <LinearLayout
@@ -217,15 +210,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
 
-            <EditText
+            <com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.BackPressEditText
                 android:id="@+id/one_N14_4"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"
-                android:inputType="number"
+                android:layout_gravity="center_horizontal|center_vertical"
                 />
 
             <TextView
@@ -233,7 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal|center_vertical"/>
         </LinearLayout>
 
     </LinearLayout>

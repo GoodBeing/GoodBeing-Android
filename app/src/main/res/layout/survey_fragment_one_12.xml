@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="30dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/survey_1_34_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/one_N34"
+            >
+            <RadioButton
+                android:id="@+id/one_N34_1"
+                android:text="@string/survey_1_34_a1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N34_2"
+                android:text="@string/survey_1_34_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N34_3"
+                android:text="@string/survey_1_34_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:text="@string/survey_1_35_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/one_N35"
+            >
+            <RadioButton
+                android:id="@+id/one_N35_1"
+                android:text="@string/survey_1_35_a1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N35_2"
+                android:text="@string/survey_1_35_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N35_3"
+                android:text="@string/survey_1_35_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/one_N35_4"
+                android:text="@string/survey_1_35_a4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:text="@string/survey_1_36_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/one_N36"
+            >
+            <RadioButton
+                android:id="@+id/one_N36_1"
+                android:text="@string/survey_1_36_a1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N36_2"
+                android:text="@string/survey_1_36_a2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N36_3"
+                android:text="@string/survey_1_36_a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/one_N36_4"
+                android:text="@string/survey_1_36_a4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    </LinearLayout>
+    
+
+</LinearLayout>

@@ -3,22 +3,19 @@ package com.landvibe.goodbeing.goodbeing_android.Sample.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ProgressBar;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
-import com.landvibe.goodbeing.goodbeing_android.Sample.Adapter.SampleViewPagerAdapter;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleIntroFragment;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 /**
@@ -29,17 +26,6 @@ public class SampleMainActivity extends AppCompatActivity
 
 
     private Intent intent;
-
-    /*
-        ProgressBar
-    */
-    private ProgressBar progressBar;
-
-    /*
-       ViewPager
-    */
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
 
     @Override
     synchronized
@@ -60,39 +46,9 @@ public class SampleMainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Initializing the TabLayout
-        tabLayout = (TabLayout) findViewById(R.id.sample_main_tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("전체"));
-        tabLayout.addTab(tabLayout.newTab().setText("진행"));
-        tabLayout.addTab(tabLayout.newTab().setText("완료"));
-
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-        viewPager = (ViewPager)findViewById(R.id.sample_main_viewpager);
-
-        SampleViewPagerAdapter sampleViewPagerAdapter = new SampleViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(sampleViewPagerAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-
-        });
-
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.sample_main_frame_layout, new SampleIntroFragment());
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -122,7 +78,7 @@ public class SampleMainActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -130,7 +86,7 @@ public class SampleMainActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
 

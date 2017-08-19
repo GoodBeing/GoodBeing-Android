@@ -17,7 +17,6 @@ import android.widget.ListView;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
-import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
@@ -30,7 +29,7 @@ public class IntroActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
 
-    static final String[] LIST_MENU = {"굳빙 서비스란","굳빙서비스의 목적","핵심기술","서비스의 종류","교수소개"};
+    static final String[] LIST_MENU = {"굳빙서비스란","굳빙서비스의 목적","핵심 기술","굳빙서비스의 종류","교수 소개"};
     //private ListView list_name;
 
     private Intent intent;
@@ -71,6 +70,21 @@ public class IntroActivity extends AppCompatActivity
                     Intent intent1 = new Intent(IntroActivity.this,Intro_Purpose_Activity.class);
                     startActivity(intent1);
                 }
+                if(position == 2)
+                {
+                    Intent intent2 = new Intent(IntroActivity.this,Intro_Skill_Activity.class);
+                    startActivity(intent2);
+                }
+                if(position == 3)
+                {
+                    Intent intent3 = new Intent(IntroActivity.this,Intro_Service_Activity.class);
+                    startActivity(intent3);
+                }
+                if(position == 4)
+                {
+                    Intent intent4 = new Intent(IntroActivity.this,Intro_Professor_Activity.class);
+                    startActivity(intent4);
+                }
             }
         });
 
@@ -98,7 +112,7 @@ public class IntroActivity extends AppCompatActivity
             intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_consulting) {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         } else if (id == R.id.nav_faq) {
             intent.setClassName(this , FaqActivity.class.getName());
@@ -106,7 +120,7 @@ public class IntroActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , LoginActivity.class.getName());
+            intent.setClassName(this , SampleMainActivity.class.getName());
             startActivity(intent);
         }
 

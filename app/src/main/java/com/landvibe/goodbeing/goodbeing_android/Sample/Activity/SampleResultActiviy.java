@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Adapter.SampleResultViewPagerAdapter;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 /**
@@ -26,13 +28,14 @@ public class SampleResultActiviy extends AppCompatActivity
     private Intent intent;
     private TextView user_name;
 
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_result);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -45,8 +48,9 @@ public class SampleResultActiviy extends AppCompatActivity
 
         intent = getIntent();
 
-        user_name = (TextView)findViewById(R.id.sample_result_user_name);
-        user_name.setText(intent.getStringExtra("name").toString());
+        viewPager = (ViewPager)findViewById(R.id.sample_result_activity_view_pager);
+        viewPager.setAdapter(new SampleResultViewPagerAdapter(getSupportFragmentManager(),3));
+        viewPager.setCurrentItem(0);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -82,7 +86,6 @@ public class SampleResultActiviy extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-
         intent = new Intent();
     }
 }

@@ -31,26 +31,14 @@
         </android.support.design.widget.AppBarLayout>
 
         <!--layout-->
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/sample_main_frame_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical">
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/sample_main_tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FF98ff98"
-                android:minHeight="?attr/actionBarSize"
-                android:fillViewport="false" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/sample_main_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-        </LinearLayout>
+        </FrameLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

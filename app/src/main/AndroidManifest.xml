@@ -54,6 +54,11 @@
             android:label="설문 선택"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".Survey.SurveyWrite_One.Activity.SurveyStartActivity"
+            android:label="설문 시작"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".Survey.SurveyWrite_One.Activity.SurveyWriteActivity"
             android:label="설문 작성"
             android:theme="@style/AppTheme.NoActionBar"></activity>
@@ -62,7 +67,7 @@
             android:label="설문 결과"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-        <!-- Inspection -->
+        <!-- Sample -->
         <activity
             android:name=".Sample.Activity.SampleMainActivity"
             android:label="시료 측정"
@@ -93,7 +98,9 @@
         <activity
             android:name=".Signup.Terms.TermsOfServiceActivity"
             android:label="서비스 약관"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
 
         <activity
             android:name=".FAQ.FaqActivity"
