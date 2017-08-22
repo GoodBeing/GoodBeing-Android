@@ -9,10 +9,9 @@ public class FaqItem {
     private String question;
     private String answer;
 
-    public FaqItem(String question, String answer, int image) {
+    public FaqItem(String question, String answer) {
         this.question = question;
         this.answer = answer;
-        this.image = image;
     }
 
     private int image;
@@ -31,13 +30,5 @@ public class FaqItem {
 
     public void setAnswer(String answer) {
         this.answer = answer;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
     }
 }

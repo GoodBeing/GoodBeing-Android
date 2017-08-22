@@ -45,6 +45,5 @@ class FaqViewHolder extends RecyclerView.ViewHolder {
 
         question = (TextView) itemView.findViewById(R.id.faq_question_tv);
         answer = (TextView) itemView.findViewById(R.id.faq_answer_tv);
-        image = (ImageView) itemView.findViewById(R.id.faq_item_iv);
     }
 }
