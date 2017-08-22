@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
@@ -29,12 +30,12 @@ public class MainAfterLoginActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener
 //,ViewFlipperAction.ViewFlipperCallback
 {
-    private ImageButton enter_intro_ibtn;
-    private ImageButton enter_survey_ibtn;
-    private ImageButton enter_sample_ibtn;
-    private ImageButton enter_myinfo_ibtn;
-    private ImageButton enter_history_ibtn;
-    private ImageButton enter_faq_ibtn;
+    private Button enter_intro_ibtn;
+    private Button enter_survey_ibtn;
+    private Button enter_sample_ibtn;
+    private Button enter_myinfo_ibtn;
+    private Button enter_history_ibtn;
+    private Button enter_faq_ibtn;
 
     private Intent intent;
 
@@ -57,15 +58,12 @@ public class MainAfterLoginActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
-
-        enter_intro_ibtn = (ImageButton)findViewById(R.id.enter_intro_ibtn);
-        enter_survey_ibtn = (ImageButton)findViewById(R.id.enter_survey_ibtn);
-        enter_sample_ibtn = (ImageButton)findViewById(R.id.enter_sample_ibtn);
-        enter_myinfo_ibtn = (ImageButton)findViewById(R.id.enter_myinfo_ibtn);
-        enter_history_ibtn = (ImageButton)findViewById(R.id.enter_history_ibtn);
-        enter_faq_ibtn = (ImageButton)findViewById(R.id.enter_faq_ibtn);
+        enter_intro_ibtn = (Button)findViewById(R.id.enter_intro_ibtn);
+        enter_survey_ibtn = (Button)findViewById(R.id.enter_survey_ibtn);
+        enter_sample_ibtn = (Button)findViewById(R.id.enter_sample_ibtn);
+        enter_myinfo_ibtn = (Button)findViewById(R.id.enter_myinfo_ibtn);
+        enter_history_ibtn = (Button)findViewById(R.id.enter_history_ibtn);
+        enter_faq_ibtn = (Button)findViewById(R.id.enter_faq_ibtn);
 
         enter_intro_ibtn.setOnClickListener(this);
         enter_survey_ibtn.setOnClickListener(this);
