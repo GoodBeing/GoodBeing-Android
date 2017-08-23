@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistoryListAdapter;
+import com.landvibe.goodbeing.goodbeing_android.History.Adapter.HistorySampleListAdapter;
 import com.landvibe.goodbeing.goodbeing_android.History.Data.SampleResultItem;
 import com.landvibe.goodbeing.goodbeing_android.History.Listener.HistoryRecycleViewOnItemClickListener;
 import com.landvibe.goodbeing.goodbeing_android.R;
@@ -59,16 +59,11 @@ public class HistoryFragmentSample extends Fragment {
 
         // DataSet
         sampleResultItemArrayList = new ArrayList<SampleResultItem>();
-        sampleResultItemArrayList.add(new SampleResultItem("강승모" , true , 26 , 4));
-        sampleResultItemArrayList.add(new SampleResultItem("이상직" , true , 26 , 3));
-        sampleResultItemArrayList.add(new SampleResultItem("박재형" , true , 22 , 1));
-        sampleResultItemArrayList.add(new SampleResultItem("김나라" , false , 26 , 4));
-        sampleResultItemArrayList.add(new SampleResultItem("사진좀" , true , 29 , 2));
-        sampleResultItemArrayList.add(new SampleResultItem("너이다" , false , 34 , 2));
-        sampleResultItemArrayList.add(new SampleResultItem("코카콜라" , false , 21 , 1));
-        sampleResultItemArrayList.add(new SampleResultItem("펩시" , false , 29 , 3));
+        sampleResultItemArrayList.add(new SampleResultItem("강승모" , "2017-04-01" , "분석 완료" , "굳빙 위기(유해물질 중간 노출)"));
+        sampleResultItemArrayList.add(new SampleResultItem("이상직" , "2017-06-01" , "분석 중" , ""));
+        sampleResultItemArrayList.add(new SampleResultItem("박재형" , "2017-07-01" , "시료 배송중" , ""));
 
-        adapter = new HistoryListAdapter(sampleResultItemArrayList);
+        adapter = new HistorySampleListAdapter(sampleResultItemArrayList);
         historyRecycleView.setAdapter(adapter);
 
         historyRecycleView.addOnItemTouchListener(new HistoryRecycleViewOnItemClickListener(inflater.getContext().getApplicationContext(), historyRecycleView, new HistoryRecycleViewOnItemClickListener.OnItemClickListener() {
@@ -82,8 +77,6 @@ public class HistoryFragmentSample extends Fragment {
                 startActivity(intent);
             }
         }));
-
-
 
         return view;
     }

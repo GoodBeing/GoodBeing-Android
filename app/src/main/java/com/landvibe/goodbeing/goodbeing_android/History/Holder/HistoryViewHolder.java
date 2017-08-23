@@ -4,8 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.landvibe.goodbeing.goodbeing_android.R;
-
 /**
  * Created by 고승빈 on 2017-07-18.
  */
@@ -16,8 +14,8 @@ public class HistoryViewHolder extends RecyclerView.ViewHolder{
     public HistoryViewHolder(View itemView) {
         super(itemView);
 
-        name = (TextView) itemView.findViewById(R.id.history_name);
-        intro = (TextView) itemView.findViewById(R.id.history_intro);
+//        name = (TextView) itemView.findViewById(R.id.history_name);
+//        intro = (TextView) itemView.findViewById(R.id.history_intro);
     }
 
     public TextView getName() {

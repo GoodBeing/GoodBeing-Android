@@ -1,8 +1,6 @@
 package com.landvibe.goodbeing.goodbeing_android.Sample.Fragment;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,58 +20,7 @@ import com.landvibe.goodbeing.goodbeing_android.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.y;
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link SampleRadarChartFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link SampleRadarChartFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SampleRadarChartFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-//    private OnFragmentInteractionListener mListener;
-
-    public SampleRadarChartFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SampleRadarChartFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SampleRadarChartFragment newInstance(String param1, String param2) {
-        SampleRadarChartFragment fragment = new SampleRadarChartFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,14 +33,14 @@ public class SampleRadarChartFragment extends Fragment {
 
         List<RadarEntry> entries = new ArrayList<>();
 
-        entries.add(new RadarEntry(10));
+        entries.add(new RadarEntry(50));
+        entries.add(new RadarEntry(60));
+        entries.add(new RadarEntry(80));
         entries.add(new RadarEntry(20));
-        entries.add(new RadarEntry(30));
-        entries.add(new RadarEntry(40));
-        entries.add(new RadarEntry(10));
-        entries.add(new RadarEntry(20));
-        entries.add(new RadarEntry(30));
-        entries.add(new RadarEntry(40));
+        entries.add(new RadarEntry(60));
+        entries.add(new RadarEntry(70));
+        entries.add(new RadarEntry(50));
+        entries.add(new RadarEntry(80));
 
         ArrayList xVals = new ArrayList();
 
@@ -116,9 +63,14 @@ public class SampleRadarChartFragment extends Fragment {
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
 
         XAxis xAxis = radarChart.getXAxis();
+        xAxis.setAxisMinimum(0);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xVals));
 
-        radarChart.getYAxis().setEnabled(false);
+        YAxis yAxis = radarChart.getYAxis();
+        yAxis.setAxisMinimum(0);
+        yAxis.setAxisMaximum(80);
+        yAxis.setDrawLabels(false);
+
         radarChart.getLegend().setEnabled(false);
         radarChart.setDescription(null);
         radarChart.setData(radarData);

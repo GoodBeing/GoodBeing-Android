@@ -9,7 +9,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -75,11 +74,11 @@ public class SurveyResultActiviy extends AppCompatActivity
         Intent intt = getIntent();
         arraysurvey = intt.getParcelableArrayListExtra("SURVEY_RESULT");
         int resultscore = 0;
-        for(int i = 0;i<arraysurvey.size();i++)
-        {
-            Log.d("score is : ",i + "번 점수는 "+arraysurvey.get(i).getScore());
-            resultscore += arraysurvey.get(i).getScore();
-        }
+//        for(int i = 0;i<arraysurvey.size();i++)
+//        {
+//            Log.d("score is : ",i + "번 점수는 "+arraysurvey.get(i).getScore());
+//            resultscore += arraysurvey.get(i).getScore();
+//        }
         result_score.setText("당신의 굳빙 지수는 " + resultscore + " 입니다.");
 
 
