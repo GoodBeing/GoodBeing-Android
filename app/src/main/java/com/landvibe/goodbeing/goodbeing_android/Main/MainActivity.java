@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity
         survey_4_ibtn.setOnClickListener(this);
         survey_5_ibtn.setOnClickListener(this);
         survey_6_ibtn.setOnClickListener(this);
+        survey_7_ibtn.setOnClickListener(this);
+        survey_result_ex_ibtn.setOnClickListener(this);
 
 
 
@@ -202,7 +204,14 @@ public class MainActivity extends AppCompatActivity
                 intent.setClassName(this , SurveyStartActivity.class.getName());
                 startActivity(intent);
                 break;
-
+            case R.id.survey7:
+                intent.setClassName(this , SurveyStartActivity.class.getName());
+                startActivity(intent);
+                break;
+            case R.id.result_ex:
+                intent.setClassName(this , MainSurveyExampleActivity.class.getName());
+                startActivity(intent);
+                break;
 
 
 

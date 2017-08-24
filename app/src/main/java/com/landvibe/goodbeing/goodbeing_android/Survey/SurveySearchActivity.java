@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Main.MainSurveyExampleActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
@@ -59,6 +60,8 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         Button group  = (Button) findViewById(R.id.group);
         Button teenager  = (Button) findViewById(R.id.teenager);
         Button pregnant  = (Button) findViewById(R.id.pregnant);
+        Button older  = (Button) findViewById(R.id.older);
+        Button example  = (Button) findViewById(R.id.searchresult_ex);
 
 
         pregnant.setOnClickListener(this);
@@ -67,6 +70,9 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
         group.setOnClickListener(this);
         teenager.setOnClickListener(this);
         couple.setOnClickListener(this);
+        older.setOnClickListener(this);
+        example.setOnClickListener(this);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -142,6 +148,17 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
             intent.setClassName(this , SurveyWriteActivity.class.getName());
             startActivity(intent);
         }
+        else if(view.getId() == R.id.older)
+        {
+            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.searchresult_ex)
+        {
+            intent.setClassName(this , MainSurveyExampleActivity.class.getName());
+            startActivity(intent);
+        }
+
 
     }
 }

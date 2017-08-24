@@ -27,6 +27,10 @@
             android:name=".Main.MainAfterLoginActivity"
             android:label="GoodBeing"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Main.MainSurveyExampleActivity"
+            android:label="설문결과 미리보기"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!-- Intro -->
         <activity
             android:name=".Intro.IntroActivity"
