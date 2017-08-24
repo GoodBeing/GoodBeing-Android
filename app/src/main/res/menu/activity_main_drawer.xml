@@ -4,23 +4,23 @@
     <group android:checkableBehavior="single">
            <item
             android:id="@+id/nav_intro"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_description_black_36dp"
             android:title="서비스 소개" />
         <item
             android:id="@+id/nav_history"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_face_black_36dp"
             android:title="마이굳빙" />
         <item
             android:id="@+id/nav_surveyWrite"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_mode_edit_black_36dp"
             android:title="설문작성" />(
         <item
             android:id="@+id/nav_sample"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="관련 의료 상식" />
+            android:icon="@drawable/ic_opacity_black_36dp"
+            android:title="시료측정" />
         <item
             android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_question_answer_black_36dp"
             android:title="의료 FAQ" />
         <item
             android:id="@+id/nav_consulting"

@@ -27,12 +27,14 @@ public class HistorySurveyListAdapter extends RecyclerView.Adapter<HistorySurvey
         public TextView survey_item_name;
         public TextView survey_item_score;
         public TextView survey_item_date;
+        public TextView survey_item_result;
 
         public ViewHolder(View itemView) {
             super(itemView);
             survey_item_name = (TextView)itemView.findViewById(R.id.survey_item_name);
             survey_item_score = (TextView)itemView.findViewById(R.id.survey_item_score);
             survey_item_date = (TextView)itemView.findViewById(R.id.survey_item_date);
+            survey_item_result = (TextView)itemView.findViewById(R.id.survey_item_result);
         }
     }
 
@@ -50,8 +52,20 @@ public class HistorySurveyListAdapter extends RecyclerView.Adapter<HistorySurvey
         SurveyResultItem item = surveyResultItems.get(position);
 
         holder.survey_item_name.setText(item.getUser_name());
-        holder.survey_item_score.setText(item.getSurvey_score());
+        holder.survey_item_score.setText(item.getSurvey_score() + "점");
         holder.survey_item_date.setText(item.getSurvey_date());
+
+        int score = Integer.parseInt(item.getSurvey_score());
+        String result = new String();
+
+        if(score > 70)
+            result = "굳빙이 매우 위협받음 (유해물질 고노출)";
+        else if (score >25)
+            result = "굳빙 위기(유해물질 중간 노출)";
+        else
+            result = "굳빙 (유해물질 저노출)";
+
+        holder.survey_item_result.setText(result);
     }
 
     @Override

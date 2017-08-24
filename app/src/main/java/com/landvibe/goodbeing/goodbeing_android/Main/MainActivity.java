@@ -12,13 +12,14 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
+import com.landvibe.goodbeing.goodbeing_android.Login.LoginActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
@@ -30,15 +31,15 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , ImageView.OnClickListener
 //,ViewFlipperAction.ViewFlipperCallback
 {
-    private ImageButton survey_1_ibtn;
-    private ImageButton survey_2_ibtn;
-    private ImageButton survey_3_ibtn;
-    private ImageButton survey_4_ibtn;
-    private ImageButton survey_5_ibtn;
-    private ImageButton survey_6_ibtn;
-    private ImageButton survey_7_ibtn;
+    private Button survey_1_ibtn;
+    private Button survey_2_ibtn;
+    private Button survey_3_ibtn;
+    private Button survey_4_ibtn;
+    private Button survey_5_ibtn;
+    private Button survey_6_ibtn;
+    private Button survey_7_ibtn;
 
-    private ImageButton survey_result_ex_ibtn;
+    private Button survey_result_ex_ibtn;
     private Intent intent;
 
     private ViewFlipper flipper;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+//
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -60,15 +61,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        survey_1_ibtn = (ImageButton)findViewById(R.id.survey1);
-        survey_2_ibtn = (ImageButton)findViewById(R.id.survey2);
-        survey_3_ibtn = (ImageButton)findViewById(R.id.survey3);
-        survey_4_ibtn = (ImageButton)findViewById(R.id.survey4);
-        survey_5_ibtn = (ImageButton)findViewById(R.id.survey5);
-        survey_6_ibtn = (ImageButton)findViewById(R.id.survey6);
-        survey_7_ibtn = (ImageButton)findViewById(R.id.survey7);
+        survey_1_ibtn = (Button)findViewById(R.id.survey1);
+        survey_2_ibtn = (Button)findViewById(R.id.survey2);
+        survey_3_ibtn = (Button)findViewById(R.id.survey3);
+        survey_4_ibtn = (Button)findViewById(R.id.survey4);
+        survey_5_ibtn = (Button)findViewById(R.id.survey5);
+        survey_6_ibtn = (Button)findViewById(R.id.survey6);
+        survey_7_ibtn = (Button)findViewById(R.id.survey7);
+        survey_result_ex_ibtn = (Button)findViewById(R.id.result_ex);
 
-        survey_result_ex_ibtn = (ImageButton)findViewById(R.id.result_ex);
         survey_1_ibtn.setOnClickListener(this);
         survey_2_ibtn.setOnClickListener(this);
         survey_3_ibtn.setOnClickListener(this);
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_login)
         {
-            intent.setClassName(this , SampleMainActivity.class.getName());
+            intent.setClassName(this , LoginActivity.class.getName());
             startActivity(intent);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

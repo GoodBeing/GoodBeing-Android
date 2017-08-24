@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="시료 소개 텍스트"
-        android:textAlignment="center"
-        android:textSize="64dp"
+    <ViewFlipper
+        android:id="@+id/sample_intro_view_flipper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/sample_intro_button"

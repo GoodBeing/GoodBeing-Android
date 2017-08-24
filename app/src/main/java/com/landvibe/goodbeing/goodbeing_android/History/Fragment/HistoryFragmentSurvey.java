@@ -57,10 +57,10 @@ public class HistoryFragmentSurvey extends Fragment {
 
         // DataSet
         surveyResultItems = new ArrayList<SurveyResultItem>();
-        surveyResultItems.add(new SurveyResultItem("강승모","2017-09-09","89점"));
-        surveyResultItems.add(new SurveyResultItem("이상직","2017-04-02","99점"));
-        surveyResultItems.add(new SurveyResultItem("박재형","2015-01-01","91점"));
-        surveyResultItems.add(new SurveyResultItem("고승빈","2015-01-01","11점"));
+        surveyResultItems.add(new SurveyResultItem("강승모","2017-09-09","89"));
+        surveyResultItems.add(new SurveyResultItem("이상직","2017-04-02","99"));
+        surveyResultItems.add(new SurveyResultItem("박재형","2015-01-01","91"));
+        surveyResultItems.add(new SurveyResultItem("고승빈","2015-01-01","11"));
 
         recyclerView.addOnItemTouchListener(new HistoryRecycleViewOnItemClickListener(inflater.getContext().getApplicationContext(), recyclerView, new HistoryRecycleViewOnItemClickListener.OnItemClickListener() {
             @Override

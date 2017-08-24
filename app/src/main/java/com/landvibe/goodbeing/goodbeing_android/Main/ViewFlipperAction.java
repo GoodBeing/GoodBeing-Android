@@ -13,7 +13,7 @@ import com.landvibe.goodbeing.goodbeing_android.R;
  * Created by jik on 2017-08-01.
  */
 
-class ViewFlipperAction implements View.OnTouchListener {
+public class ViewFlipperAction implements View.OnTouchListener {
     Context context;
 
     //전체화면개수

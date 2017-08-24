@@ -1,57 +1,51 @@
 package com.landvibe.goodbeing.goodbeing_android.History.Data;
 
 /**
- * Created by 고승빈 on 2017-07-18.
+ * Created by KSM on 2017-08-13.
  */
+
 public class SampleResultItem {
+    private String user_name;       // 사용자 이름
+    private String sample_date;     // 설문 작성 날짜
+    private String sample_status;    // 설문 점수
+    private String sample_result;
 
-    private String name;
-
-    private Boolean gender;
-
-    private int age;
-
-    private int bloodType;
-
-    public SampleResultItem() {
+    public SampleResultItem(String user_name, String sample_date, String sample_status, String sample_result) {
+        this.user_name = user_name;
+        this.sample_date = sample_date;
+        this.sample_status = sample_status;
+        this.sample_result = sample_result;
     }
 
-    public SampleResultItem(String name, Boolean gender, int age, int bloodType) {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.bloodType = bloodType;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public String getName() {
-        return name;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getSample_date() {
+        return sample_date;
     }
 
-    public Boolean getGender() {
-        return gender;
+    public void setSample_date(String sample_date) {
+        this.sample_date = sample_date;
     }
 
-    public void setGender(Boolean gender) {
-        this.gender = gender;
+    public String getSample_status() {
+        return sample_status;
     }
 
-    public int getAge() {
-        return age;
+    public void setSample_status(String sample_status) {
+        this.sample_status = sample_status;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getSample_result() {
+        return sample_result;
     }
 
-    public int getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(int bloodType) {
-        this.bloodType = bloodType;
+    public void setSample_result(String sample_result) {
+        this.sample_result = sample_result;
     }
 }

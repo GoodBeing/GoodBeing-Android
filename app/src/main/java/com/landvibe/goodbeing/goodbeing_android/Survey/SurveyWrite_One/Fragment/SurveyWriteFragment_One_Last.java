@@ -157,6 +157,7 @@ public  class SurveyWriteFragment_One_Last extends Fragment implements View.OnCl
         }
         else if(view.getId() == R.id.cancle_btn)
         {
+
             //유저 id ,설문 코드, 점수
             //SCS.sendSurvey();
 

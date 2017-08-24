@@ -34,9 +34,6 @@ public class FaqAdapter extends RecyclerView.Adapter<FaqViewHolder> {
 
         holder.getQuestion().setText(faqitems.get(position).getQuestion());
         holder.getAnswer().setText(faqitems.get(position).getAnswer());
-        holder.getImage().setImageResource(faqitems.get(position).getImage());
-
-
 
     }
 

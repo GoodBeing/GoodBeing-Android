@@ -21,6 +21,7 @@
             android:layout_height="wrap_content" />
 
         <TableLayout
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -82,8 +83,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
             </TableRow>
-
         </TableLayout>
+
+        <TextView
+            android:text="맞춤형 굿빙 평가"
+            android:textColor="@android:color/white"
+            android:background="@android:color/black"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="노화를 막고 해독식품의 섭취를 권장합니다. 평소 신선한 야채나 과일을 흐르는 물에 3회 이상 씻어 드시기 직전 잘라서 드시고 오래된 야채는 조리해서 익혀드실것을 권해드립니다. 또한 비타민C 섭취, 엽산 섭취를 늘려야 합니다."
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:text="분석결과"
