@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -53,13 +54,14 @@ public class HistoryFragmentSample extends Fragment {
         historyRecycleView = (RecyclerView) view.findViewById(R.id.history_sample_recycler_view);
 
         historyRecycleView.setHasFixedSize(true);
+        historyRecycleView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
 
         layoutManager = new LinearLayoutManager(getActivity() , LinearLayoutManager.VERTICAL , false);
         historyRecycleView.setLayoutManager(layoutManager);
 
         // DataSet
         sampleResultItemArrayList = new ArrayList<SampleResultItem>();
-        sampleResultItemArrayList.add(new SampleResultItem("강승모" , "2017-04-01" , "분석 완료" , "굳빙 위기(유해물질 중간 노출)"));
+        sampleResultItemArrayList.add(new SampleResultItem("강승모" , "2017-04-01" , "분석 완료" , "굳빙 위기\n(유해물질 중간 노출)"));
         sampleResultItemArrayList.add(new SampleResultItem("이상직" , "2017-06-01" , "분석 중" , ""));
         sampleResultItemArrayList.add(new SampleResultItem("박재형" , "2017-07-01" , "시료 배송중" , ""));
 

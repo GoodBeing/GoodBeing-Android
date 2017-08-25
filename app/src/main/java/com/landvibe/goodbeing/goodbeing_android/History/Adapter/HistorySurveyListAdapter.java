@@ -59,17 +59,17 @@ public class HistorySurveyListAdapter extends RecyclerView.Adapter<HistorySurvey
         String result = new String();
 
         if(score > 70)
-            result = "굳빙이 매우 위협받음 (유해물질 고노출)";
+            result = "굳빙 위기\n(유해물질 고노출)";
         else if (score >25)
-            result = "굳빙 위기(유해물질 중간 노출)";
+            result = "굳빙 평범\n(유해물질 중간 노출)";
         else
-            result = "굳빙 (유해물질 저노출)";
+            result = "굳빙 좋음\n(유해물질 저노출)";
 
         holder.survey_item_result.setText(result);
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()  {
         return surveyResultItems.size();
     }
 }
