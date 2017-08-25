@@ -69,7 +69,7 @@ public class HistoryFragmentSurvey extends Fragment {
         surveyResultItems = new ArrayList<SurveyResultItem>();
 
         for(int i = 0; i<totalarraylist.size();i++)
-            surveyResultItems.add(new SurveyResultItem("사용자","2017-08-25",totalarraylist.get(i).getTotal_score()));
+            surveyResultItems.add(new SurveyResultItem("사용자",totalarraylist.get(i).getSurvey_date(),totalarraylist.get(i).getTotal_score()));
 
 
         recyclerView.addOnItemTouchListener(new HistoryRecycleViewOnItemClickListener(inflater.getContext().getApplicationContext(), recyclerView, new HistoryRecycleViewOnItemClickListener.OnItemClickListener() {

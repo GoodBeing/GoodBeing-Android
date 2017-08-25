@@ -20,17 +20,17 @@ public class DBAdapter {
     }
     public DBAdapter(Context context)
     {
-        dbHelper = new DBManager(context,"SQLITEDB",null,1);
+        dbHelper = new DBManager(context,"SQLITEDB",null,2);
     }
 
-    public void insert(String totalscore,String s1,String s2,String s3,String s4,String s5,String s6,String s7,String s8){
+    public void insert(String totalscore,String s1,String s2,String s3,String s4,String s5,String s6,String s7,String s8,String date){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String _query = "insert into DB (TOTAL_SCORE, SECTION1_SCORE," +
-                                            "SECTION2_SCORE,SECTION3_SCORE," +
+                                            "SECTION2_SCORE, SECTION3_SCORE," +
                                             "SECTION4_SCORE, SECTION5_SCORE, " +
-                                            "SECTION6_SCORE,SECTION7_SCORE," +
-                                            "SECTION8_SCORE) " +
-                                            "values(" + totalscore + "," + s1 + " , " + s2+ "," + s3+"," + s4+"," + s5+"," + s6+"," + s7+"," + s8 + ")";
+                                            "SECTION6_SCORE, SECTION7_SCORE," +
+                                            "SECTION8_SCORE, DATE) " +
+                                            "values(" + totalscore + "," + s1 + " , " + s2+ "," + s3+"," + s4+"," + s5+"," + s6+"," + s7+"," + s8 + ",'" + date + "')";
 
         Log.d("asdfDB"," insert query : "+_query);
         db.execSQL(_query);
@@ -50,7 +50,7 @@ public class DBAdapter {
             {
                 SurveyTotalItem item = new SurveyTotalItem(cursor.getString(0),cursor.getString(1),
                         cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5),
-                        cursor.getString(6),cursor.getString(7),cursor.getString(8));
+                        cursor.getString(6),cursor.getString(7),cursor.getString(8),cursor.getString(9));
                 arrlist.add(item);
             }
             return arrlist;

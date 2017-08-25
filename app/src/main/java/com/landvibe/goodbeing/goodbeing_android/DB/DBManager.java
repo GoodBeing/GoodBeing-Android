@@ -35,8 +35,10 @@ public class DBManager extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if(oldVersion == 1 && newVersion == 2){
+            db.execSQL("ALTER TABLE DB ADD DATE TEXT");
+        }
     }
 
 

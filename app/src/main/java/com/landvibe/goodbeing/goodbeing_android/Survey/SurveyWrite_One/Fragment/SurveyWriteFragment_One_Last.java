@@ -19,7 +19,9 @@ import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyResultActiviy;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Item.SurveyItem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by jik on 2017-07-26.
@@ -189,12 +191,15 @@ public  class SurveyWriteFragment_One_Last extends Fragment implements View.OnCl
             String s7 = String.valueOf(section_skin);
             String s8 = String.valueOf(section_main);
 
+            Date now = new Date(System.currentTimeMillis());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+
+            String date = dateFormat.format(now);
 
             Log.d("asdfDB"," insert 전 ");
 
-            dbAdapter.insert(total,s1,s2,s3,s4,s5,s6,s7,s8);
+            dbAdapter.insert(total,s1,s2,s3,s4,s5,s6,s7,s8,date);
             Log.d("asdfDB"," insert gn ");
-
 
             ArrayList<String> score_arr = new ArrayList<>();
 
@@ -207,7 +212,6 @@ public  class SurveyWriteFragment_One_Last extends Fragment implements View.OnCl
             score_arr.add(s6);
             score_arr.add(s7);
             score_arr.add(s8);
-
 
             Intent intent = new Intent(getActivity() , SurveyResultActiviy.class);
             intent.putStringArrayListExtra("SURVEY_RESULT",score_arr);

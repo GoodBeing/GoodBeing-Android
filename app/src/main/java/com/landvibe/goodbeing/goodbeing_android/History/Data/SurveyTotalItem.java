@@ -14,7 +14,7 @@ public class SurveyTotalItem {
     private String s6_score;
     private String s7_score;
     private String s8_score;
-
+    private String survey_date;
 
     public String getTotal_score() {
         return total_score;
@@ -88,9 +88,15 @@ public class SurveyTotalItem {
         this.s8_score = s8_score;
     }
 
+    public String getSurvey_date() {
+        return survey_date;
+    }
 
+    public void setSurvey_date(String survey_date) {
+        this.survey_date = survey_date;
+    }
 
-    public SurveyTotalItem(String total_score, String s1_score, String s2_score, String s3_score, String s4_score, String s5_score, String s6_score, String s7_score, String s8_score) {
+    public SurveyTotalItem(String total_score, String s1_score, String s2_score, String s3_score, String s4_score, String s5_score, String s6_score, String s7_score, String s8_score, String survey_date) {
         this.total_score = total_score;
         this.s1_score = s1_score;
         this.s2_score = s2_score;
@@ -100,9 +106,6 @@ public class SurveyTotalItem {
         this.s6_score = s6_score;
         this.s7_score = s7_score;
         this.s8_score = s8_score;
+        this.survey_date = survey_date;
     }
-
-
-
-
 }
