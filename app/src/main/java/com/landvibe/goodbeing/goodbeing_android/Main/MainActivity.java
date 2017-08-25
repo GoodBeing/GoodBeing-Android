@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import com.landvibe.goodbeing.goodbeing_android.DB.DBAdapter;
 import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity
 
     private ViewFlipper flipper;
     private List<ImageView> indexes;
+
+    public DBAdapter dbadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +107,10 @@ public class MainActivity extends AppCompatActivity
         flipper.setOnTouchListener(new ViewFlipperAction(this, flipper));
         flipper.setFlipInterval(3000);
         flipper.startFlipping();
+        Log.d("asdfDB"," db생성전 ");
+
+        dbadapter = new DBAdapter(this);
+        Log.d("asdfDB"," db생성후 ");
 
     }
 

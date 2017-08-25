@@ -9,7 +9,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -55,7 +54,10 @@ public class SurveyResultActiviy extends AppCompatActivity
     private float section_sleep =0;
     private float section_skin =0;
     private float section_main =0;
+    private float resultscore = 0;
+
     private ArrayList<SurveyItem> arraysurvey;
+    private ArrayList<String> scorearray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,8 @@ public class SurveyResultActiviy extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         arraysurvey = new ArrayList<SurveyItem>();
+        scorearray = new ArrayList<String>();
+
         gomain = (Button)findViewById(R.id.survey_result_gomain_btn);
         gocategory = (Button)findViewById(R.id.survey_result_gocategory_btn);
         gosample = (Button)findViewById(R.id.survey_result_gosample_btn);
@@ -80,14 +84,28 @@ public class SurveyResultActiviy extends AppCompatActivity
         result_opinion = (TextView)findViewById(R.id.survey_result_opinion);
 
         Intent intt = getIntent();
-        arraysurvey = intt.getParcelableArrayListExtra("SURVEY_RESULT");
-        int resultscore = 0;
-        for(int i = 0;i<arraysurvey.size();i++)
-        {
-            Log.d("score is : ",i + "번 점수는 "+arraysurvey.get(i).getScore());
-            resultscore += arraysurvey.get(i).getScore();
-        }
-        resultscore = (int)(resultscore*0.7);
+       // arraysurvey = intt.getParcelableArrayListExtra("SURVEY_RESULT");
+        scorearray  = intt.getStringArrayListExtra("SURVEY_RESULT");
+
+
+//        for(int i = 0;i<arraysurvey.size();i++)
+//        {            Log.d("score is : ",i + "번 점수는 "+arraysurvey.get(i).getScore());
+//
+//            resultscore += arraysurvey.get(i).getScore();
+//        }
+//        resultscore = (int)(resultscore*0.7);
+
+
+        resultscore = Float.parseFloat(scorearray.get(0));
+        section_depoison = Float.parseFloat(scorearray.get(1));
+        section_bodyhealth = Float.parseFloat(scorearray.get(2));
+        section_stress = Float.parseFloat(scorearray.get(3));
+        section_house = Float.parseFloat(scorearray.get(4));
+        section_job = Float.parseFloat(scorearray.get(5));
+        section_sleep = Float.parseFloat(scorearray.get(6));
+        section_skin = Float.parseFloat(scorearray.get(7));
+        section_main = Float.parseFloat(scorearray.get(8));
+
 
         result_score.setText("" + resultscore);
 

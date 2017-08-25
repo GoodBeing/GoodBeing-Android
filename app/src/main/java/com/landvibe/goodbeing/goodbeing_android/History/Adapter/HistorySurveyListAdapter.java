@@ -55,7 +55,7 @@ public class HistorySurveyListAdapter extends RecyclerView.Adapter<HistorySurvey
         holder.survey_item_score.setText(item.getSurvey_score() + "점");
         holder.survey_item_date.setText(item.getSurvey_date());
 
-        int score = Integer.parseInt(item.getSurvey_score());
+        float score = Float.parseFloat(item.getSurvey_score());
         String result = new String();
 
         if(score > 70)
