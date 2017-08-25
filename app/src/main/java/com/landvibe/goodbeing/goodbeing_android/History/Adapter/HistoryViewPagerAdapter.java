@@ -24,9 +24,9 @@ public class HistoryViewPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                return new HistoryFragmentSample();
-            case 1:
                 return new HistoryFragmentSurvey();
+            case 1:
+                return new HistoryFragmentSample();
             default:
                 return null;
         }

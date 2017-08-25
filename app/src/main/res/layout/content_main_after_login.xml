@@ -21,10 +21,7 @@
             <ViewFlipper
                 android:id="@+id/viewflipper"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </ViewFlipper>
+                android:layout_height="match_parent" />
 
         </FrameLayout>
     </LinearLayout>
