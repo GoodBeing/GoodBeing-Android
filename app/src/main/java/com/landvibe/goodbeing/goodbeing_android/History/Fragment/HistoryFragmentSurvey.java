@@ -36,7 +36,7 @@ public class HistoryFragmentSurvey extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<SurveyTotalItem> totalarraylist;
 
-    DBAdapter dbAdapter;
+   private DBAdapter dbAdapter;
     /*
         DataSet for RecycleView
     */
@@ -73,7 +73,7 @@ public class HistoryFragmentSurvey extends Fragment {
 //            surveyResultItems.add(new SurveyResultItem("사용자","2017-08-25",totalarraylist.get(i).getTotal_score()));
 
         for(int i = totalarraylist.size(); i>0; i--)
-            surveyResultItems.add(new SurveyResultItem("사용자","2017-08-25",totalarraylist.get(i-1).getTotal_score()));
+            surveyResultItems.add(new SurveyResultItem("사용자","2017-08-29",totalarraylist.get(i-1).getTotal_score()));
 
 
 

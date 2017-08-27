@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:drawableTop="@drawable/ic_opacity_black_36dp"
                 android:paddingTop="25dp"
-                android:text="시료측정" />
+                android:text="시료신청" />
         </LinearLayout>
 
         <LinearLayout

@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
 
-    static final String[] LIST_MENU = {"굳빙서비스란","굳빙서비스의 목적","핵심 기술","굳빙서비스의 종류","교수 소개"};
+    static final String[] LIST_MENU = {"굳빙서비스란","굳빙서비스의 목적","핵심 기술","굳빙서비스의 종류","도움주신 분"};
     //private ListView list_name;
 
     private Intent intent;

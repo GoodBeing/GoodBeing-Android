@@ -38,13 +38,24 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Intro.Intro_GB_Activity"
-            android:label="굳빙 서비스란"
+            android:label="굳빙이란"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Intro.Intro_Purpose_Activity"
-            android:label="굳빙 서비스의 목적"
+            android:label="굳빙의 목적"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
+        <activity
+            android:name=".Intro.Intro_Skill_Activity"
+            android:label="굳빙의 기술"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Intro.Intro_Service_Activity"
+            android:label="굳빙의 서비스"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Intro.Intro_Professor_Activity"
+            android:label="굳빙의 도움"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!-- History -->
         <activity
             android:name=".History.HistoryActivity"
@@ -73,7 +84,7 @@
         <!-- Sample -->
         <activity
             android:name=".Sample.Activity.SampleMainActivity"
-            android:label="시료 측정"
+            android:label="시료 신청"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity

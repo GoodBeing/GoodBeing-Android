@@ -98,11 +98,9 @@ public class MainActivity extends AppCompatActivity
         LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
         View view1 = inflater.inflate(R.layout.bannerview1, flipper, false);
         View view2 = inflater.inflate(R.layout.bannerview2, flipper, false);
-        View view3 = inflater.inflate(R.layout.bannerview3, flipper, false);
         //inflate 한 view 추가
         flipper.addView(view1);
         flipper.addView(view2);
-        flipper.addView(view3);
 
         flipper.setOnTouchListener(new ViewFlipperAction(this, flipper));
         flipper.setFlipInterval(3000);

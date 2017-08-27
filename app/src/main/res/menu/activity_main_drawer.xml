@@ -17,7 +17,7 @@
         <item
             android:id="@+id/nav_sample"
             android:icon="@drawable/ic_opacity_black_36dp"
-            android:title="시료측정" />
+            android:title="시료신청" />
         <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_question_answer_black_36dp"

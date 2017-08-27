@@ -15,7 +15,7 @@ import com.landvibe.goodbeing.goodbeing_android.FAQ.FaqActivity;
 import com.landvibe.goodbeing.goodbeing_android.History.HistoryActivity;
 import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
-import com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleIntroFragment;
+import com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleAddFragment;
 import com.landvibe.goodbeing.goodbeing_android.Survey.SurveySearchActivity;
 
 /**
@@ -47,7 +47,7 @@ public class SampleMainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.sample_main_frame_layout, new SampleIntroFragment());
+        fragmentTransaction.replace(R.id.sample_main_frame_layout, new SampleAddFragment());
         fragmentTransaction.commit();
     }
 

@@ -19,7 +19,7 @@ import com.landvibe.goodbeing.goodbeing_android.Intro.IntroActivity;
 import com.landvibe.goodbeing.goodbeing_android.Main.MainSurveyExampleActivity;
 import com.landvibe.goodbeing.goodbeing_android.R;
 import com.landvibe.goodbeing.goodbeing_android.Sample.Activity.SampleMainActivity;
-import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyWriteActivity;
+import com.landvibe.goodbeing.goodbeing_android.Survey.SurveyWrite_One.Activity.SurveyStartActivity;
 
 /**
  * Created by 고승빈 on 2017-07-14.
@@ -119,38 +119,38 @@ public class SurveySearchActivity extends AppCompatActivity implements Navigatio
 
         if(view.getId() == R.id.pregnant)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.general)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
 
         else if(view.getId() == R.id.couple)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.family)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.teenager)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.group)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.older)
         {
-            intent.setClassName(this , SurveyWriteActivity.class.getName());
+            intent.setClassName(this , SurveyStartActivity.class.getName());
             startActivity(intent);
         }
         else if(view.getId() == R.id.searchresult_ex)

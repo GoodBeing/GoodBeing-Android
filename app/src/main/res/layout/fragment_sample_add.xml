@@ -8,162 +8,222 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_weight="1"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingRight="10dp"-->
+                <!--<TextView-->
+                    <!--android:text="사용자 정보"-->
+                    <!--android:paddingLeft="25dp"-->
+                    <!--android:textColor="@android:color/white"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content" />-->
 
-        <TextView
-            android:text="사용자 정보"
-            android:paddingLeft="25dp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black"
+                <!--<TableLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TableRow>-->
+                        <!--<TextView-->
+                            <!--android:text="성명"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/sample_add_user_name"-->
+                            <!--android:layout_weight="4"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"/>-->
+                    <!--</TableRow>-->
+
+                    <!--<TableRow>-->
+                        <!--<TextView-->
+                            <!--android:text="기본정보"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/sample_add_user_info"-->
+                            <!--android:layout_weight="4"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"/>-->
+                    <!--</TableRow>-->
+
+                <!--</TableLayout>-->
+        <!--</LinearLayout>-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+            >
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:text="설문 정보 선택"
+                android:paddingLeft="25dp"
+                android:textColor="@android:color/white"
+                android:background="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <TableRow>
-                <TextView
-                    android:text="성명"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/sample_add_user_name"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
+            <Spinner
+                android:id="@+id/sample_add_survey_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-            <TableRow>
-                <TextView
-                    android:text="기본정보"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/sample_add_user_info"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center_horizontal|center_vertical"
+                android:visibility="gone"
+                android:id="@+id/info_linearlayout">
 
-        </TableLayout>
-
-        <TextView
-            android:text="설문 정보"
-            android:paddingLeft="25dp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/sample_add_survey_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TableRow>
-                <TextView
-                    android:text="설문 작성일"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/sample_add_survey_date"
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="설문 점수"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/sample_add_survey_score"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3" />
-            </TableRow>
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    >
 
-        </TableLayout>
+                    <TextView
+                        android:id="@+id/survey_item_name"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="사용자"
+                        />
 
-        <TextView
-            android:text="배송지 정보"
-            android:paddingLeft="25dp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/survey_item_date"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="2017-08-29"
+                        />
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                </LinearLayout>
 
-            <TableRow>
+
+
                 <TextView
-                    android:text="성명"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <EditText
-                    android:id="@+id/sample_add_delivery_user_name"
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="우편번호"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <EditText
-                    android:id="@+id/sample_add_delivery_post_code"
+                    android:id="@+id/survey_item_score"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3" />
-            </TableRow>
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    />
 
-            <TableRow>
                 <TextView
-                    android:text="주소"
-                    android:layout_weight="1"
+                    android:id="@+id/survey_item_result"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <EditText
-                    android:id="@+id/sample_add_user_address"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center_horizontal|center_vertical"
+                    />
 
-            <TableRow>
-                <TextView
-                    android:text="휴대폰번호"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <EditText
-                    android:id="@+id/sample_add_user_mobile"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-            </TableRow>
+            </LinearLayout>
 
-        </TableLayout>
+        </LinearLayout>
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp">
+            <TextView
+                android:text="배송지 정보"
+                android:paddingLeft="25dp"
+                android:textColor="@android:color/white"
+                android:background="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:text="성명"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/sample_add_delivery_user_name"
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="우편번호"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/sample_add_delivery_post_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="주소"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/sample_add_user_address"
+                        android:layout_weight="4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="휴대폰번호"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/sample_add_user_mobile"
+                        android:layout_weight="4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+
+            </TableLayout>
+         </LinearLayout>
         <Button
             android:id="@+id/sample_add_submit_button"
             android:text="시료 신청"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"/>
 
         </LinearLayout>
 
