@@ -93,9 +93,16 @@ public class FaqActivity extends AppCompatActivity
             public void onItemClick(View view, int position) {
 
                 if(view.findViewById(R.id.faq_answer_tv).getVisibility()==view.findViewById(R.id.faq_answer_tv).GONE)
+                {
                     view.findViewById(R.id.faq_answer_tv).setVisibility(View.VISIBLE);
+                    view.findViewById(R.id.faq_img_ic).setBackgroundResource(R.drawable.ic_faq_close);
+                }
                 else
+                {
                     view.findViewById(R.id.faq_answer_tv).setVisibility(View.GONE);
+                    view.findViewById(R.id.faq_img_ic).setBackgroundResource(R.drawable.ic_faq_expand);
+                }
+
 
             }
             @Override
