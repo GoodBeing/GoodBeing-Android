@@ -44,14 +44,14 @@ public class SampleRadarChartFragment extends Fragment {
 
         ArrayList xVals = new ArrayList();
 
-        xVals.add("주거");
-        xVals.add("노화");
-        xVals.add("직업");
+        xVals.add("신체건강");
+        xVals.add("유해물 노출");
+        xVals.add("해독활동");
+        xVals.add("피부노출");
         xVals.add("수면");
-        xVals.add("화장품");
-        xVals.add("해독식품");
-        xVals.add("유해식품");
-        xVals.add("신진대사");
+        xVals.add("직업");
+        xVals.add("주거환경");
+        xVals.add("스트레스");
 
         RadarDataSet set = new RadarDataSet(entries, null);
         set.setColor(Color.BLUE);

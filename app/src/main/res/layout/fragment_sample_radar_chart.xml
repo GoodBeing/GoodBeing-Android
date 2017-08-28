@@ -3,7 +3,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleRadarChartFragment">
+    tools:context="com.landvibe.goodbeing.goodbeing_android.Sample.Fragment.SampleRadarChartFragment"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -15,90 +18,8 @@
             android:background="@android:color/black"
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TableRow>
-            <TextView
-                android:text="신진대사"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙이 매우 위협받음"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 고노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:text="유해식품"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙 위기"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 중간 노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:text="해독식품"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙 위기"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 중간 노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:text="화장품"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙 위기"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 중간 노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
 
         <TableRow>
             <TextView
@@ -108,7 +29,75 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="굳빙"
+                android:text="굳빙 위기"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 중간 노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="신체건강"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 위기"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 중간 노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:text="해독활동"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 위협"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 고노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:text="피부노출"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 좋음"
                 android:layout_weight="2"
                 android:layout_width="0dp"
                 android:gravity="center"
@@ -117,8 +106,77 @@
                 android:text="(유해물질 저노출)"
                 android:layout_weight="2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </TableRow>
 
+
+        <TableRow>
+            <TextView
+                android:text="유해물노출"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 위기"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 중간 노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="주거환경"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 위기"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 중간 노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="스트레스"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="굳빙 위협"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="(유해물질 고노출)"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
         </TableRow>
 
         <TableRow>
@@ -138,47 +196,9 @@
                 android:text="(유해물질 중간 노출)"
                 android:layout_weight="2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:text="노화"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙 위기"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 중간 노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:text="주거"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="굳빙 위기"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="(유해물질 중간 노출)"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                />
 
         </TableRow>
 

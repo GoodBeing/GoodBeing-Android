@@ -66,8 +66,8 @@ public class HistoryActivity extends AppCompatActivity
 
         // Initializing the TabLayout
         tabLayout = (TabLayout) findViewById(R.id.history_tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("시료"));
         tabLayout.addTab(tabLayout.newTab().setText("설문"));
+        tabLayout.addTab(tabLayout.newTab().setText("시료"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
